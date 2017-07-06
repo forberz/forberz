@@ -35,26 +35,34 @@
 					<li><a href="/site/contact.php"><?= $DICT['contact']?></a></li>
 				</ul>
 				<ul class="footer_menu">
-					<li class="foot_li"><a href="/site/guide.php"><?= $DICT['guide']?></a></li>				
-					<li><a href="/site/guide.php?article=1">שחזור וחידוש פלסטיק וגומי</a></li>
-					<li><a href="/site/guide.php?article=2">טיפול בסימני פוליש על פלסטיק</a></li>
-					<li><a href="/site/guide.php?article=3">טיפוח ושמירה על ריפודי עור</a></li>
-					<li><a href="/site/guide.php?article=4">דיטיילינג לדשבורד</a></li>
-					<li><a href="/site/guide.php?article=5">ניקוי ריפודים ברכב</a></li>
+					<li class="foot_li"><a href="/site/guide.php"><?= $DICT['guide']?></a></li>	
+					<?php
+						$result = $DB->query("SELECT id, "
+							. $DB->real_escape_string('title_'.$LANG) ." AS title
+							FROM `guide` ORDER BY id LIMIT 5");
+
+						while ($row = $result->fetch_assoc()) {
+							echo '<li><a href="/site/guide.php?guide='.$row['id'].'">'.$row['title'].'</a></li>';
+						}
+					?>
 				</ul>
 				<ul class="footer_menu">
 					<li class="foot_li"><a href="/site/catalogue.php?limit=5"><?= $DICT['cata']?></a></li>
-					<li><a href="/site/catalogue.php?product=1">ניקוי ג'נטים</a></li>
-					<li><a href="/site/catalogue.php?product=2">חמאת עור</a></li>
-					<li><a href="/site/catalogue.php?product=3">ווקס לרכב שחור</a></li>
-					<li><a href="/site/catalogue.php?product=4">תחליף למסיר שומנים</a></li>
-					<li><a href="/site/catalogue.php?product=5">שטיפה ללא מים</a></li>
+					<?php
+						$result = $DB->query("SELECT id, "
+							. $DB->real_escape_string('title_'.$LANG) ." AS title
+							FROM `products` ORDER BY id LIMIT 5");
+
+						while ($row = $result->fetch_assoc()) {
+							echo '<li><a href="/site/catalogue.php?product='.$row['id'].'">'.$row['title'].'</a></li>';
+						}
+					?>
 				</ul>
 			</div>
 		</div>
 		<div class="footer_bottom_back">
 		<div class="footer_bottom">
-			<p><?= $DICT['rights']?></p>
+			<p>&copy; <?= $DICT['rights']?> Forberz&trade; <?=date("Y")?></p>
 			<p>design by mdnt</p>
 		</div>
 		</div>

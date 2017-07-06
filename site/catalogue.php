@@ -9,23 +9,23 @@ if (!isset($_GET['product'])) {
 	<?php
 }
 
-$result = $DB->query("SELECT id, ". $DB->real_escape_string('prices_'.$LANG) ." AS prices, sizes, image,". $DB->real_escape_string('title_'.$LANG) ." AS title,".$DB->real_escape_string('howtopoints_'.$LANG) ." AS howtopoints,". $DB->real_escape_string('subtitle_'.$LANG) ." AS subtitle,".$DB->real_escape_string('maintext_'.$LANG) ." AS maintext,". $DB->real_escape_string('points_'.$LANG) ." AS points FROM `products` 
-".($PRODUCT ? "WHERE id = {$PRODUCT}" : "")." ORDER BY priority LIMIT " . ($PRODUCT !== false ? 1 : $LIMIT ));
-
-// // id
-// // title_en
-// // subtitle_en
-// // points_en
-// maintext_en
-// howto_en
-// faq_en
-// sizes
-// howtopoints_en
-// howtotext_en
-// faqpoints_en
-// howtotips_en
-// msds_en
-// msdspoints_en
+$result = $DB->query("SELECT id, "
+	. $DB->real_escape_string('title_'.$LANG) ." AS title,"
+	. $DB->real_escape_string('subtitle_'.$LANG) ." AS subtitle,"
+	. $DB->real_escape_string('icons_'.$LANG) ." AS icons,"
+	. $DB->real_escape_string('points_'.$LANG) ." AS points," 
+	. $DB->real_escape_string('maintext_'.$LANG) ." AS maintext,"
+	. $DB->real_escape_string('prices_'.$LANG) ." AS prices,
+	sizes, image,"
+	. $DB->real_escape_string('img_alt_'.$LANG) ." AS img_alt,"
+	. $DB->real_escape_string('howtopoints_'.$LANG) ." AS howtopoints,"
+	. $DB->real_escape_string('howtotext_'.$LANG) ." AS howtotext,"
+	. $DB->real_escape_string('howtotips_'.$LANG) ." AS howtotips,"
+	. $DB->real_escape_string('faqpoints_'.$LANG) ." AS faqpoints,"
+	. $DB->real_escape_string('msdspoints_'.$LANG) ." AS msdspoints,"
+	. $DB->real_escape_string('msdstext_'.$LANG) ." AS msdstext
+	FROM `products` 
+".($PRODUCT ? "WHERE id = $PRODUCT" : "")." ORDER BY priority LIMIT " . ($PRODUCT !== false ? 1 : ($LIMIT ? $LIMIT : 5) ));
 
 while ($row = $result->fetch_assoc()) {
 	?>
@@ -36,13 +36,13 @@ while ($row = $result->fetch_assoc()) {
 		</div>
 
 		<div class="product_icons">
-			<h4>100% NATURAL ● NO SILICONE ● NO CHEMICALS ● NONTOXIC ● PAINTSHOP SAFE ● RECOMMENDED BY PROFESSIONALS</h4>
+			<h4><?=$row['icons']?></h4>
 		</div>
 
 		<div class="catdiv" <?= $PRODUCT ? '' : 
 						'onclick="document.location=\'?product=' . $row['id'] . '\'"' ?>>
 			<div class="prod_img_buy <?= $PRODUCT ? 'product' : '' ?>">
-				<img class="product_eng" src="<?=$row['image']?>" alt="Forberz Ride Effect 120 gr" />
+				<img class="product_eng" src="<?=$row['image']?>" alt="<?=$row['img_alt']?>" />
 				<?php if ($PRODUCT) { ?>
 					<div class="buy_title"><?=$DICT['pack_size']?></div>
 					
@@ -87,10 +87,10 @@ while ($row = $result->fetch_assoc()) {
 				<?php } ?>
 			</div>
 
-			<div class="text_box">
+			<div class="prod_text_box">
 				<ul class="prod_point">
 					<?php
-						$points = explode(' @@ ', $row['howtopoints']);
+						$points = explode(' @@ ', $row['points']);
 
 						foreach ($points as $p) {
 							echo '<li>'.$p.'</li>';
@@ -104,10 +104,9 @@ while ($row = $result->fetch_assoc()) {
 	</div>
 	
 	<?php
-}
-
-if (isset($_GET['product'])) {
-	include('product_page_bottom.php');
+	if (isset($_GET['product'])) {
+		include('product_page_bottom.php');
+	}
 }
 
 include('footer.php');

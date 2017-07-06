@@ -17,8 +17,6 @@ body.rtl, body.rtl * {
 body.rtl * {
 	text-align: right;
 }
-body.ltr .footer_flex {
-}
 body.ltr table.shops {
 	text-align: left;
 }
@@ -36,128 +34,31 @@ img {
     margin: 0 auto;
     padding: 0;
     display: block;
+    border-radius: 2px;
 }
-img.logo {
-    margin: auto;
-    width: 16em;
-    background-color: #000039;
-    padding: 4em 1em 0.5em 1em;
-    display: block
-}
-img.footer_logo {
-    width: 12em;
-    background-color: #000039;
-    margin: 0px;
-    padding: 1.5em 1em
-}
-
 img.black_img {
     box-shadow: 0 0 70px 10px black;
     padding: 0;
     margin: 1em;
     float: left
 }
-img.product_eng {
-    width: 90%;
-    margin: 0 auto;
-    margin-top: 1em;
-    box-shadow: 0 0 20px 10px black;
-}
-
 a {
     transition: color .2s ease-in-out;
+    transition: background-color .2s ease-in-out;
     color: #fefefe;
     text-decoration: none;
     padding: 0
 }
-a:hover {
+a:not(.grey):hover {
     color: orange;
     cursor: pointer;
 }
 a.active {
     color: lightblue
 }
-a.page_nav {
-    padding: 2rem 1rem 0.5rem 1rem;
-    background-color: #0A0A0A;
-    margin: auto;
-    display: block
-}
-a.page_nav:first-child {
-    margin-left: 0;
-}
-a.page_nav:last-child {
-    margin-right: 0;
-}
-a.cat_nav {
-    text-align: center;
-    padding: 1.5rem;
-	width: 50%;
-    margin: 0 auto;
-    font-size: 1.2em;
-    display: block;
-}
-a.madeinisrael {
-    padding: 2rem 1rem 0.5rem 1rem;
-    background-color: #000039;
-    margin: auto;
-    font-weight: bold;
-    letter-spacing: 0.05em;
-    display: block
-}
-a.natural {
-    padding: 2rem 1rem 0.5rem 1rem;
-    background-color: green;
-    margin: auto;
-    font-weight: bold;
-    letter-spacing: 0.05em;
-    display: block;
-}
-div.social {
-    background-color: #0A0A0A;
-    min-height: 1.5rem;
-    height: auto;
-    width: 90%;
-    margin: auto;
-    padding: 0;
-    display: block;
-}
 
-div.black_wrap {
-    background-color: #0A0A0A;
-    height: auto;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0;
-}
-
-div.main_menu {
-    background-color: #0A0A0A;
-    min-height: 2rem;
-    height: auto;
-    width: 90%;
-    margin: auto;
-    padding: 0;
-}
-
-div.page_menu {
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    margin-top: 1em;
-    justify-content: space-between;
-    flex-flow: row-wrap;
-    align-items: flex start;
-}
-
-div.top {
-    background-color: #0A0A0A;
-    height: auto;
-    width: 100%;
-    margin: auto;
-    background-image: url("/img/strip1.jpg");
-    display: block;
-    text-align: center;
+div {
+    border-radius: 2px;
 }
 div.main {
     background-color: #0A0A0A;
@@ -168,344 +69,6 @@ div.main {
     padding: 0.5rem 1rem;
 }
 
-#gallery {
-    width: 88.7%;
-    text-align: center;
-}
-
-#gallery .gallery-img {
-    width: 30%;
-    height: 200px;
-    margin: 0.5rem;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 200% auto;
-    cursor: pointer;
-}
-
-#blackend {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.7);
-}
-
-#blackend.open {
-    display: flex;
-    z-index: 999;
-    overflow-y: auto;
-}
-
-#blackend img {
-    max-width: 100%;
-    /*max-height: 100%;*/
-    z-index: 1;
-}
-
-#blackend .close {
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-    z-index: 2;
-    width: 1em;
-    height: 1em;
-    font-size: 3rem;
-    color: #fff;
-    cursor: pointer;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
-}
-
-div.guide {
-    padding: 0.5rem 1rem;
-    width: 88.7%;
-    margin: auto;
-    height: auto;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-}
-div.guide_item {
-    width: 40%;
-    margin: auto;
-    background-color: #0A0A0A;
-    padding: 0.5rem 1rem;
-
-}
-div.shops {
-    background-color: #0A0A0A;
-    height: auto;
-    width: 90%;
-    margin: 0 auto;
-    padding: 0.5rem 1rem;
-    overflow-x: auto;
-}
-div.footer_main {
-    background-color: #0A0A0A;
-    height: auto;
-    width: 100%;
-    margin: auto;
-    margin-top: 1em;
-    padding-bottom: 1rem;
-}
-div.footer_flex {
-    display: flex;
-    flex-flow: row wrap;
-    width: 90%;
-    margin: auto;
-    justify-content: space-between;
-    background-color: #0A0A0A;
-}
-div.footer_info {
-    margin: auto;
-    padding: 0;
-    width: auto;
-    height: auto;
-    background-color: #0A0A0A;
-    margin-top: 1em;
-}
-div.footer_contact {
-    margin: auto;
-    padding: 0;
-    width: 15em;
-    height: auto;
-    background-color: #0A0A0A;
-    margin-top: 1em;
-}
-div.footer_bottom_back {
-    width: auto;
-    margin: auto;
-    background-color: #0E0E0E;
-}
-div.footer_bottom {
-    width: 90%;
-    margin: auto;
-    padding: 0.5rem;
-    font-size: 0.7rem;
-    color: lightgrey;
-    display: flex;
-    justify-content: space-between;
-}
-div.catdiv {
-    background-color: #0A0A0A;
-    min-height: 150px;
-    height: 100%;
-    width: 88.7%;
-    margin: 0 auto;
-    padding: 0.5rem 1rem;
-}
-div.cat_wrap {
-    margin: 0 auto;
-    padding: 0;
-    display: block;
-    width: auto;
-    min-height: 150px;
-    height: auto;
-}
-
-
-div.cat_wrap, div.cat_wrap * {
-    cursor:pointer;
-}
-div.text_box {
-    margin: auto;
-    padding: 0;
-    width: 60%;
-    float: flex;
-    height: auto;
-    display: block;
-}
-div.prod_img_buy {
-    float: flex;
-    width: 30%;
-	min-width: 280px;
-	min-height: 100px;
-    background-color: #050505;
-    display: inline-block;
-    margin: 0 auto;
-    padding: 0;
-    height: 100%;
-}
-div.prod_img_buy.product {
-    cursor: default;
-}
-div.prod_img_buy form {
-    padding: 0.5rem;
-    width: 90%;
-    height: auto;
-    margin: 0 auto;
-}
-div.prod_img_buy h4 {
-    font-size: 2rem;
-	text-align: center;
-	margin: 0 auto;
-    padding: 0;
-}
-	
-div.buy_title {
-	font-size: 1.2rem;
-    margin: 0 auto;
-    padding: 0;
-    display: block;
-    text-align: center;
-}
-
-select.sel {
-	font-size: 1.3rem;
-    margin: 0 auto;
-    margin-bottom: 1rem;
-    margin-top: 0.5rem;
-    display: block;
-    padding: 0.2rem;
-}
-.payment_btn {
-    height: auto;
-    margin: 0 auto;
-    padding: 1rem 0.5rem;
-}
-.payment_btn input[type="submit"] {
-    transition: background .2s ease-in-out;
-    color: #fff;
-    background: #000039;
-    font-size: 1.4rem;
-    cursor: pointer;
-    border: 0;
-    margin: 0.5rem 1rem;
-    padding: 0 0.5rem;
-    width: 7rem;
-    height: 2.5rem;
-}
-.payment_btn input[type="submit"]:hover {
-    background: #000066;
-}
-.payment_btn input[type="number"] {
-    width: 4rem;
-    height: 2.5rem;
-    color: #fff;
-    background: #111;
-    text-align: center;
-    font-size: 1.4rem;
-    border: 0;
-    padding: 0;
-}
-.payment_btn span {
-    display: inline-block;
-    font-size: 1.4rem;
-    padding: 0 1rem;
-}
-span.buy_info {
-    color: #bbb;
-    font-size: 0.8rem;
-    margin: 0.5rem 0;
-}
-
-
-.mobile {
-    display: none;
-}
-div.product_header {
-    background-color: #000029;
-    height: auto;
-    width: 88.7%;
-    margin: 0 auto;
-    margin-top: 1em;
-    padding: 0.5rem 1rem;
-}
-div.product_icons {
-    width: 88.7%;
-    background-color: green;
-    height: auto;
-    margin: 0 auto;
-    padding: 0.5rem 1rem;
-    letter-spacing: 0.07em
-}
-div.text_box {
-    width: 60%;
-    min-height: 300px;
-    height: auto;
-    display: inline-block;
-    padding: 0 2rem;
-    vertical-align: top;
-}
-div.pagenav {
-    height: auto;
-    width: 90%;
-    margin: auto;
-    margin-top: 1em;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-}
-
-div.buy {
-    display: flex;
-    flex-flow: row wrap;
-    width: 88.7%;
-    margin: 0 auto;
-    margin-top: 1em;
-    align-items: stretch;
-    justify-content: space-between;
-    padding: 0.5rem 1rem;
-}
-div.buy_rideeffect,
-div.buy_detailhd {
-    height: auto;
-    width: 46%;
-    background-color: #0A0A0A;
-    padding: 1em 1em 12rem 1em;
-    position: relative
-}
-
-
-table.shops {
-    border-collapse: collapse;
-    width: 100%;
-	table-layout: fixed;
-}
-table.shops th{
-    color: #aaa;
-}
-
-table.shops th, table.shops td {
-	padding: 0.2rem 0.5rem;
-}
-
-table.shops tr:nth-child(even) {
-    background-color: #111;
-    border-bottom: 1px doted #222;
-}
-table.shops tr:hover:not(:first-child)  {
-    background-color: #191919;
-    color: orange;
-}
-
-table.shops td:nth-child(3){
-    font-weight: bold;
-}
-table.shops td {
-    border-left: 1px solid #0A0A0A;
-}
-
-.buy_rideeffect .up,
-.buy_rideeffect .down {
-    width: 45px;
-    height: 45px;
-    background: #000039;
-    border-radius: 50%;
-    float: right;
-    text-align: center;
-    line-height: 48px;
-    font-size: 2rem;
-}
-.buy_rideeffect .down {
-    float: left;
-    line-height: 40px;
-}
 h1 {
     margin: 0;
     padding: 0
@@ -531,230 +94,28 @@ p {
     margin: 0;
     padding: 0
 }
-ul.lang_menu {
-    list-style-type: none;
-    padding: 0.3rem 0;
-    margin: auto;
-    font-weight: bold;
-    font-size: 0.75em;
-    height: auto;
-    float: right;
-    direction: rtl;
-    display: flex;
-}
 
-ul.social_menu {
-    list-style-type: none;
-    padding: 0.3rem 0;
-    margin: auto;
-    font-weight: bold;
-    font-size: 0.75em;
-    height: auto;
-    float:left;
-    display: flex;
+/*about*/
+div.main.abouter {
+    padding: 0;
+    width: 91.1%;
 }
-ul.lang_menu li {
-    display: inline;
-    text-decoration: none;
-    margin: 0;
-    height: auto;
-    width: auto;
-    padding: 0 0.5rem;
-}
-ul.social_menu li {
-    display: inline;
-    text-decoration: none;
+div.about {
+    display: inline-block;
+    width: 91.1%;
+    padding: 0;
     margin: 0 auto;
-    height: auto;
-    width: auto;
-    padding: 0 0.5rem;
-}
-ul.main_menu {
     background-color: #0A0A0A;
-    list-style-type: none;
-    padding: 0;
+}
+div.about_side_pic {
+    float: left;
     margin: 0 auto;
-    font-weight: bold;
-    font-size: 1.2rem;
-    padding: 0.3rem 0;
-}
-ul.main_menu li {
-    display: inline;
-    text-decoration: none;
-    margin: 0;
-    padding: 0 0.5rem;
-    height: auto;
-    width: auto
-}
-
-li.opmenu {
-    float: right !important;
-}
-
-body.rtl li.opmenu {
-    float: left !important;
-}
-
-
-ul.footer_menu {
-    margin: auto;
     padding: 0;
-    margin-top: 1em;
-    list-style-type: none;
+    display: inline-block;
+    height: 100%;
 }
-
-ul.prod_point {
-    list-style-type: circle;
-    font-weight: bold;
-    font-size: 1.1em;
-    margin-top: 0.5em;
-    margin-bottom: 1em;
-}
-
-ul.prod_point li {
-    padding: 0;
-    padding: 0;
-    margin: auto;
-    margin: 0;
-}
-
-
-.foot_li a {
-    transition: color .2s ease-in-out;
-    font-size: 0.85em; 
-    color: #aaa;
-}
-.foot_li a:hover {
-    color: orange;
-}
-
-iframe.shop_list {
-    margin: auto;
-    padding: 0;
-    display: block;
-}
-
-@media screen and (max-width: 1000px) {
-	
-	.mobile {
-		display: table-cell;
-		font-size: 1rem;
-	}
-	.pc {
-		display: none;
-	}
-	
-	div.page_menu {
-		display: block;
-		width: 93%;
-	}
-	
-	div.footer_flex, div.footer_flex .mobile  {
-		font-size: 1.2rem !important;
-		line-height: 1.5rem;
-	}
-	
-	div.footer_flex li.foot_li  {
-		font-size: 1.5rem;
-	
-	}
-	
-	img.product_eng {
-		max-width: 280px;
-	}
+div.about_text {
+    margin: 1rem;
+    width: 60%;
     
-	div.buy_rideeffect,
-    div.buy_detailhd {
-        width: 100%;
-        padding-bottom: 20rem !important;
-    }
-	div.text_box {
-		width: 90%;
-		float: none !important;
-		padding: 1rem;
-	}
-
-	div.prod_img_buy {
-		float: none;
-		margin: 0 auto;
-		min-height: 300px;
-	}
-    header + div.main_heb,
-    header + div.main_heb + div.buy,
-    header + div.main_heb + div.buy + div.shops > div,
-    div.shops {
-        padding: 5% !important;
-    }
-	
-	div.main.table {
-		width: 100%;
-		padding: 0;
-    }
-	
-	div.main.table tr {
-		padding: 0.5rem 0;
-		height: 3rem;
-	}
-	
-    div.buy {
-        width: 95% !important;
-    }
-    div.buy img {
-        float: none !important;
-        margin: 1em auto !important;
-        display: block;
-    }
-    .payment_btn {
-        flex-direction: column;
-        align-items: center;
-        bottom: 3rem;
-    }
-    .payment_btn:after {
-        width: 90%;
-        padding: 0 5%;
-        bottom: -6rem;
-    }
-	div.footer_contact, div.footer_flex > ul {
-		width: 100%;
-		padding: 0 0.5rem;
-	
-	}
-	div.footer_flex > ul:last-child {
-		margin-bottom: 1.5rem;
-	}
-	
-	div.prod_img_buy {
-		margin: 1rem auto !important;
-		float: none !important;
-		width: 100%;
-	}
-	
-	div.prod_img_buy.longer {
-		min-height: 700px;
-	}
-	div.catdiv_ltr {
-		position: relative;
-    }
-	div.prod_img_buy div.buy_title + select ~ form {
-		margin-top: 0;
-	}
-    div.main_menu {
-        display: flex
-    }
-    div.social {
-        display: inline-block;
-    }
-    ul.main_menu li { 
-        display: block;
-        padding-top: 0.5rem;
-    }
-    ul.main_menu > li:last-child {
-        margin-bottom: 0.5rem;
-    }
-}
-
-@media screen and (max-width: 1000px) and (orientation: portrait) {
-	table.shops th:first-child, table.shops td:first-child {
-		display: none;
-	}
 }

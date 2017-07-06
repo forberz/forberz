@@ -8,8 +8,15 @@ $prev_area = '';
 		<h1><?= $DICT['about_forberz']?></h1>
 		<h4 class="grey"><?= $DICT['about_forberz_sub']?></h4>
 	</div>
-	<div class="main">
-		<p><?= $DICT['about_forberz_text']?></p>
+	<div class="main abouter">
+		<div class="about">
+			<div class="about_side_pic">
+				<img src="/img/a11">
+			</div>
+			<div class="about_text">
+				<?= $DICT['about_forberz_text']?>
+			</div>
+		</div>
 	</div>
 
 <?php 

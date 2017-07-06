@@ -114,8 +114,10 @@ if ($result = $DB->query("SELECT lang_key, ". $DB->real_escape_string('lang_'.$L
 				showPrice(i);
 			};
 
-			var choosePic = function(src) {
+			var choosePic = function(src, title, subtitle) {
 				document.getElementById('the-pic').src = src;
+				document.getElementById('the-pic-title').innerHTML = title;
+				document.getElementById('the-pic-subtitle').innerHTML = subtitle;
 				document.getElementById('blackend').setAttribute('class', 'open');
 			};
 
@@ -125,6 +127,13 @@ if ($result = $DB->query("SELECT lang_key, ". $DB->real_escape_string('lang_'.$L
 		</script>
 
 		<link rel="stylesheet" href="/site/css/style.css"/>
+		<link rel="stylesheet" href="/site/css/shops.css"/>
+		<link rel="stylesheet" href="/site/css/footer.css"/>
+		<link rel="stylesheet" href="/site/css/gallery.css"/>
+		<link rel="stylesheet" href="/site/css/guide.css"/>
+		<link rel="stylesheet" href="/site/css/header.css"/>
+		<link rel="stylesheet" href="/site/css/media.css"/>
+		<link rel="stylesheet" href="/site/css/product.css"/>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
 		<title>Forberz - Natural Detailing Products for Your Car and Bike</title>
