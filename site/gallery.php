@@ -1,10 +1,12 @@
 <?php
 include('header.php');
 
-$result = $DB->query("SELECT id, prod_id, img, thumb,"
-	. $DB->real_escape_string('title_'.$LANG) ." AS title,"
-	. $DB->real_escape_string('subtitle_'.$LANG) ." AS subtitle
-	FROM `gallery` ORDER BY id LIMIT 200");
+$result = $DB->query("SELECT 
+						id, prod_id, img, thumb,
+						title_{$LANG} AS title,
+						subtitle_{$LANG} AS subtitle
+					FROM `gallery` 
+					ORDER BY id LIMIT 200");
 
 $prev_area = '';
 ?>
@@ -14,7 +16,6 @@ $prev_area = '';
 	</div>
 	<div class="main" id="gallery">
 	<?php
-		$dir = '../gallery/';
 		while ($row = $result->fetch_assoc()) {?>
 				<div class="gallery-img" style="background-image: url('<?=$row['thumb']?>')" onclick="choosePic('<?=$row['img']?>', '<?=str_replace("'", "\\'", $row['title'])?>', '<?=str_replace("'", "\\'", $row['subtitle'])?>')">
 					<div class="fader"><b><?=$row['title']?></b><br><?=$row['subtitle']?></div>

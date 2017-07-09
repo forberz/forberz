@@ -20,7 +20,7 @@
 						<tr>
 							<td><h4 class="grey"><?= $DICT['mail']?></h4></td>
 							<td colspan="2"><h4><a href="mailto:sales@forberz.com?subject=Forberz+Online+Contact+-+No.+5<?php 
-								echo str_pad((string)rand(12323, 99997), 5, "0"). strtoupper(isset($_GET['lang']) ? $_GET['lang'] : 'en'); 
+								echo str_pad((string)rand(12323, 99997), 5, "0"). strtoupper($LANG); 
 							?>" target="_blank">sales@forberz.com</a></h4></td>
 						</tr>
 					</table>
@@ -28,7 +28,7 @@
 				</div>
 				<ul class="footer_menu">
 					<li class="foot_li"><a href="/"><?= $DICT['main']?></a></li>
-					<li><a href="/site/about.php"><?= $DICT['about_forberz']?></a></li>
+					<li><a href="/site/about_forberz.php"><?= $DICT['about_forberz']?></a></li>
 					<li><a href="/site/shops.php"><?= $DICT['wherebuy']?></a></li>
 					<li><a href="/site/affiliate.php"><?= $DICT['affiliate']?></a></li>
 					<li><a href="/site/jobs.php"><?= $DICT['jobs']?></a></li>
@@ -37,24 +37,22 @@
 				<ul class="footer_menu">
 					<li class="foot_li"><a href="/site/guide.php"><?= $DICT['guide']?></a></li>	
 					<?php
-						$result = $DB->query("SELECT id, "
-							. $DB->real_escape_string('title_'.$LANG) ." AS title
+						$result = $DB->query("SELECT id, footer_{$LANG} AS title
 							FROM `guide` ORDER BY id LIMIT 5");
 
 						while ($row = $result->fetch_assoc()) {
-							echo '<li><a href="/site/guide.php?guide='.$row['id'].'">'.$row['title'].'</a></li>';
+							echo '<li><a href="/site/guide.php?id='.$row['id'].'">'.$row['title'].'</a></li>';
 						}
 					?>
 				</ul>
 				<ul class="footer_menu">
 					<li class="foot_li"><a href="/site/catalogue.php?limit=5"><?= $DICT['cata']?></a></li>
 					<?php
-						$result = $DB->query("SELECT id, "
-							. $DB->real_escape_string('title_'.$LANG) ." AS title
+						$result = $DB->query("SELECT id, footer_{$LANG} AS title
 							FROM `products` ORDER BY id LIMIT 5");
 
 						while ($row = $result->fetch_assoc()) {
-							echo '<li><a href="/site/catalogue.php?product='.$row['id'].'">'.$row['title'].'</a></li>';
+							echo '<li><a href="/site/catalogue.php?id='.$row['id'].'">'.$row['title'].'</a></li>';
 						}
 					?>
 				</ul>

@@ -58,7 +58,7 @@ a.active {
 }
 
 div {
-    border-radius: 2px;
+    border-radius: 3px;
 }
 div.main {
     background-color: #0A0A0A;
@@ -85,6 +85,9 @@ h4 {
 .grey {
     color: #aaa
 }
+.highline {
+    line-height: 2rem;
+}
 
 h3 {
     margin: 0;
@@ -96,26 +99,35 @@ p {
 }
 
 /*about*/
-div.main.abouter {
-    padding: 0;
-    width: 91.1%;
-}
-div.about {
-    display: inline-block;
-    width: 91.1%;
-    padding: 0;
-    margin: 0 auto;
+div.about_forberz {
     background-color: #0A0A0A;
+    width: 91.1%;
+    min-height: 300px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+    margin-top: 1rem;
 }
 div.about_side_pic {
-    float: left;
+    width: auto;
+    min-height: 300px;
+    height: 100%;
     margin: 0 auto;
     padding: 0;
     display: inline-block;
-    height: 100%;
 }
-div.about_text {
-    margin: 1rem;
+div.about_forberz_text {
     width: 60%;
-    
+    height: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+    display: inline-block;
+    vertical-align: top;
+}
+img.about_img {
+    margin: 0 auto;
+    padding: 0;
+    min-height: 300px;
+    width: 100%;
+    height: 100%;
 }

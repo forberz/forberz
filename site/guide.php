@@ -1,15 +1,17 @@
 <?php
 include('header.php');
 
-$result = $DB->query("SELECT id, "
-	. $DB->real_escape_string('author_'.$LANG) ." AS author,"
-	. $DB->real_escape_string('title_'.$LANG) ." AS title,"
-	. $DB->real_escape_string('subtitle_'.$LANG) ." AS subtitle,"
-	. $DB->real_escape_string('text_'.$LANG) ." AS text, img 
-	FROM `guide` 
-".($GUIDE ? "WHERE id = {$GUIDE}" : "")." ORDER BY id LIMIT " . ($GUIDE !== false ? 1 : ($LIMIT ? $LIMIT : 5) ));
+$result = $DB->query("SELECT id, 
+						author_{$LANG} AS author,
+						title_{$LANG} AS title,
+						subtitle_{$LANG} AS subtitle,
+						text_{$LANG} AS text, img 
+					FROM `guide` 
+					".($ID ? "WHERE id = {$ID}" : "")." 
+					ORDER BY id 
+					LIMIT " . ($ID !== false ? 1 : ($LIMIT ? $LIMIT : 100) ));
 
-if ($GUIDE === false) {
+if ($ID === false) {
 ?>
 <div class="main">
 	<h1><?= $DICT['guide']?></h1>
@@ -24,15 +26,15 @@ if ($GUIDE === false) {
 				<h4 class="grey"><?= $row['subtitle']?></h4>
 			</div>
 
-			<div  <?= $GUIDE ? '' : 'onclick="document.location=\'?guide=' . $row['id'] . '\'"' ?>>
-				<div class="guide_img <?= $GUIDE ? 'guide' : '' ?>">
+			<div  <?= $ID ? '' : 'onclick="document.location=\'?id=' . $row['id'] . '\'"' ?>>
+				<div class="guide_img <?= $ID ? 'guide' : '' ?>">
 					<img class="guide_thumb" src="<?= $row['img'] ?>">
-					<?php if (!$GUIDE) { ?>
-						<a href="?guide=<?=$row['id']?>" class="cat_nav">More Info</a>
+					<?php if (!$ID) { ?>
+						<a href="?id=<?=$row['id']?>" class="cat_nav">More Info</a>
 					<?php } ?>
 				</div>
 
-				<div><?= $GUIDE ? $row['text'] : substr(strip_tags($row['text']), 0, 300) . '...' ?></div>
+				<div><?= $ID ? $row['text'] : substr(strip_tags($row['text']), 0, 300) . '...' ?></div>
 			</div>
 		</div>
 	<?php } ?>

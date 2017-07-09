@@ -1,7 +1,13 @@
 <?php
 include('header.php');
-$result = $DB->query("SELECT ". $DB->real_escape_string('area_'.$LANG) ." AS area,". $DB->real_escape_string('city_'.$LANG) ." AS city,". $DB->real_escape_string('name_'.$LANG) ." AS store,". $DB->real_escape_string('adress_'.$LANG) ." AS adress,phone FROM `protreat` 
-WHERE area_he != 'תת_לא פעיל' AND area_he != 'תת_לא_פעיל' ORDER BY priority");
+$result = $DB->query("SELECT 
+						area_{$LANG} AS area,
+						city_{$LANG} AS city,
+						name_{$LANG} AS store,
+						adress_{$LANG} AS adress,phone 
+					FROM `protreat` 
+					WHERE area_he != 'תת_לא פעיל' AND area_he != 'תת_לא_פעיל' 
+					ORDER BY priority");
 $prev_area = '';
 ?>
 	<div class="main">

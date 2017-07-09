@@ -10,9 +10,9 @@
 		  <li><a href="http://www.ebay.com/usr/forberz" rel="nofollow" target="_blank">eBay</a></li>
 		</ul>
 		<ul class="lang_menu">  
-		  <li><a href="?lang=he<?= $PRODUCT ? '&product=' . $PRODUCT : '' ?>" <?= $LANG === 'he' ? 'class="grey"' : ''?>>עברית</a></li>
-		  <li><a href="?lang=ru<?= $PRODUCT ? '&product=' . $PRODUCT : '' ?>" <?= $LANG === 'ru' ? 'class="grey"' : ''?>>Русский</a></li>
-		  <li><a href="?lang=en<?= $PRODUCT ? '&product=' . $PRODUCT : '' ?>" <?= $LANG === 'en' ? 'class="grey"' : ''?>>English</a></li>
+		  <li><a href="?lang=he<?= $ID ? '&id=' . $ID : '' ?>" <?= $LANG === 'he' ? 'class="grey"' : ''?>>עברית</a></li>
+		  <li><a href="?lang=ru<?= $ID ? '&id=' . $ID : '' ?>" <?= $LANG === 'ru' ? 'class="grey"' : ''?>>Русский</a></li>
+		  <li><a href="?lang=en<?= $ID ? '&id=' . $ID : '' ?>" <?= $LANG === 'en' ? 'class="grey"' : ''?>>English</a></li>
 		</ul>
 	</div>
 	<div class="top">

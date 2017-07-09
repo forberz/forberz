@@ -1,14 +1,20 @@
 <?php
 include('header.php');
-$result = $DB->query("SELECT ". $DB->real_escape_string('area_'.$LANG) ." AS area,". $DB->real_escape_string('city_'.$LANG) ." AS city,". $DB->real_escape_string('name_'.$LANG) ." AS store,". $DB->real_escape_string('adress_'.$LANG) ." AS adress,phone FROM `stores` 
-WHERE area_he != 'תת_לא פעיל' AND area_he != 'תת_לא_פעיל' ORDER BY priority");
+$result = $DB->query("SELECT 
+						area_{$LANG} AS area,
+						city_{$LANG} AS city,
+						name_{$LANG} AS store,
+						adress_{$LANG} AS adress,phone 
+					FROM `stores` 
+					WHERE area_he != 'תת_לא פעיל' AND area_he != 'תת_לא_פעיל' 
+					ORDER BY priority");
 $prev_area = '';
 ?>
 	<div class="main">
 		<h1><?= $DICT['wherebuy']?></h1>
 		<h4 class="grey"><?= $DICT['wherebuy_sub']?></h4>
 	</div>
-	<div class="main">
+	<div class="shops">
 		<table class="shops">
 			<tr>
 				<th><?= $DICT['area']?></th>

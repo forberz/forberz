@@ -4,10 +4,12 @@ ini_set('display_errors', 1);
 
 session_start();
 
-$LANG = isset($_GET['lang']) ? $_GET['lang'] : 
-		(isset($_SESSION['lang']) ? $_SESSION['lang'] : 'en');
-$PRODUCT = isset($_GET['product']) ? intval($_GET['product']) : false;
-$GUIDE = isset($_GET['guide']) ? intval($_GET['guide']) : false;
+$LANG = isset($_GET['lang']) ? strtolower($_GET['lang']) : 
+		(isset($_SESSION['lang']) ? strtolower($_SESSION['lang']) : 'en');
+if (!in_array($LANG, array('en', 'he', 'ru'))) {
+	$LANG = 'en';
+}
+$ID = isset($_GET['id']) ? intval($_GET['id']) : false;
 $LIMIT = isset($_GET['limit']) ? intval($_GET['limit']) : false;
 $_SESSION['lang'] = $LANG;
 
@@ -15,7 +17,7 @@ $DB = new mysqli("localhost", "forberzc_mdnt", "mdnt6368", "forberzc_store");
 $DB->set_charset("utf8");
 
 $DICT = array();
-if ($result = $DB->query("SELECT lang_key, ". $DB->real_escape_string('lang_'.$LANG) ." AS word FROM dict")) {
+if ($result = $DB->query("SELECT lang_key, lang_{$LANG} AS word FROM dict")) {
 	while ($row = $result->fetch_assoc()) {
 		$DICT[$row['lang_key']] = $row['word'];
 	}
@@ -101,6 +103,8 @@ if ($result = $DB->query("SELECT lang_key, ". $DB->real_escape_string('lang_'.$L
 		<!-- <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> -->
 		
 		
+		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
 	
 		<script>
 			var showPrice = function(i) {
@@ -123,6 +127,21 @@ if ($result = $DB->query("SELECT lang_key, ". $DB->real_escape_string('lang_'.$L
 
 			var closePic = function() {
 				document.getElementById('blackend').removeAttribute('class');
+			};
+
+			var slideToItem = function(e) {
+				e.preventDefault();
+				var top = 0,
+					t = $(e.target.getAttribute('href'));
+
+				while ((t = t.prev()) && ~['A', 'DIV', 'UL', 'HEADER'].indexOf(t[0].tagName)) {
+					top += t.height();
+					if (t[0].tagName === 'HEADER') {
+						break;
+					}
+				}
+
+				$('body').animate({'scrollTop': top}, 800);
 			};
 		</script>
 
