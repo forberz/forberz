@@ -106,7 +106,7 @@ while ($row = $result->fetch_assoc()) {
 					?>
 				</ul>
 			
-				<?= $ID ? $row['maintext'] : substr(strip_tags($row['maintext']), 0, 300) . '...'?>
+				<?= $ID ? $row['maintext'] : mb_substr(strip_tags($row['maintext']), 0, 300) . '...'?>
 			</div>
 		</div>
 	</div>

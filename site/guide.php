@@ -20,14 +20,27 @@ if ($ID === false) {
 <?php } ?>
 <div class="guide">
 	<?php while ($row = $result->fetch_assoc()) { ?>
-		<div class="guide_item">
+		<div class="guide_item" <?= $ID ? '' : 'onclick="document.location=\'?id=' . $row['id'] . '\'"' ?>>
 			<div class="guide_header <?= isset($_GET['id']) ? 'inside' : '' ?>">
 				<h1><?= $row['title']?></h1>
 				<h4 class="grey"><?= $row['subtitle']?></h4>
+
+				<div class="guide_body <?= isset($_GET['id']) ? 'inside' : '' ?>">
+					<div class="guide_img <?= $ID ? 'guide' : '' ?>">
+						<img class="guide_thumb" src="<?= $row['img'] ?>">
+						<div>
+							<?= $ID ? $row['text'] : mb_substr(strip_tags($row['text']), 0, 300) . '...' ?>
+						</div>
+						<?php if (!$ID) { ?>
+							<a href="?id=<?=$row['id']?>" class="cat_nav">More Info</a>
+						<?php } ?>
+					</div>
+				</div>
 			</div>
 			
 			<?php if (isset($_GET['id'])) { 
-				echo '<div class="guide_side_wrap">';
+				echo '<div class="guide_side_wrap">
+					<h2>More Guides</h2>';
 				$resultIn = $DB->query("SELECT id, 
 										author_{$LANG} AS author,
 										title_{$LANG} AS title,
@@ -39,28 +52,18 @@ if ($ID === false) {
 									LIMIT 3");
 
 				while ($rowIn = $resultIn->fetch_assoc()) { ?>
-				<div class="guide_side">
+				<a href="guide.php?id=<?=$rowIn['id']?>" class="guide_side">
 					<div class="guide_header">
-						<h1><?= $rowIn['title']?></h1>
+						<h3><?= $rowIn['title']?></h3>
 						<h4 class="grey"><?= $rowIn['subtitle']?></h4>
 						<img class="guide_thumb" src="<?= $rowIn['img'] ?>" />
+						<a href="?id=<?=$rowIn['id']?>" class="cat_nav">More Info</a>
 					</div>
-				</div>
-			<?php echo '</div>';
-				} 
-			}?>
-
-			<div class="guide_body <?= isset($_GET['id']) ? 'inside' : '' ?>" <?= $ID ? '' : 'onclick="document.location=\'?id=' . $row['id'] . '\'"' ?>>
-				<div class="guide_img <?= $ID ? 'guide' : '' ?>">
-					<img class="guide_thumb" src="<?= $row['img'] ?>">
-					<?php if (!$ID) { ?>
-						<a href="?id=<?=$row['id']?>" class="cat_nav">More Info</a>
-					<?php } ?>
-				</div>
-
-				<div><?= $ID ? $row['text'] : substr(strip_tags($row['text']), 0, strpos($row['text'], ' ', 300)) . '...' ?>
-				</div>
-			</div>
+				</a>
+			<?php
+				}
+				echo '</div>'; 
+			} ?>
 		</div>
 	<?php } ?>
 </div>	

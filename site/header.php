@@ -151,8 +151,8 @@ if ($result = $DB->query("SELECT lang_key, lang_{$LANG} AS word FROM dict")) {
 		<link rel="stylesheet" href="/site/css/gallery.css"/>
 		<link rel="stylesheet" href="/site/css/guide.css"/>
 		<link rel="stylesheet" href="/site/css/header.css"/>
-		<link rel="stylesheet" href="/site/css/media.css"/>
 		<link rel="stylesheet" href="/site/css/product.css"/>
+		<link rel="stylesheet" href="/site/css/media.css"/>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
 		<title>Forberz - Natural Detailing Products for Your Car and Bike</title>
