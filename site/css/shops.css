@@ -1,0 +1,44 @@
+    .mobile {
+        display: none;
+    }
+    .pc {
+        display: table-cell;
+    }
+div.shops {
+    background-color: #0A0A0A;
+    height: auto;
+    width: 91.1%;
+    margin: 0 auto;
+    margin-top: 1rem;
+    padding: 0;
+    overflow-x: auto;
+}
+table.shops {
+    margin: 0.7rem auto;
+    border-collapse: collapse;
+    width: 98%;
+	table-layout: fixed;
+}
+table.shops th{
+    color: #aaa;
+}
+
+table.shops th, table.shops td {
+	padding: 0.2rem 0.5rem;
+}
+
+table.shops tr:nth-child(even) {
+    background-color: #111;
+    border-bottom: 1px doted #222;
+}
+table.shops tr:hover:not(:first-child)  {
+    background-color: #191919;
+    color: orange;
+}
+
+table.shops td:nth-child(3){
+    font-weight: bold;
+}
+table.shops td {
+    border-left: 1px solid #0A0A0A;
+}

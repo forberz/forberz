@@ -1,0 +1,102 @@
+div.black_wrap {
+    background-color: #0A0A0A;
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    border-radius: 0;
+}
+div.social {
+    background-color: #0A0A0A;
+    min-height: 1.5rem;
+    height: auto;
+    width: 90%;
+    margin: auto;
+    padding: 0;
+    display: block;
+}
+ul.social_menu {
+    list-style-type: none;
+    padding: 0.3rem 0;
+    margin: auto;
+    font-weight: bold;
+    font-size: 0.75em;
+    height: auto;
+    float:left;
+    display: flex;
+}
+ul.social_menu li {
+    display: inline;
+    text-decoration: none;
+    padding: 0 0.5rem;
+}
+ul.lang_menu {
+    list-style-type: none;
+    padding: 0.3rem 0;
+    margin: auto;
+    font-weight: bold;
+    font-size: 0.75em;
+    height: auto;
+    float: right;
+    direction: rtl;
+    display: flex;
+}
+ul.lang_menu li {
+    display: inline;
+    text-decoration: none;
+    margin: 0;
+    height: auto;
+    width: auto;
+    padding: 0 0.5rem;
+}
+div.top {
+    background-color: #0A0A0A;
+    height: auto;
+    width: 100%;
+    margin: auto;
+    background-image: url("/img/strip1.jpg");
+    display: block;
+    text-align: center;
+    border-radius: 0;
+}
+img.logo {
+    margin: 0 auto;
+    width: 16em;
+    background-color: #000039;
+    padding: 4rem 1.5rem 1rem 1.5rem;
+    display: block;
+    border-radius: 0;
+}
+div.main_menu {
+    background-color: #0A0A0A;
+    min-height: 2rem;
+    height: auto;
+    width: 90%;
+    margin: auto;
+    padding: 0;
+    border-radius: 0;
+}
+ul.main_menu {
+    background-color: #0A0A0A;
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0.3rem 0;
+}
+ul.main_menu li {
+    display: inline;
+    text-decoration: none;
+    margin: 0;
+    padding: 0 0.5rem;
+    height: auto;
+    width: auto
+}
+li.opmenu {
+    float: right !important;
+}
+
+body.rtl li.opmenu {
+    float: left !important;
+}

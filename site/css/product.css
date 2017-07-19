@@ -1,0 +1,206 @@
+div.page_menu {
+    width: 91.1%;
+    margin: 0 auto;
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-between;
+
+
+}
+a.page_nav {
+    padding: 2rem 1rem 0.5rem 1rem;
+    background-color: #0A0A0A;
+    margin: auto;
+    display: block;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+a.page_nav:hover {
+    background-color: #111
+}
+a.madeinisrael {
+    padding: 2rem 1rem 0.5rem 1rem;
+    background-color: #000039;
+    margin: auto;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    display: block
+}
+a.madeinisrael:hover {
+    color: lightblue;
+    background-color: #000099
+}
+a.natural {
+    padding: 2rem 1rem 0.5rem 1rem;
+    background-color: green;
+    margin: auto;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    display: block;
+}
+a.natural:hover {
+    background-color: #003300;
+    color: yellow;
+}
+
+img.product_eng {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 1em;
+    box-shadow: 0 0 20px 10px black;
+}
+div.catdiv {
+    background-color: #0A0A0A;
+    min-height: 150px;
+    height: 100%;
+    width: 91.1%;
+    margin: 0 auto;
+}
+div.cat_wrap {
+    margin: 0 auto;
+    padding: 0;
+    display: block;
+    width: auto;
+    min-height: 150px;
+    height: auto;
+}
+
+
+div.cat_wrap, div.cat_wrap * {
+    cursor:pointer;
+}
+div.product_header {
+    background-color: #000029;
+    height: auto;
+    width: 88.7%;
+    margin: 0 auto;
+    margin-top: 1em;
+    padding: 0.5rem 1rem;
+}
+div.product_icons {
+    width: 88.7%;
+    background-color: green;
+    height: auto;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    letter-spacing: 0.07em
+}
+div.prod_img_buy {
+    width: 30%;
+    min-width: 280px;
+    min-height: 100px;
+    background-color: #050505;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 0;
+    height: 100%;
+}
+div.prod_text_box {
+    width: 60%;
+    min-height: 300px;
+    margin: 1rem 0 auto;
+    height: auto;
+    display: inline-block;
+    padding: 0 2rem;
+    vertical-align: top;
+}
+div.prod_img_buy.product {
+    cursor: default;
+}
+div.prod_img_buy form {
+    padding: 0.5rem;
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+}
+div.prod_img_buy h4 {
+    font-size: 2rem;
+	text-align: center;
+	margin: 0 auto;
+    padding: 0;
+}
+	
+div.buy_title {
+	font-size: 1.2rem;
+    margin: 0 auto;
+    padding: 0;
+    display: block;
+    text-align: center;
+}
+
+select.sel {
+	font-size: 1.3rem;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    display: block;
+    padding: 0.2rem;
+}
+.payment_btn {
+    height: auto;
+    margin: 0 auto;
+    padding: 1rem 0.5rem;
+}
+.payment_btn input[type="submit"] {
+    transition: background .2s ease-in-out;
+    color: #fff;
+    background: #000039;
+    font-size: 1.4rem;
+    cursor: pointer;
+    border: 0;
+    margin: 0.5rem 1rem;
+    padding: 0 0.5rem;
+    width: 7rem;
+    height: 2.5rem;
+}
+.payment_btn input[type="submit"]:hover {
+    background: #000066;
+}
+.payment_btn input[type="number"] {
+    width: 4rem;
+    height: 2.5rem;
+    color: #fff;
+    background: #111;
+    text-align: center;
+    font-size: 1.4rem;
+    border: 0;
+    padding: 0;
+}
+.payment_btn span {
+    display: inline-block;
+    font-size: 1.4rem;
+    padding: 0 1rem;
+}
+span.buy_info {
+    color: #bbb;
+    font-size: 0.8rem;
+    margin: 0.5rem 0;
+}
+
+
+.mobile {
+    display: none;
+}
+
+ul.prod_point {
+    list-style-type: circle;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+ul.prod_point li {
+    padding: 0;
+    padding: 0;
+    margin: auto;
+    margin: 0;
+}
+ul.other_point {
+    list-style-type: circle;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+ul.other_point li{
+    margin: 0.5rem 0 auto;
+}
