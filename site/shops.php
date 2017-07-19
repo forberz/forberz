@@ -33,12 +33,12 @@ $prev_area = '';
 					$prev_area = $row['area'];
 					echo $row['area'];
 				} ?></td>
-				<td><?php echo $row['city']; ?></td>
-				<td><?php echo $row['store']; ?></td>
-				<td class="pc"><?php echo $row['adress']; ?></td>
-				<td class="pc"><?php echo $row['phone']; ?></td>
-				<td class="mobile"><a href="waze://?q=<?php echo $row['adress']; ?>" target="_blank" rel="nofollow"><?php echo $row['adress']; ?></a></td>
-				<td class="mobile"><a href="tel:<?php echo $row['phone']; ?>" target="_blank" rel="nofollow"><?php echo $row['phone']; ?></a></td>
+				<td><?= $row['city']; ?></td>
+				<td><?= $row['store']; ?></td>
+				<td class="pc"><?= $row['adress']; ?></td>
+				<td class="pc"><?= $row['phone']; ?></td>
+				<td class="mobile"><a href="waze://?q=<?= $row['adress'].', '.$row['city']; ?>" target="_blank" rel="nofollow"><?= $row['adress']; ?></a></td>
+				<td class="mobile"><a href="tel:<?= $row['phone']; ?>" target="_blank" rel="nofollow"><?= $row['phone']; ?></a></td>
 			</tr>
 			<?php 
 				}

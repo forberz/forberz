@@ -58,7 +58,7 @@ $result = $DB->query("SELECT id, prod_id, img, thumb,
 	</div>
 	<div class="main_clients_text">
 		<?php while ($row = $result->fetch_assoc()) {?>
-    	<div><img class="client_logo" src="<?=$row['img']?>"></div>
+    	<div class="client_logo"><img class="client_logo" src="<?=$row['img']?>"></div>
     	<?php }?>
 	</div>
 </div>

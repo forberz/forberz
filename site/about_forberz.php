@@ -8,7 +8,7 @@ include('header.php');
 	
 	<div class="about_forberz">
 		<div class="about_side_pic">
-			<img class="about_img" src="/img/a11" alt="Forberz">
+			<img class="about_img" src="/img/a11.jpg" alt="Forberz">
 		</div>
 		<div class="about_forberz_text">
 			<?= $DICT['about_forberz_text']?>
