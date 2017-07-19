@@ -136,6 +136,8 @@ if ($result = $DB->query("SELECT lang_key, lang_{$LANG} AS word FROM dict")) {
 				document.getElementById('blackend').removeAttribute('class');
 				document.getElementById('the-pic').setAttribute('class', 'hidden');
 				document.getElementById('the-video').setAttribute('class', 'hidden');
+				document.getElementById('the-video').removeAttribute('src');
+				document.getElementById('the-pic').removeAttribute('src');
 			};
 
 			var slideToItem = function(e) {
