@@ -118,8 +118,15 @@ if ($result = $DB->query("SELECT lang_key, lang_{$LANG} AS word FROM dict")) {
 				showPrice(i);
 			};
 
-			var choosePic = function(src, title, subtitle) {
-				document.getElementById('the-pic').src = src;
+			var choosePic = function(src, title, subtitle, video) {
+				if (video) {
+					document.getElementById('the-video').src = video;
+					document.getElementById('the-video').removeAttribute('class');
+				} else {
+					document.getElementById('the-pic').src = src;
+					document.getElementById('the-pic').removeAttribute('class');
+
+				}
 				document.getElementById('the-pic-title').innerHTML = title;
 				document.getElementById('the-pic-subtitle').innerHTML = subtitle;
 				document.getElementById('blackend').setAttribute('class', 'open');
@@ -127,6 +134,8 @@ if ($result = $DB->query("SELECT lang_key, lang_{$LANG} AS word FROM dict")) {
 
 			var closePic = function() {
 				document.getElementById('blackend').removeAttribute('class');
+				document.getElementById('the-pic').setAttribute('class', 'hidden');
+				document.getElementById('the-video').setAttribute('class', 'hidden');
 			};
 
 			var slideToItem = function(e) {

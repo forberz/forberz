@@ -2,7 +2,7 @@
 include('header.php');
 
 $result = $DB->query("SELECT 
-						id, prod_id, img, thumb,
+						id, prod_id, img, thumb, video,
 						title_{$LANG} AS title,
 						subtitle_{$LANG} AS subtitle
 					FROM `gallery` 
@@ -17,7 +17,7 @@ $prev_area = '';
 	<div class="main" id="gallery">
 	<?php
 		while ($row = $result->fetch_assoc()) {?>
-				<div class="gallery-img" style="background-image: url('<?=$row['thumb']?>')" onclick="choosePic('<?=$row['img']?>', '<?=str_replace("'", "\\'", $row['title'])?>', '<?=str_replace("'", "\\'", $row['subtitle'])?>')">
+				<div class="gallery-img" style="background-image: url('<?=$row['thumb']?>')" onclick="choosePic('<?=trim($row['img'])?>', '<?=trim(str_replace("'", "\\'", $row['title']))?>', '<?=trim(str_replace("'", "\\'", $row['subtitle']))?>', <?=isset($row['video']) ? "'".trim($row['video'])."'" : 'null' ?>)">
 					<div class="fader"><b><?=$row['title']?></b><br><?=$row['subtitle']?></div>
 				</div>
 			<?php
@@ -25,7 +25,8 @@ $prev_area = '';
 	</div>
 	<div id="blackend">
 		<div class="close" onclick="closePic()">&times;</div>
-		<img id="the-pic" />
+		<img id="the-pic" class="hidden" />
+		<iframe id="the-video" width="560" height="315" frameborder="0" allowfullscreen class="hidden"></iframe>
 		<div id="the-pic-title"></div>
 		<div id="the-pic-subtitle"></div>
 	</div>
