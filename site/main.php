@@ -26,11 +26,13 @@ $result = $DB->query("SELECT
   <script type="text/javascript">
     $(document).ready(function(){
       $('.slide_img').slick({
+			lazyLoad: 'progressive',
 			centerMode: true,
 			centerPadding: navigator.userAgent.match(/iPhone|iPad|iPod|Android/i) ? '0px' : '150px',
 			slidesToShow: 1,
 			dots: true,
-			autoplay: true
+			autoplay: true,
+ 			autoplaySpeed: 5000
       });
     });
   </script>
