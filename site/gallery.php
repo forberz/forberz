@@ -6,6 +6,7 @@ $result = $DB->query("SELECT
 						title_{$LANG} AS title,
 						subtitle_{$LANG} AS subtitle
 					FROM `gallery` 
+					WHERE in_gallery
 					ORDER BY id LIMIT 200");
 
 $prev_area = '';
@@ -28,8 +29,10 @@ $prev_area = '';
 		<div class="close" onclick="closePic()">&times;</div>
 		<img id="the-pic" class="hidden" />
 		<iframe id="the-video" width="560" height="315" frameborder="0" allowfullscreen class="hidden"></iframe>
-		<div id="the-pic-title"></div>
-		<div id="the-pic-subtitle"></div>
+		<div id="the-pic-description">
+			<div id="the-pic-title"></div>
+			<div id="the-pic-subtitle"></div>
+		</div>
 	</div>
 <?php 
 include('footer.php');

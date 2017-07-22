@@ -28,10 +28,12 @@
     $images = explode(',', $row['images']);
     $titles = explode(',', $row['images_titles']);
     $subtitles = explode(',', $row['images_subtitles']);
+    $videos = explode(',', $row['images_videos']);
     foreach ($images as $k => $img) {
       if ($img) { ?>
-        <div class="gallery-img" style="background-image: url('<?=$img?>')" onclick="choosePic('<?=$img?>', '<?=str_replace("'", "\\'", $titles[$k])?>', '<?=str_replace("'", "\\'", $subtitles[$k])?>')">
+        <div class="gallery-img prodgal" style="background-image: url('<?=$img?>')" onclick="choosePic('<?=$img?>', '<?=str_replace("'", "\\'", $titles[$k])?>', '<?=str_replace("'", "\\'", $subtitles[$k])?>', <?= isset($videos[$k]) ? "'".$videos[$k]."'" : 'null'?>)">
           <div class="fader"><b><?=$titles[$k]?></b><br><?=$subtitles[$k]?></div>
+          <?php if (isset($videos[$k])) { ?><div class="videomark">VIDEO</div><?php } ?>
         </div>
       <?php
       }
@@ -40,9 +42,12 @@
 
 <div id="blackend">
   <div class="close" onclick="closePic()">&times;</div>
-  <img id="the-pic" />
-  <div id="the-pic-title"></div>
-  <div id="the-pic-subtitle"></div>
+  <img id="the-pic" class="hidden" />
+  <iframe id="the-video" width="560" height="315" frameborder="0" allowfullscreen class="hidden"></iframe>
+  <div id="the-pic-description">
+    <div id="the-pic-title"></div>
+    <div id="the-pic-subtitle"></div>
+  </div>
 </div>
 
 <div class="main" id="faq">

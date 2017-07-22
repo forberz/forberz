@@ -27,7 +27,8 @@ $result = $DB->query("SELECT
 						P.msdstext_{$LANG} AS msdstext,
 						GROUP_CONCAT(G.img, ',') AS images,
 						GROUP_CONCAT(G.title_{$LANG}, ',') AS images_titles,
-						GROUP_CONCAT(G.subtitle_{$LANG}, ',') AS images_subtitles
+						GROUP_CONCAT(G.subtitle_{$LANG}, ',') AS images_subtitles,
+						GROUP_CONCAT(G.video, ',') AS images_videos
 					FROM `products` AS P 
 						LEFT JOIN `gallery` AS G ON (P.id = G.prod_id)
 					".($ID ? "WHERE P.id = {$ID}" : "")."
