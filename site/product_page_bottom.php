@@ -1,11 +1,11 @@
 
 <div class="page_menu">
-  <a class="page_nav" href="#howto"><?= $DICT['how_to_use']?></a>
-  <a class="page_nav" href="#gallery"><?= $DICT['gallery']?></a>
-  <a class="page_nav" href="#faq"><?= $DICT['freq']?></a>
-  <a class="page_nav" href="#msds"><?= $DICT['msds']?></a>
-  <a class="madeinisrael"><?= $DICT['madeinisrael']?></a>
-  <a class="natural"><?= $DICT['100natural']?></a>
+  <div><a class="page_nav" href="#howto"><?= $DICT['how_to_use']?></a></div>
+  <div><a class="page_nav" href="#gallery"><?= $DICT['gallery']?></a></div>
+  <div><a class="page_nav" href="#faq"><?= $DICT['freq']?></a></div>
+  <div><a class="page_nav" href="#msds"><?= $DICT['msds']?></a></div>
+  <div><a class="madeinisrael"><?= $DICT['madeinisrael']?></a></div>
+  <div><a class="natural"><?= $DICT['100natural']?></a></div>
 </div>
 
 <div class="main" id="howto">
@@ -26,13 +26,13 @@
 <div class="main" id="gallery">
   <?php
     $images = explode(',', $row['images']);
-    $titles = explode(',', $row['images_titles']);
-    $subtitles = explode(',', $row['images_subtitles']);
+    $titles = explode('^^^', $row['images_titles']);
+    $subtitles = explode('^^^', $row['images_subtitles']);
     $videos = explode(',', $row['images_videos']);
     foreach ($images as $k => $img) {
       if ($img) { ?>
-        <div class="gallery-img prodgal" style="background-image: url('<?=$img?>')" onclick="choosePic('<?=$img?>', '<?=str_replace("'", "\\'", $titles[$k])?>', '<?=str_replace("'", "\\'", $subtitles[$k])?>', <?= isset($videos[$k]) ? "'".$videos[$k]."'" : 'null'?>)">
-          <div class="fader"><b><?=$titles[$k]?></b><br><?=$subtitles[$k]?></div>
+        <div class="gallery-img prodgal" style="background-image: url('<?=$img?>')" onclick="choosePic('<?=trim($img)?>', <?=isset($titles[$k]) ? "'".trim(str_replace("'", "\\'", $titles[$k]))."'" : 'null' ?>, <?=isset($subtitles[$k]) ? "'".trim(str_replace("'", "\\'", $subtitles[$k]))."'" : 'null' ?>, <?=isset($videos[$k]) ? "'".trim($videos[$k])."'" : 'null' ?>)">
+          <div class="fader"><b><?=isset($titles[$k]) ? $titles[$k] : '' ?></b><br><?=isset($subtitles[$k]) ? $subtitles[$k] :'' ?></div>
           <?php if (isset($videos[$k])) { ?><div class="videomark">VIDEO</div><?php } ?>
         </div>
       <?php

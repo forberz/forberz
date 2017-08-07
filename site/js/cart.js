@@ -46,7 +46,7 @@ storeApp.controller(
 
 			$scope.links = {
 				local: $sce.trustAsResourceUrl(document.location.origin+'/'),
-				fb: $sce.trustAsResourceUrl('http://facebook.com/')
+				fb: $sce.trustAsResourceUrl('https://facebook.com/')
 			};
 
 			$scope.loc_options = null;

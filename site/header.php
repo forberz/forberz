@@ -2,6 +2,13 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+if((empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] == "off")) {
+    $redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    header('HTTP/1.1 301 Moved Permanently');
+    header('Location: ' . $redirect);
+    exit();
+}
+
 session_start();
 
 $LANG = isset($_GET['lang']) ? strtolower($_GET['lang']) : 
@@ -26,34 +33,32 @@ if ($result = $DB->query("SELECT lang_key, lang_{$LANG} AS word FROM dict")) {
 ?><!DOCTYPE html>
 <html lang="<?= $LANG?>">
 	<head>
-		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico?v=2" />
-		<link rel="icon" type="image/x-icon" href="favicon.ico?v=2" />
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="format-detection" content="telephone=no">
 		<meta name="robots" content="index, follow, archive">
 		<!-- social pictures -->
-		<!-- <meta property="og:type" content="website"> -->
-		<!-- <meta property="og:site_name" content="homzit.com"> -->
-		<!-- <meta property="og:title" content="Homzit"> -->
-		<!-- <meta property="og:description" content="Online marketplace that enables people to find and list properties for sale, rent or sublet in over 190 countries. see local listings in your preferred language, currency and measurement."> -->
-		<!-- <meta property="og:url" content="https://dev.homzit.com/"> -->
+		<meta property="og:type" content="website">
+		<meta property="og:site_name" content="forberz.com">
+		<meta property="og:title" content="Forberz">
+		<meta property="og:description" content="Forberz - 100% Natural Car and Bike Care and Detailing Products">
 		
-		<!-- <meta property="og:image" content="https://i.imgur.com/a6s2W1g.png"> -->
-		<!-- <meta property="og:image:url" content="https://i.imgur.com/a6s2W1g.png"> -->
-		<!-- <meta property="og:image:type" content="image/png"> -->
-		<!-- <meta property="og:image:width" content="960"> -->
-		<!-- <meta property="og:image:height" content="640"> -->
+		<meta property="og:image" content="https://forberz.com/img/forberzavatar.jpg">
+		<meta property="og:image:url" content="https://forberz.com/img/forberzavatar.jpg">
+		<meta property="og:image:type" content="image/jpeg">
+		<meta property="og:image:width" content="1500">
+		<meta property="og:image:height" content="1500">
 		
 		<!-- main picture -->
-		<!-- <meta itemprop="image" content="https://i.imgur.com/a6s2W1g.png"> -->
+		<!-- <meta itemprop="image" content="https://forberz.com/img/forberzavatar.jpg"> -->
 		
-		<!-- <link rel="alternate" href="https://dev.homzit.com/he" hreflang="he"> -->
-		<!-- <link rel="alternate" href="https://dev.homzit.com/ru" hreflang="ru"> -->
+		<link rel="alternate" href="?lang=he" hreflang="he">
+		<link rel="alternate" href="?lang=ru" hreflang="ru">
 		
-		<!-- <meta name="description" content="Online marketplace that enables people to find and list properties for sale, rent or sublet in over 190 countries. see local listings in your preferred language, currency and measurement."> -->
-		<!-- <meta name="keywords" content="homz.it,homzit,homez.it,homezit, promote property properly,property promoted properly"> -->
-		<!-- <meta name="author" content="Homzit, Inc."> -->
-		<!-- <meta name="Copyright" content="Copyright (c) 2015-2017 Homzit, Inc."> -->
+		<meta name="description" content="Forberz - 100% Natural Car and Bike Care and Detailing Products">
+		<meta name="author" content="Forberz">
+		<meta name="Copyright" content="Copyright (c) 2013-2017 Forberz, Inc.">
 		
 		<!-- images for apple -->
 		<!-- <link rel="apple-touch-icon" sizes="57x57" href="https://cdn.homzit.com/img/apple-touch-icon-57x57.png"> -->
@@ -95,8 +100,8 @@ if ($result = $DB->query("SELECT lang_key, lang_{$LANG} AS word FROM dict")) {
 		
 		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 
-		<script type="text/javascript" src="/js/script.js"></script>
-		<!-- <script type="text/javascript" src="/js/cart.js"></script> -->
+		<script type="text/javascript" src="/site/js/script.js"></script>
+		<!-- <script type="text/javascript" src="/site/js/cart.js"></script> -->
 
 		<link rel="stylesheet" href="/site/css/style.css"/>
 		<link rel="stylesheet" href="/site/css/header.css"/>

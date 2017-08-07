@@ -30,9 +30,9 @@
 		<input type="submit" value="קנה עכשיו">
 		<span>כמות</span>
 		<input type="number" name="quantity" value="1" id="quantity" min="1" pattern="[0-9]*">
-		<input type="hidden" name="return" value="http://www.forberz.com/#thank-you">
+		<input type="hidden" name="return" value="https://www.forberz.com/#thank-you">
 		<!-- <input type="hidden" name="notify_url" value="https://homzit.com/order/paypal"> -->
-		<input type="hidden" name="cancel_return" value="http://www.forberz.com/">
+		<input type="hidden" name="cancel_return" value="https://www.forberz.com/">
 		<input type="image" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" id="buynow">
 	</form>
 	<?php } else { echo '<div>No val</div>' . $item['title']; } ?>

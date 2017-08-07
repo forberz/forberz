@@ -25,9 +25,12 @@ $result = $DB->query("SELECT
 						P.faqpoints_{$LANG} AS faqpoints,
 						P.msdspoints_{$LANG} AS msdspoints,
 						P.msdstext_{$LANG} AS msdstext,
+						P.buyshortterm_{$LANG} AS buyshortterm,
+						P.buybtn_{$LANG} AS buybtn,
+						P.ammount_{$LANG} AS ammount,
 						GROUP_CONCAT(G.img, ',') AS images,
-						GROUP_CONCAT(G.title_{$LANG}, ',') AS images_titles,
-						GROUP_CONCAT(G.subtitle_{$LANG}, ',') AS images_subtitles,
+						GROUP_CONCAT(G.title_{$LANG} SEPARATOR '^^^') AS images_titles,
+						GROUP_CONCAT(G.subtitle_{$LANG} SEPARATOR '^^^') AS images_subtitles,
 						GROUP_CONCAT(G.video, ',') AS images_videos
 					FROM `products` AS P 
 						LEFT JOIN `gallery` AS G ON (P.id = G.prod_id)
@@ -82,14 +85,14 @@ while ($row = $result->fetch_assoc()) {
 						<input type="hidden" name="no_shipping" value="1">
 						<input type="hidden" name="amount" id="item_price_<?=$row['id']?>" value="<?=$prices[0]?>">
 						<input type="hidden" name="shipping" value="0">
-						<span>כמות</span>
+						<span><?= $DICT['ammount']?></span>
 						<input type="number" name="quantity" value="1" id="item_quantity_<?=$row['id']?>" min="1" pattern="[0-9]*" onchange="showPrice(<?=$row['id']?>)">
-						<input type="hidden" name="return" value="http://www.forberz.com/#thank-you">
+						<input type="hidden" name="return" value="https://www.forberz.com/#thank-you">
 						<!-- <input type="hidden" name="notify_url" value="https://homzit.com/order/paypal"> -->
-						<input type="hidden" name="cancel_return" value="http://www.forberz.com/">
-						<input type="submit" value="קנה עכשיו">
+						<input type="hidden" name="cancel_return" value="https://www.forberz.com/">
+						<input type="submit" value="<?= $DICT['buybtn']?>">
 						<input type="image" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" id="buynow">
-						<span class="buy_info">המחיר כולל משלוח תוך 6 ימי עסקים בדואר רשום באמצעות דואר ישראל ובאחריותם. ניתן לשלם בכל כרטיסי האשראי הקיימים כולל דיירקט וכרטיסים נטענים, באמצעות PayPal מערכת התשלומים הגדולה והבטוחה בעולם.</span>
+						<span class="buy_info"><?= $DICT['buyshortterm']?></span>
 					</form>
 				<?php } else { ?>
 					<a href="?id=<?=$row['id']?>" class="cat_nav"><?= $DICT['moreinfo']?></a>

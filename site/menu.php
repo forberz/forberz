@@ -4,10 +4,10 @@
 		<ul class="social_menu">
 		  <li class="grey"><?= $DICT['social_on']?></li>
 		  <li><a href="https://www.facebook.com/forberz" rel="nofollow" target="_blank">Facebook</a></li>
-		  <li><a href="http://www.google.com/+Forberz" rel="nofollow" target="_blank">Google+</a></li>
+		  <li><a href="https://www.google.com/+Forberz" rel="nofollow" target="_blank">Google+</a></li>
 		  <li><a href="https://www.instagram.com/forberz" rel="nofollow" target="_blank">Instagram</a></li>
 		  <li><a href="https://www.pinterest.com/forberz" rel="nofollow" target="_blank">Pinterest</a></li>
-		  <li><a href="http://www.ebay.com/usr/forberz" rel="nofollow" target="_blank">eBay</a></li>
+		  <li><a href="https://www.ebay.com/usr/forberz" rel="nofollow" target="_blank">eBay</a></li>
 		</ul>
 		<ul class="lang_menu">  
 		  <li><a href="?lang=he<?= $ID ? '&id=' . $ID : '' ?>" <?= $LANG === 'he' ? 'class="grey"' : ''?>>עברית</a></li>
