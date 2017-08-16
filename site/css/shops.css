@@ -1,9 +1,10 @@
-    .mobile {
-        display: none;
-    }
-    .pc {
-        display: table-cell;
-    }
+.mobile {
+    display: none;
+}
+.pc {
+    display: table-cell;
+}
+
 div.shops {
     background-color: #0A0A0A;
     height: auto;
@@ -41,4 +42,5 @@ table.shops td:nth-child(3){
 }
 table.shops td {
     border-left: 1px solid #0A0A0A;
+    word-break: break-word;
 }

@@ -29,7 +29,7 @@ if ($ID === false) {
 					<div class="guide_img <?= $ID ? 'guide' : '' ?>">
 						<img class="guide_thumb" src="<?= $row['img'] ?>">
 						<div>
-							<?= $ID ? $row['text'] : mb_substr(strip_tags($row['text']), 0, 300) . '...' ?>
+							<?= $ID ? $row['text'] : mb_substr(strip_tags($row['text']), 0, 300, 'utf-8') . '...' ?>
 						</div>
 						<?php if (!$ID) { ?>
 							<a href="?id=<?=$row['id']?>" class="cat_nav">More Info</a>

@@ -9,7 +9,7 @@ if (!isset($_GET['id'])) {
 	<?php
 }
 
-$result = $DB->query("SELECT 
+$query = "SELECT 
 						P.id, 
 						P.title_{$LANG} AS title,
 						P.subtitle_{$LANG} AS subtitle,
@@ -37,7 +37,11 @@ $result = $DB->query("SELECT
 					".($ID ? "WHERE P.id = {$ID}" : "")."
 					GROUP BY P.id
 					ORDER BY priority 
-					LIMIT " . ($ID !== false ? 1 : ($LIMIT ? $LIMIT : 100) ));
+					LIMIT " . ($ID !== false ? 1 : ($LIMIT ? $LIMIT : 100) );
+
+// var_dump($query);
+
+$result = $DB->query($query);
 
 while ($row = $result->fetch_assoc()) {
 	?>
@@ -82,11 +86,10 @@ while ($row = $result->fetch_assoc()) {
 						<input type="hidden" name="item_name" value="<?=htmlentities($row['title'].' - '.$row['subtitle'])?>">
 						<input type="hidden" name="item_number" value="9">
 						<!-- <input type="hidden" name="invoice" value="5906270250f"> -->
-						<input type="hidden" name="no_shipping" value="1">
 						<input type="hidden" name="amount" id="item_price_<?=$row['id']?>" value="<?=$prices[0]?>">
 						<input type="hidden" name="shipping" value="0">
-						<span><?= $DICT['ammount']?></span>
-						<input type="number" name="quantity" value="1" id="item_quantity_<?=$row['id']?>" min="1" pattern="[0-9]*" onchange="showPrice(<?=$row['id']?>)">
+						<span><?= isset($DICT['ammount']) ? $DICT['ammount'] : $row['ammount'] ?></span>
+						<input type="number" name="quantity" value="1" id="item_quantity_<?=$row['id']?>" min="1" pattern="[0-9]*" onchange="showPrice(<?=$row['id']?>)" oninput="showPrice(<?=$row['id']?>)">
 						<input type="hidden" name="return" value="https://www.forberz.com/#thank-you">
 						<!-- <input type="hidden" name="notify_url" value="https://homzit.com/order/paypal"> -->
 						<input type="hidden" name="cancel_return" value="https://www.forberz.com/">
@@ -110,7 +113,7 @@ while ($row = $result->fetch_assoc()) {
 					?>
 				</ul>
 			
-				<?= $ID ? $row['maintext'] : mb_substr(strip_tags($row['maintext']), 0, 300) . '...'?>
+				<?= $ID ? $row['maintext'] : mb_substr(strip_tags($row['maintext']), 0, 300, 'utf-8') . '...'?>
 			</div>
 		</div>
 	</div>
