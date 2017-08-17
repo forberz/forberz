@@ -34,7 +34,7 @@
 					<li><a href="/site/jobs.php"><?= $DICT['jobs']?></a></li>
 					<li><a href="/site/contact.php"><?= $DICT['contact']?></a></li>
 				</ul>
-				<ul class="footer_menu">
+				<!-- <ul class="footer_menu">
 					<li class="foot_li"><a href="/site/guide.php"><?= $DICT['guide']?></a></li>	
 					<?php
 						$result = $DB->query("SELECT id, footer_{$LANG} AS title
@@ -44,7 +44,7 @@
 							echo '<li><a href="/site/guide.php?id='.$row['id'].'">'.$row['title'].'</a></li>';
 						}
 					?>
-				</ul>
+				</ul> -->
 				<ul class="footer_menu">
 					<li class="foot_li"><a href="/site/catalogue.php?limit=5"><?= $DICT['cata']?></a></li>
 					<?php

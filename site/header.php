@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-if((empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] == "off")) {
+if(!is_dir('C:\\Windows') && (empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] == "off")) {
     $redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
     header('HTTP/1.1 301 Moved Permanently');
     header('Location: ' . $redirect);
