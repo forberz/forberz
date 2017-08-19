@@ -10,7 +10,7 @@ include('header.php');
 			<img class="about_img" src="/img/a11.jpg" alt="Forberz">
 		</div>
 		<div class="about_forberz_text">
-			<?= $DICT['about_detailing_text']?>
+			<?= $DICT['jobs_text']?>
 		</div>
 		
 	</div>
