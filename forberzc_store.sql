@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `forberzc_store`
 --
-CREATE DATABASE IF NOT EXISTS `forberzc_store` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+-- CREATE DATABASE IF NOT EXISTS `forberzc_store` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `forberzc_store`;
 
 -- --------------------------------------------------------
@@ -234,8 +234,8 @@ CREATE TABLE IF NOT EXISTS `products` (
   `img_alt_he` text NOT NULL,
   `img_alt_ru` text NOT NULL,
   `prices_en` varchar(255) NOT NULL,
-  `prices_he` text NOT NULL,
-  `prices_ru` text NOT NULL,
+  `prices_he` varchar(255) NOT NULL,
+  `prices_ru` varchar(255) NOT NULL,
   `sizes` varchar(255) NOT NULL,
   `howtopoints_en` text NOT NULL,
   `howtopoints_he` text NOT NULL,
@@ -415,4 +415,25 @@ INSERT INTO `stores` (`id`, `priority`, `area_en`, `area_he`, `area_ru`, `city_e
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
-GRANT ALL ON forberzc_store.* TO 'forberzc_mdnt'@'localhost' IDENTIFIED BY 'mdnt6368';
+DROP TABLE IF EXISTS `coupons`;
+CREATE TABLE IF NOT EXISTS `coupons` (
+  `id` varchar(8) NOT NULL,
+  `price` int(5) NOT NULL,
+  `size` int(5) NOT NULL DEFAULT 1,
+  `min_quantity` int(5) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `coupons` (`id`, `price`, `size`, `min_quantity`) VALUES
+('12345677', 12, 300, 12),
+('132232d7', 34, 500, 55),
+('1DDDDDD7', 5, 120, 300000),
+('1sdfwrS7', 32, 120, NULL),
+('ABcDRTS7', 2223, 5000, NULL)
+;
+
+
+
+-- GRANT ALL ON forberzc_store.* TO 'forberzc_mdnt'@'localhost' IDENTIFIED BY 'mdnt6368';
+
+

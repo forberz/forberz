@@ -53,4 +53,54 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-64555452-1', 'auto');
+ga('require', 'displayfeatures');
 ga('send', 'pageview');
+
+
+var coupon_timeout = null;
+var handle_coupon = function(e, id) {
+	e.preventDefault();
+	
+	var coupon = document.getElementById('coupon').value.trim();
+	
+	if (coupon_timeout) {
+		clearTimeout(coupon_timeout);
+		coupon_timeout = null;
+	}
+	
+	$('#special_K').remove();
+	$('.sel').removeAttr('disabled');
+	
+	if (coupon.length !== 8) {
+		return alert('Error, try again.');
+	}
+	
+	coupon_timeout = setTimeout(function() {
+		$.ajax({
+			method: 'POST',
+			url: 'ajax/get_coupon.php',
+			data: { coupon: coupon },
+			success: function(response) {
+				response = JSON.parse(response);
+				if (response && !response.error) {
+					console.log(response.price, response.min_quantity);
+					
+					document.getElementById('item_price_' + id).value = response.price;
+					document.getElementById('item_show_price_' + id).innerHTML = response.price * response.min_quantity;
+					
+					var item_quantity = document.getElementById('item_quantity_' + id);
+					if (parseInt(item_quantity.value) < response.min_quantity) {
+						item_quantity.value = response.min_quantity;
+					}
+					
+					$('.sel')
+						.prepend('<option value="' + response.price + '" id="special_K">' + response.size + '</option>')
+						.val(response.price)
+						.attr('disabled', 'disabled');
+				} else {
+					alert('Wrong code, try again.');
+				}
+			}
+		});
+	}, 300);
+};

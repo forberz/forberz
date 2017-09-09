@@ -25,8 +25,7 @@ $ID = isset($_GET['id']) ? intval($_GET['id']) : false;
 $LIMIT = isset($_GET['limit']) ? intval($_GET['limit']) : false;
 $_SESSION['lang'] = $LANG;
 
-$DB = new mysqli("localhost", "forberzc_mdnt", "mdnt6368", "forberzc_store");
-$DB->set_charset("utf8");
+require '../conn.php';
 
 $DICT = array();
 if ($result = $DB->query("SELECT lang_key, lang_{$LANG} AS word FROM dict")) {

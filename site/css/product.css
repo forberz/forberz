@@ -205,3 +205,35 @@ ul.other_point {
 ul.other_point li{
     margin: 0.5rem 0 auto;
 }
+
+#coupon_wrapper {
+    clear: both;
+    text-align: center;
+}
+
+#coupon {
+    width: 50%;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    margin: 1rem 0;
+    display: inline-block;
+    border-radius: 6px;
+    cursor: text;
+    font-size: 1.5rem;
+    padding: 0 2%;
+}
+
+
+#coupon_button {
+    width: 25%;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    margin: 1rem;
+    display: inline-block;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    text-align: center;
+    background: #000039;
+    color: #fff;
+}
