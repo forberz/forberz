@@ -79,7 +79,10 @@ var handle_coupon = function(e, id) {
 		$.ajax({
 			method: 'POST',
 			url: 'ajax/get_coupon.php',
-			data: { coupon: coupon },
+			data: { 
+				prod_id: id,
+				coupon: coupon 
+			},
 			success: function(response) {
 				response = JSON.parse(response);
 				if (response && !response.error) {
@@ -89,7 +92,7 @@ var handle_coupon = function(e, id) {
 					document.getElementById('item_show_price_' + id).innerHTML = response.price * response.min_quantity;
 					
 					var item_quantity = document.getElementById('item_quantity_' + id);
-					if (parseInt(item_quantity.value) < response.min_quantity) {
+					if (parseInt(item_quantity.value) != response.min_quantity) {
 						item_quantity.value = response.min_quantity;
 					}
 					
@@ -104,3 +107,24 @@ var handle_coupon = function(e, id) {
 		});
 	}, 300);
 };
+
+/*var handle_coupon_typing = function(e, id) {
+	e.preventDefault();
+	
+	var coupon = e.target.value.trim();
+	
+	if (coupon.length === 8) {
+		return true;
+	}
+	
+	if ($('#special_K').length) {
+		$('#special_K').remove();
+		$('.sel').removeAttr('disabled');
+		
+		var price = $('.sel').val();
+		
+		document.getElementById('item_price_' + id).value = price;
+		document.getElementById('item_show_price_' + id).innerHTML = price;
+		document.getElementById('item_quantity_' + id).value = 1;
+	}
+}*/
