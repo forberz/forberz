@@ -1,8 +1,19 @@
 
+var price_timeout = null;
 var showPrice = function(i) {
-	document.getElementById('item_show_price_' + i).innerHTML = 
-		parseInt(document.getElementById('item_price_' + i).value) 
-		* parseInt(document.getElementById('item_quantity_' + i).value);
+	
+	if (price_timeout) {
+		clearTimeout(price_timeout);
+	}
+	
+	price_timeout = setTimeout(function() {
+		if (document.getElementById('item_quantity_' + i).value < parseInt(document.getElementById('item_quantity_' + i).getAttribute('min'))) {
+			document.getElementById('item_quantity_' + i).value = parseInt(document.getElementById('item_quantity_' + i).getAttribute('min'));
+		}
+		
+		document.getElementById('item_show_price_' + i).innerHTML = 
+			parseInt(document.getElementById('item_price_' + i).value) * parseInt(document.getElementById('item_quantity_' + i).value);
+	}, 800);
 };
 
 var setPrice = function(val, i) {
@@ -70,6 +81,8 @@ var handle_coupon = function(e, id) {
 	
 	$('#special_K').remove();
 	$('.sel').removeAttr('disabled');
+	 document.getElementById('item_quantity_' + id).setAttribute('min', 1);
+	 document.getElementById('item_name_' + id).value = document.getElementById('item_name_' + id).value.replace(/^.{8} \* /, '');
 	
 	if (coupon.length !== 8) {
 		return alert('Error, try again.');
@@ -81,19 +94,22 @@ var handle_coupon = function(e, id) {
 			url: 'ajax/get_coupon.php',
 			data: { 
 				prod_id: id,
-				coupon: coupon 
+				coupon: coupon,
+				lang: $('html').attr('lang')
 			},
 			success: function(response) {
 				response = JSON.parse(response);
 				if (response && !response.error) {
 					console.log(response.price, response.min_quantity);
 					
+					document.getElementById('item_name_' + id).value = coupon + ' * ' + document.getElementById('item_name_' + id).value;
 					document.getElementById('item_price_' + id).value = response.price;
 					document.getElementById('item_show_price_' + id).innerHTML = response.price * response.min_quantity;
 					
 					var item_quantity = document.getElementById('item_quantity_' + id);
 					if (parseInt(item_quantity.value) != response.min_quantity) {
 						item_quantity.value = response.min_quantity;
+						item_quantity.setAttribute('min', response.min_quantity);
 					}
 					
 					$('.sel')

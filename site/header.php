@@ -25,7 +25,8 @@ $ID = isset($_GET['id']) ? intval($_GET['id']) : false;
 $LIMIT = isset($_GET['limit']) ? intval($_GET['limit']) : false;
 $_SESSION['lang'] = $LANG;
 
-require '../conn.php';
+@include 'conn.php';
+@include '../conn.php';
 
 $DICT = array();
 if ($result = $DB->query("SELECT lang_key, lang_{$LANG} AS word FROM dict")) {

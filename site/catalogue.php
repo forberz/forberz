@@ -83,7 +83,7 @@ while ($row = $result->fetch_assoc()) {
 						<input type="hidden" name="charset" value="utf-8">
 						<input type="hidden" name="currency_code" value="<?= $LANG === 'he' ? 'ILS' : 'USD' ?>">
 						<input type="hidden" name="lc" value="US">
-						<input type="hidden" name="item_name" value="<?=htmlentities($row['title'].' - '.$row['subtitle'])?>">
+						<input type="hidden" name="item_name" id="item_name_<?=$row['id']?>" value="<?=htmlentities($row['title'].' - '.$row['subtitle'])?>">
 						<input type="hidden" name="item_number" value="9">
 						<!-- <input type="hidden" name="invoice" value="5906270250f"> -->
 						<input type="hidden" name="amount" id="item_price_<?=$row['id']?>" value="<?=$prices[0]?>">

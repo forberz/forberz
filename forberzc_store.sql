@@ -419,18 +419,20 @@ DROP TABLE IF EXISTS `coupons`;
 CREATE TABLE IF NOT EXISTS `coupons` (
   `id` varchar(8) NOT NULL,
   `prod_id` int(11) NOT NULL,
-  `price` int(5) NOT NULL,
-  `size` int(5) NOT NULL DEFAULT 1,
-  `min_quantity` int(5) NOT NULL DEFAULT 1,
+  `price_en` int(7) NOT NULL,
+  `price_he` int(7) NOT NULL,
+  `price_ru` int(7) NOT NULL,
+  `size` int(7) NOT NULL DEFAULT 1,
+  `min_quantity` int(7) NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `coupons` (`id`, `prod_id`, `price`, `size`, `min_quantity`) VALUES
-('12345677', 1, 12, 300, 12),
-('132232d7', 1, 34, 500, 55),
-('1DDDDDD7', 2, 5, 120, 300000),
-('1sdfwrS7', 2, 32, 120, 1),
-('ABcDRTS7', 2, 2223, 5000, 1)
+INSERT INTO `coupons` (`id`, `prod_id`, `price_en`, `price_he`, `price_ru`, `size`, `min_quantity`) VALUES
+('12345677', 1, 12, 120, 12, 300, 12),
+('132232d7', 1, 34, 340, 34, 500, 55),
+('1DDDDDD7', 2, 5, 50, 5, 120, 300000),
+('1sdfwrS7', 2, 32, 320, 32, 120, 1),
+('ABcDRTS7', 2, 2223, 22230, 2223, 5000, 3)
 ;
 
 
