@@ -1,7 +1,7 @@
 <div class="buy_rideeffect">
 	<h2><?php echo $item['title'] ?></h2>
 	<h3><?php echo $item['subtitle'] ?></h3>
-	<img class="black_img" src="/img/forberz_ride_effect_120_front.jpg" alt="Forberz - Natural Care and Detailing Products for Cars and Bikes" width="250px">
+	<img class="black_img" src="img/forberz_ride_effect_120_front.jpg" alt="Forberz - Natural Care and Detailing Products for Cars and Bikes" width="250px">
 	<p></br><b>- לטיפול בנזקי שמש וסימני פוליש.
 	</br>- מראה אחיד ומקורי לאורך זמן.
 	</br>- ללא סיליקונים, ללא שומן מן החי, טרפנטין או כימיקלים.

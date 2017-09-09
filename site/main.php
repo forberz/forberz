@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/site/css/main.css"/>
+<link rel="stylesheet" href="site/css/main.css"/>
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 

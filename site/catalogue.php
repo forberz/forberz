@@ -56,7 +56,7 @@ while ($row = $result->fetch_assoc()) {
 		</div>
 
 		<div class="catdiv" <?= $ID ? '' : 
-						'onclick="document.location=\'?id=' . $row['id'] . '\'"' ?>>
+						'onclick="document.location=\'site/catalogue.php?id=' . $row['id'] . '\'"' ?>>
 			<div class="prod_img_buy <?= $ID ? 'product' : '' ?>">
 				<img class="product_eng" src="<?=$row['image']?>" alt="<?=$row['img_alt']?>" />
 				<?php if ($ID) { ?>
@@ -98,7 +98,7 @@ while ($row = $result->fetch_assoc()) {
 						<span class="buy_info"><?= $DICT['buyshortterm']?></span>
 					</form>
 				<?php } else { ?>
-					<a href="?id=<?=$row['id']?>" class="cat_nav"><?= $DICT['moreinfo']?></a>
+					<a href="site/catalogue.php?id=<?=$row['id']?>" class="cat_nav"><?= $DICT['moreinfo']?></a>
 				<?php } ?>
 			</div>
 

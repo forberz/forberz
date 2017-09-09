@@ -1,7 +1,7 @@
 <div class="footer_main">
 			<div class="footer_flex">
 				<div class="footer_info">
-					<img class="footer_logo" src="/img/forberz.png" alt="Forberz - Natural Care and Detailing Products for Cars and Bikes">
+					<img class="footer_logo" src="img/forberz.png" alt="Forberz - Natural Care and Detailing Products for Cars and Bikes">
 				</div>
 				<div class="footer_contact">
 					<table class="foot_cont_rtl">
@@ -28,31 +28,31 @@
 				</div>
 				<ul class="footer_menu">
 					<li class="foot_li"><a href="/"><?= $DICT['main']?></a></li>
-					<li><a href="/site/about_forberz.php"><?= $DICT['about_forberz']?></a></li>
-					<li><a href="/site/shops.php"><?= $DICT['wherebuy']?></a></li>
-					<li><a href="/site/affiliate.php"><?= $DICT['affiliate']?></a></li>
-					<li><a href="/site/jobs.php"><?= $DICT['jobs']?></a></li>
-					<li><a href="/site/contact.php"><?= $DICT['contact']?></a></li>
+					<li><a href="site/about_forberz.php"><?= $DICT['about_forberz']?></a></li>
+					<li><a href="site/shops.php"><?= $DICT['wherebuy']?></a></li>
+					<li><a href="site/affiliate.php"><?= $DICT['affiliate']?></a></li>
+					<li><a href="site/jobs.php"><?= $DICT['jobs']?></a></li>
+					<li><a href="site/contact.php"><?= $DICT['contact']?></a></li>
 				</ul>
 				<!-- <ul class="footer_menu">
-					<li class="foot_li"><a href="/site/guide.php"><?= $DICT['guide']?></a></li>	
+					<li class="foot_li"><a href="site/guide.php"><?= $DICT['guide']?></a></li>	
 					<?php
 						$result = $DB->query("SELECT id, footer_{$LANG} AS title
 							FROM `guide` ORDER BY id LIMIT 5");
 
 						while ($row = $result->fetch_assoc()) {
-							echo '<li><a href="/site/guide.php?id='.$row['id'].'">'.$row['title'].'</a></li>';
+							echo '<li><a href="site/guide.php?id='.$row['id'].'">'.$row['title'].'</a></li>';
 						}
 					?>
 				</ul> -->
 				<ul class="footer_menu">
-					<li class="foot_li"><a href="/site/catalogue.php?limit=5"><?= $DICT['cata']?></a></li>
+					<li class="foot_li"><a href="site/catalogue.php?limit=5"><?= $DICT['cata']?></a></li>
 					<?php
 						$result = $DB->query("SELECT id, footer_{$LANG} AS title
 							FROM `products` ORDER BY id LIMIT 5");
 
 						while ($row = $result->fetch_assoc()) {
-							echo '<li><a href="/site/catalogue.php?id='.$row['id'].'">'.$row['title'].'</a></li>';
+							echo '<li><a href="site/catalogue.php?id='.$row['id'].'">'.$row['title'].'</a></li>';
 						}
 					?>
 				</ul>

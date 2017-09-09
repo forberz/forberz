@@ -32,7 +32,7 @@ if ($ID === false) {
 							<?= $ID ? $row['text'] : mb_substr(strip_tags($row['text']), 0, 300, 'utf-8') . '...' ?>
 						</div>
 						<?php if (!$ID) { ?>
-							<a href="?id=<?=$row['id']?>" class="cat_nav">More Info</a>
+							<a href="site/guide.php?id=<?=$row['id']?>" class="cat_nav">More Info</a>
 						<?php } ?>
 					</div>
 				</div>
@@ -57,7 +57,7 @@ if ($ID === false) {
 						<h3><?= $rowIn['title']?></h3>
 						<h4 class="grey"><?= $rowIn['subtitle']?></h4>
 						<img class="guide_thumb" src="<?= $rowIn['img'] ?>" />
-						<a href="?id=<?=$rowIn['id']?>" class="cat_nav">More Info</a>
+						<a href="site/guide.php?id=<?=$rowIn['id']?>" class="cat_nav">More Info</a>
 					</div>
 				</a>
 			<?php
