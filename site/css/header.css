@@ -1,3 +1,7 @@
+input {
+    -webkit-appearance: none !important;
+}
+
 div.black_wrap {
     background-color: #0A0A0A;
     height: auto;
@@ -61,9 +65,9 @@ div.top {
 }
 img.logo {
     margin: 0 auto;
-    width: 16em;
-    background-color: #000039;
-    padding: 4rem 1.5rem 1rem 1.5rem;
+    width: 18em;
+    background-color: rgba(0,0,0,0.5);
+    padding: 2rem 1.5rem 1rem 1.5rem;
     display: block;
     border-radius: 0;
 }

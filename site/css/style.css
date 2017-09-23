@@ -64,6 +64,15 @@ div.main {
     padding: 0.5rem 1rem;
 }
 
+div.cat_wrap h2 {
+    text-transform: uppercase !important;
+}
+
+div.cat_wrap div.main {
+    margin: 2rem 0;
+    padding: 0;
+}
+
 h1 {
     margin: 0;
     padding: 0

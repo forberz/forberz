@@ -9,6 +9,8 @@ if (!isset($_GET['id'])) {
 	<?php
 }
 
+$DB->query("SET SESSION group_concat_max_len=16000;");
+
 $query = "SELECT 
 		P.id, 
 		P.title_{$LANG} AS title,
@@ -25,13 +27,10 @@ $query = "SELECT
 		P.faqpoints_{$LANG} AS faqpoints,
 		P.msdspoints_{$LANG} AS msdspoints,
 		P.msdstext_{$LANG} AS msdstext,
-		P.buyshortterm_{$LANG} AS buyshortterm,
-		P.buybtn_{$LANG} AS buybtn,
-		P.ammount_{$LANG} AS ammount,
-		GROUP_CONCAT(G.img, ',') AS images,
+		GROUP_CONCAT(G.img SEPARATOR ',') AS images,
 		GROUP_CONCAT(G.title_{$LANG} SEPARATOR '^^^') AS images_titles,
 		GROUP_CONCAT(G.subtitle_{$LANG} SEPARATOR '^^^') AS images_subtitles,
-		GROUP_CONCAT(G.video, ',') AS images_videos
+		GROUP_CONCAT(G.video SEPARATOR ',') AS images_videos
 	FROM `products` AS P 
 		LEFT JOIN `gallery` AS G ON (P.id = G.prod_id)
 	".($ID ? "WHERE P.id = {$ID}" : "")."
@@ -45,12 +44,10 @@ $result = $DB->query($query);
 
 while ($row = $result->fetch_assoc()) {
 	?>
-	<div class="cat_wrap <?php echo ($row['id'] % 2) === 0 ? 'left' : 'right'; ?>">
+	<div class="cat_wrap <?php echo ($row['id'] % 2) === 0 ? 'left' : 'right'; ?> <?= $ID ? 'insider' : '' ?>">
 		<div class="product_header">
 			<h1><?= $row['title']?></h1>
-			<h2><?= $row['subtitle']?></h2>
 		</div>
-
 		<div class="product_icons">
 			<h4><?=$row['icons']?></h4>
 		</div>
@@ -103,15 +100,13 @@ while ($row = $result->fetch_assoc()) {
 							<div id="coupon_button" onclick="handle_coupon(event, '<?=$row['id']?>')">OK</div>
 						</div>
 						
-						
 						<span class="buy_info"><?= $DICT['buyshortterm']?></span>
 					</form>
-				<?php } else { ?>
-					<a href="site/catalogue.php?id=<?=$row['id']?>" class="cat_nav"><?= $DICT['moreinfo']?></a>
 				<?php } ?>
 			</div>
 
 			<div class="prod_text_box">
+				<h2><?= $row['subtitle']?></h2>
 				<ul class="prod_point">
 					<?php
 						$points = explode(' @@ ', $row['points']);
@@ -121,8 +116,71 @@ while ($row = $result->fetch_assoc()) {
 						}
 					?>
 				</ul>
-			
-				<?= $ID ? $row['maintext'] : mb_substr(strip_tags($row['maintext']), 0, 300, 'utf-8') . '...'?>
+
+				<?php if ($ID) { ?>
+					<div class="product_description">
+						<?=$row['maintext']?>
+					</div>
+					<div class="main" id="howto">
+						<h2><?= $DICT['how_to_use']?></h2>
+						<ul class="other_point">
+						<?php
+							$points = explode(' @@ ', $row['howtopoints']);
+
+							foreach ($points as $p) {
+								echo '<li>'.$p.'</li>';
+							}
+						?>
+						</ul>
+
+						<?=$row['howtotext']?>
+					</div>
+
+					<div class="main" id="faq">
+					  <h2><?= $DICT['freq']?></h2>
+						<ul class="other_point">
+						  <?php
+							$points = explode("\n--", $row['faqpoints']);
+
+							foreach ($points as $p) {
+							  $qANDa = preg_split("/\r?\n\r?\n/", $p);
+							  if (count($qANDa) > 1) {
+								echo '<li><b>'.$qANDa[0].'</b><br><i>'.$qANDa[1].'</i></li>';
+							  } else {
+								echo "<li>$p</li>";
+							  }
+							}
+						  ?>
+						</ul>
+					</div>
+
+					<div class="main" id="msds">
+						<h2><?= $DICT['msds'] ?></h2>
+						<ul class="other_point">
+						<?php
+							$points = explode(' @@ ', $row['msdspoints']);
+
+							foreach ($points as $p) {
+								echo '<li>'.$p.'</li>';
+							}
+						?>
+						</ul>
+
+						<br>
+						<?= $row['msdstext'] ?>
+					</div>
+					<br><br>
+				<?php 
+					} else { 
+						echo mb_substr(strip_tags($row['maintext']), 0, 300, 'utf-8') . '...';
+						?>
+							<div class="buttons_before_prod">
+								<a href="site/catalogue.php?id=<?=$row['id']?>" class="cat_nav"><?= $DICT['moreinfo']?></a>
+								<a href="site/catalogue.php?id=<?=$row['id']?>" class="cat_nav"><?= $DICT['buybtn']?></a>
+							</div>
+						<?php
+					} 
+				?>
 			</div>
 		</div>
 	</div>

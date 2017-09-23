@@ -11,11 +11,11 @@ $result = $DB->query("SELECT
 						WHERE id IN (50,51,54,53) ORDER BY id");
 ?>
 
-<div class="main">
+<!-- <div class="main">
 	<h1><?=$DICT['main_h1']?></h1>
 	<h3 class="grey"><?=$DICT['main_h2']?></h3>
 	<span class="highline"><?=$DICT['main_p']?></span>
-</div>
+</div> -->
 
 <div class="slide_img">
 	<?php while ($row = $result->fetch_assoc()) {?>

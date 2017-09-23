@@ -27,7 +27,11 @@ $prev_area = '';
 			</tr>
 			<?php 
 				while ($row = $result->fetch_assoc()) {
+					if ($prev_area && $prev_area !== $row['area']) {
+						echo '<tr><td bgcolor="black" colspan="5">&nbsp;</td></tr>';
+					}
 			?>
+
 			<tr>
 				<td><?php if ($prev_area !== $row['area']) {
 					$prev_area = $row['area'];

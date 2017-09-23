@@ -14,7 +14,7 @@ $prev_area = '';
 		<h1><?= $DICT['protreat']?></h1>
 		<h4 class="grey"><?= $DICT['protreat_sub']?></h4>
 	</div>
-	<div class="main">
+	<div class="shops">
 		<table class="shops">
 			<tr>
 				<th><?= $DICT['area']?></th>
@@ -27,6 +27,9 @@ $prev_area = '';
 			</tr>
 			<?php 
 				while ($row = $result->fetch_assoc()) {
+					if ($prev_area && $prev_area !== $row['area']) {
+						echo '<tr><td bgcolor="black" colspan="5">&nbsp;</td></tr>';
+					}
 			?>
 			<tr>
 				<td><?php if ($prev_area !== $row['area']) {

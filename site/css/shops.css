@@ -22,6 +22,7 @@ table.shops {
 }
 table.shops th{
     color: #aaa;
+    background-color: black;
 }
 
 table.shops th, table.shops td {
@@ -37,7 +38,7 @@ table.shops tr:hover:not(:first-child)  {
     color: orange;
 }
 
-table.shops td:nth-child(3){
+table.shops td:first-child, table.shops td:nth-child(3){
     font-weight: bold;
 }
 table.shops td {

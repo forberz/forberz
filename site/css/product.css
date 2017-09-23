@@ -19,36 +19,12 @@ a.page_nav {
 a.page_nav:hover {
     background-color: #111
 }
-a.madeinisrael {
-    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
-    background-color: #000039;
-    margin: auto;
-    font-weight: bold;
-    letter-spacing: 0.05em;
-    display: block
-}
-a.madeinisrael:hover {
-    color: lightblue;
-    background-color: #000099
-}
-a.natural {
-    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
-    background-color: green;
-    margin: auto;
-    font-weight: bold;
-    letter-spacing: 0.05em;
-    display: block;
-}
-a.natural:hover {
-    background-color: #003300;
-    color: yellow;
-}
+
 
 img.product_eng {
     width: 90%;
-    margin: 0 auto;
+    margin: 1rem auto;
     margin-top: 1em;
-    box-shadow: 0 0 20px 10px black;
 }
 div.catdiv {
     background-color: #0A0A0A;
@@ -56,6 +32,10 @@ div.catdiv {
     height: 100%;
     width: 91.1%;
     margin: 0 auto;
+    position: relative;
+}
+div.cat_wrap.insider, div.cat_wrap.insider * {
+    cursor: default;
 }
 div.cat_wrap {
     margin: 0 auto;
@@ -151,8 +131,10 @@ select.sel {
     border: 0;
     margin: 0.5rem 1rem;
     padding: 0 0.5rem;
-    width: 7rem;
+    width: 8rem;
     height: 2.5rem;
+    text-align: center;
+    border-radius: 6px;
 }
 .payment_btn input[type="submit"]:hover {
     background: #000066;
@@ -206,6 +188,10 @@ ul.other_point li{
     margin: 0.5rem 0 auto;
 }
 
+.product_description {
+    padding: 0 1.5rem;
+}
+
 #coupon_wrapper {
     clear: both;
     text-align: center;
@@ -236,4 +222,30 @@ ul.other_point li{
     text-align: center;
     background: #000039;
     color: #fff;
+}
+
+.buttons_before_prod, body.rtl .buttons_before_prod {
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.buttons_before_prod a.cat_nav {
+    width: 120px;
+    margin: 1rem 0.5rem 0 0.5rem;
+    height: 1rem;
+    line-height: 1rem;
+    display: inline-block;
+}
+.product_header.black {
+    background-color: black;
+    margin: 0 auto;
+}
+.product_header.black h2 {
+    color: lightgrey;
+}
+span.cat_sub {
+    font-size: 0.7em;
+    display: inline-block;
+    color: lightgrey;
 }

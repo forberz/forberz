@@ -45,12 +45,13 @@ if ($result = $DB->query("SELECT lang_key, lang_{$LANG} AS word FROM dict")) {
 		<!-- DON'T MOVE THIS BELOW -->
 		
 		<?php 
-			if (is_dir('/Users')) {
+			if (is_dir('C:\\Windows')) {
+				// echo '<base href="http://127.0.0.1/" />';
+				echo '<base href="http://10.0.0.6/" />';
+			} elseif (is_dir('/Users')) {
 				echo '<base href="http://127.0.0.1/forberz/" />';
-			} elseif (is_dir('C:\\Windows')) {
-				echo '<base href="http://127.0.0.1/" />';
 			} else {
-				echo '<base href="https://forberz.com/" />';
+				echo '<base href="https://www.forberz.com/" />';
 			}
 		?>
 		
