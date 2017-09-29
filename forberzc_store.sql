@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 29, 2017 at 07:20 PM
+-- Generation Time: Sep 29, 2017 at 09:42 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -160,17 +160,12 @@ CREATE TABLE `gallery` (
 
 INSERT INTO `gallery` (`id`, `prod_id`, `in_gallery`, `meta`, `title_en`, `title_he`, `title_ru`, `subtitle_en`, `subtitle_he`, `subtitle_ru`, `thumb`, `img`, `video`) VALUES
 (1, 1, 1, 'ride_effect_video', 'Forberz Ride Effect in action - Close Up', 'פורברז רייד אפקט בפעולה במבט מקרוב', 'video', 'Sun damaged plastic trim gets a quick revival treatment with Forberz Ride Effect', 'חלק פלסטיק שנשרף מהשמש מקבל טיפול מהיר בעזרת פורברז רייד אפקט', 'oy video', 'https://i.ytimg.com/vi/cmwOtn0bFSI/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAwOykCz2HbflFprTubC9x45cMUPg', 'https://i.ytimg.com/vi/cmwOtn0bFSI/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAwOykCz2HbflFprTubC9x45cMUPg', 'https://www.youtube.com/embed/cmwOtn0bFSI'),
-(2, 0, 0, 'ride_effect_2', 'Ride Effect get the right', 'רייד אפקט בדיקה', 'Тест', 'Test', 'רייד אפקט בדיקה\n', 'Тест', '/gi/gi11.png', '/gi/gi11.png', NULL),
-(3, 0, 0, 'detail_hd_1', 'Ride Effect get the right', 'רייד אפקט בדיקה', 'Тест', 'Test', 'דיטייל בדיקה\n', 'Тест', '/gi/gi12.png', '/gi/gi11.png', NULL),
-(5, 0, 0, 'logo1', 'Trade Mobile Leasing', 'טרייד מוביל ליסינג', '', '', '', '', 'gallery/logo1.png', 'gallery/logo1.png', NULL),
-(6, 0, 0, 'logo2', 'Toyota Select', 'טויוטה סלקט כמו חדש', '', '', '', '', 'gallery/logo2.png', 'gallery/logo2.png', NULL),
-(7, 0, 0, 'logo3', 'Chevrolet', 'שברולט', '', '', '', '', 'gallery/logo3.jpg', 'gallery/logo3.jpg', NULL),
-(8, 0, 0, 'logo4', 'Land Rover', 'לנד רובר', '', '', '', '', 'gallery/logo4.png', 'gallery/logo4.png', NULL),
-(9, 0, 0, 'logo5', 'Ford', 'פורד', '', '', '', '', 'gallery/logo5.jpg', 'gallery/logo5.jpg', NULL),
-(10, 0, 0, 'logo6', 'Ducati', 'דוקאטי', '', '', '', '', 'gallery/logo6.jpg', 'gallery/logo6.jpg', NULL),
-(11, 0, 0, 'logo7', 'Opel', 'אופל', '', '', '', '', 'gallery/logo7.jpg', 'gallery/logo7.jpg', NULL),
-(12, 0, 0, 'logo8', 'Odiva Art', 'אודיבה ארט', '', '', '', '', 'gallery/logo3.png', 'gallery/logo3.png', NULL),
-(13, 0, 0, 'logo9', 'Lease4u', 'ליס4יו', '', '', '', '', 'gallery/logo9.jpg', 'gallery/logo9.jpg', NULL),
+(2, 1, 1, 'Forberz Ride Effect - Restore plastic and rubber trim on your car and bike', 'Forberz Ride Effect - Restore plastic and rubber trim on your car and bike', 'פורברז רייד אפקט- שחזור, חידוש ושימור פלסטיקה לרכב ודו-גלגלי', '', '', '', '', 'https://i.ytimg.com/vi/xB3d82UKlNQ/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLChVaAa5Woh5z8XWK0hLxtd9UGF0Q', 'https://i.ytimg.com/vi/xB3d82UKlNQ/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLChVaAa5Woh5z8XWK0hLxtd9UGF0Q', 'https://www.youtube.com/embed/xB3d82UKlNQ'),
+(3, 0, 1, 'Recomendation of Forberz products by Roy Dayan from RD Design', 'Recomendation of Forberz products by Roy Dayan from RD Design', 'המלצה של רוי דיין מRD Design על מוצרי "פורברז"', '', '', '', '', 'https://i.ytimg.com/vi/vS5ov8jiGaM/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAHbRmJR-5WJ9TCmG_t9T4cERDS4w', 'https://i.ytimg.com/vi/vS5ov8jiGaM/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAHbRmJR-5WJ9TCmG_t9T4cERDS4w', 'https://www.youtube.com/embed/vS5ov8jiGaM'),
+(4, 0, 1, 'A moped gets a treatment with Forberz Ride Effect and Forberz Detail HD', 'A moped gets a treatment with Forberz Ride Effect and Forberz Detail HD', 'קטנוע מקבל טיפול בפורברז רייד אפקט ופורברז דיטייל אייצ\' די', '', '', '', '', 'https://i.ytimg.com/vi/kst-AGvTW3M/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLD5fvi2sZEM6yfPSShdJxw9CJyg6g', 'https://i.ytimg.com/vi/kst-AGvTW3M/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLD5fvi2sZEM6yfPSShdJxw9CJyg6g', 'https://www.youtube.com/embed/kst-AGvTW3M'),
+(5, 0, 1, 'Forberz Ride Effect in action - Close Up', 'Forberz Ride Effect in action - Close Up', 'פורברז רייד אפקט בפועלה', '', 'Sun damaged plastic moped steering trim gets a quick revival treatment with Forberz Ride Effect', '', '', 'gallery/forberz-ride-effect-restore-plastic-and-rubber-trim-parts-on-car-and-bike.jpg', 'gallery/forberz-ride-effect-restore-plastic-and-rubber-trim-parts-on-car-and-bike.jpg', 'https://www.youtube.com/embed/srwUqEe6nTI'),
+(6, 0, 1, 'First video ever made :)', 'First video ever made :)', 'הסרטון הראשון שעשינו בכיכובו של קיריל איבנוב', '', 'Kirill Ivanov - Founder of Forberz and a pro car mechanic and detailer.', 'קיריל איבנוב - מייסד "פורברז" ומקצוען בתחום הרכב והדיטיילינג.', '', 'https://i.ytimg.com/vi/Czc8r93r6zk/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLD5GwyaWGjoSPu3ge9x7m-vOiYkOw', 'https://i.ytimg.com/vi/Czc8r93r6zk/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLD5GwyaWGjoSPu3ge9x7m-vOiYkOw', 'https://www.youtube.com/embed/Czc8r93r6zk'),
+(20, 0, 1, 'An original 1938 Chevy truck seat is getting cleaned using Forberz Detail HD after years of neglect.', 'An original 1938 Chevy truck seat is getting cleaned using Forberz Detail HD after years of neglect.', 'מושב מקורי שנת 1938 של טנדר שברולט עובר נקיון יסודי בעזרת פורברז דיטייל אייצ\' די אחרי שנים של עזבון.', '', 'Forberz Detail HD - Deep clean fabric, leather and plastic', 'פורברז דיטייל אייצ\' די - ספריי נקיון עמוק לעור, בד ופלסטיק', '', 'gallery/an_original_chevy_truck_seat_is_getting_cleaned_gently_and_step_by_step_with_forberz_detail_hd_and_a_cut_paint_brush.jpg', 'gallery/an_original_chevy_truck_seat_is_getting_cleaned_gently_and_step_by_step_with_forberz_detail_hd_and_a_cut_paint_brush.jpg', NULL),
 (22, 1, 1, 'Renault Megane 1998 mirror housing plastic before treatment with Forberz Ride Effect', 'Before', 'לפני', 'До', 'Renault Megane 1998 mirror housing plastic before treatment with Forberz Ride Effect', 'מראה של רנו מגאן שנת 1998 לפני הטיפול שימו לב לפלסטיק שנשרף עם השנים בשמש ישירה ולקילופי הלכה', '', 'gallery/renault_megane_1998_mirror_housing_plastic_before_treatment_with_forberz_ride_effect.jpg', 'gallery/renault_megane_1998_mirror_housing_plastic_before_treatment_with_forberz_ride_effect.jpg', NULL),
 (23, 1, 1, 'Renault Megane 1998 mirror housing plastic after treatment with Forberz Ride Effect', 'After', 'אחרי', 'После', 'Renault Megane 1998 mirror housing plastic after treatment with Forberz Ride Effect', 'מראה של רנו מגאן שנת 1998 לאחר טיפול בעזרת פורברז רייד אפקט, שימו לב למראה החי שקביל הפלסטיק והאחידות במראה הכללי', '', 'gallery/renault_megane_1998_mirror_housing_plastic_after_treatment_with_forberz_ride_effect.jpg', 'gallery/renault_megane_1998_mirror_housing_plastic_after_treatment_with_forberz_ride_effect.jpg', NULL),
 (24, 1, 1, 'San Yang Joy Max 250 2011 before treatment with Forberz Ride Effect', 'Before', 'לפני', 'До', 'San Yang Joy Max 250 2011 before treatment with Forberz Ride Effect', 'הפלסטיקה בקטנוע הזה וריפוד המושב ראו ימים טובים יותר, המון ספריי ושמש.', '', 'gallery/san_yang_joy_max_250_2011_before_treatment_with_forberz_ride_effect_full_view.jpg', 'gallery/san_yang_joy_max_250_2011_before_treatment_with_forberz_ride_effect_full_view.jpg', NULL),
@@ -181,7 +176,22 @@ INSERT INTO `gallery` (`id`, `prod_id`, `in_gallery`, `meta`, `title_en`, `title
 (51, 0, 0, 'strip2', '', '', '', '', '', '', 'gallery/strip2.jpg', 'gallery/strip2.jpg', NULL),
 (53, 0, 0, 'strip3', '', '', '', '', '', '', 'gallery/strip3.jpg', 'gallery/strip3.jpg', NULL),
 (54, 0, 0, 'strip4', '', '', '', '', '', '', 'gallery/strip4.jpg', 'gallery/strip4.jpg', NULL),
-(55, 0, 0, 'ride_effect_1', 'Ride Effect get the right effect', 'רייד אפקט בדיקה', 'Ride Effect get the right effect', 'Ride Effect get the right effect', 'רייד אפקט בדיקה\n', 'Ride Effect get the right effect', '/gi/gi11.png', '/gi/gi12.png', NULL);
+(55, 0, 0, 'ride_effect_1', 'Ride Effect get the right effect', 'רייד אפקט בדיקה', 'Ride Effect get the right effect', 'Ride Effect get the right effect', 'רייד אפקט בדיקה\n', 'Ride Effect get the right effect', '/gi/gi11.png', '/gi/gi12.png', NULL),
+(56, 0, 1, 'Forberz Ride Effect creates a cool pattern while cooling down at our factory at Arad, Israel.', 'Forberz Ride Effect creates a cool pattern while cooling down at our factory in Arad, Israel.', '"פורברז רייד אפקט" יוצר מחזה מרהיב בזמן שהקופסאות מתקררות לאחר מזיגה במפעל שלנו בערד.', '', 'Forberz Ride Effect - Restore plastic and rubber trim on your car and bike.', 'פורברז רייד אפקט - שחזור, חידוש וטימור חלקי פלסטיק וגומי ברכב ודו-גלגלי.', '', 'gallery/forberz_ride_effect_creates_a_cool_pattern_while_cooling_down_at_our_factory_in_arad_israel.jpg', 'gallery/forberz_ride_effect_creates_a_cool_pattern_while_cooling_down_at_our_factory_in_arad_israel.jpg', NULL),
+(57, 0, 1, '', 'Ford Thunderbird 1966 coupe 428 is getting a thorough decal detailing by Kirill Ivanov', 'פורד טנדרבירד 1966 קופה מקבלת טיפול יסודי לסמל שלה על ידי קיריל איבנוב', '', 'Kirill Ivanov - Founder of Forberz and a pro car mechanic and detailer.', 'קיריל איבנוב - מייסד "פורברז" ומקצוען בתחום הרכב והדיטיילינג.', '', 'gallery/ford_thunderbird_1966_coupe_428_is_getting_a_thorough_decal_detailing_by_kirill_ivanov.jpg', 'gallery/ford_thunderbird_1966_coupe_428_is_getting_a_thorough_decal_detailing_by_kirill_ivanov.jpg', NULL),
+(58, 0, 1, '', 'Dodge Fluid Drive 1949 getting a treatment with Forberz Ride Effect at the 5th club meeting in Tel Aviv, Israel.', 'דודג\' פלויד דרייב 1949 מקבלת טיפול יסודי בעזרת פורברז רייד אפקט במפגש מועדון החמש בתל אביב.', '', 'Forberz Ride Effect - Restore plastic and rubber trim on your car and bike.', 'פורברז רייד אפקט - שחזור, חידוש וטימור חלקי פלסטיק וגומי ברכב ודו-גלגלי.', '', 'gallery/dodge_fluid_drive_1949_getting_a_treatment_with_forberz_ride_effect_at_the_5th_club_meeting_in_tel_aviv_israel.jpg', 'gallery/dodge_fluid_drive_1949_getting_a_treatment_with_forberz_ride_effect_at_the_5th_club_meeting_in_tel_aviv_israel.jpg', NULL),
+(65, 1, 1, 'Forberz Ride Effect - Restore plastic and rubber trim on your car and bike. 100% Natural.', 'Forberz Ride Effect - Restore plastic and rubber trim on your car and bike. 100% Natural.', 'פורבר רייד אפקט- שחזור, חידוש ושימור פלסטיק. 100% טבעי, מיוצר בישראל.', '', '', '', '', 'gallery/forberz-ride-effect-restore-plastic-and-rubber-trim-parts-on-car-and-bike.jpg', 'gallery/forberz-ride-effect-restore-plastic-and-rubber-trim-parts-on-car-and-bike.jpg', NULL),
+(105, 0, 0, 'logo1', 'Trade Mobile Leasing', 'טרייד מוביל ליסינג', '', '', '', '', 'gallery/logo1.png', 'gallery/logo1.png', NULL),
+(106, 0, 0, 'logo2', 'Toyota Select', 'טויוטה סלקט כמו חדש', '', '', '', '', 'gallery/logo2.png', 'gallery/logo2.png', NULL),
+(107, 0, 0, 'logo3', 'Chevrolet', 'שברולט', '', '', '', '', 'gallery/logo3.jpg', 'gallery/logo3.jpg', NULL),
+(108, 0, 0, 'logo4', 'Land Rover', 'לנד רובר', '', '', '', '', 'gallery/logo4.png', 'gallery/logo4.png', NULL),
+(109, 0, 0, 'logo5', 'Ford', 'פורד', '', '', '', '', 'gallery/logo5.jpg', 'gallery/logo5.jpg', NULL),
+(110, 0, 0, 'logo6', 'Ducati', 'דוקאטי', '', '', '', '', 'gallery/logo6.jpg', 'gallery/logo6.jpg', NULL),
+(111, 0, 0, 'logo7', 'Opel', 'אופל', '', '', '', '', 'gallery/logo7.jpg', 'gallery/logo7.jpg', NULL),
+(112, 0, 0, 'logo8', 'Odiva Art', 'אודיבה ארט', '', '', '', '', 'gallery/logo3.png', 'gallery/logo3.png', NULL),
+(113, 0, 0, 'logo9', 'Lease4u', 'ליס4יו', '', '', '', '', 'gallery/logo9.jpg', 'gallery/logo9.jpg', NULL),
+(255, 0, 0, 'ride_effect_2', 'Ride Effect get the right', 'רייד אפקט בדיקה', 'Тест', 'Test', 'רייד אפקט בדיקה\n', 'Тест', '/gi/gi11.png', '/gi/gi11.png', NULL),
+(322, 0, 0, 'detail_hd_1', 'Ride Effect get the right', 'רייד אפקט בדיקה', 'Тест', 'Test', 'דיטייל בדיקה\n', 'Тест', '/gi/gi12.png', '/gi/gi11.png', NULL);
 
 -- --------------------------------------------------------
 
@@ -490,7 +500,7 @@ ALTER TABLE `dict`
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 --
 -- AUTO_INCREMENT for table `guide`
 --

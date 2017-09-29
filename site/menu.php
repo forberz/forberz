@@ -13,11 +13,12 @@ if (strpos($current_page, 'index.php') === false && $current_page !== '' && $cur
 	<div class="social">
 		<ul class="social_menu">
 		  <li class="grey"><?= $DICT['social_on']?></li>
-		  <li><a href="https://www.facebook.com/forberz" rel="nofollow" target="_blank">Facebook</a></li>
-		  <li><a href="https://www.google.com/+Forberz" rel="nofollow" target="_blank">Google+</a></li>
-		  <li><a href="https://www.instagram.com/forberz" rel="nofollow" target="_blank">Instagram</a></li>
-		  <li><a href="https://www.pinterest.com/forberz" rel="nofollow" target="_blank">Pinterest</a></li>
-		  <li><a href="https://www.ebay.com/usr/forberz" rel="nofollow" target="_blank">eBay</a></li>
+		  <li><a href="https://www.facebook.com/forberz" rel="nofollow" target="_blank"><img class="social_icon" src="gallery/fb-art.png"></a></li>
+		  <li><a href="https://www.google.com/+Forberz" rel="nofollow" target="_blank"><img class="social_icon" src="gallery/g-plus.png"></a></li>
+		  <li><a href="https://www.instagram.com/forberz" rel="nofollow" target="_blank"><img class="social_icon" src="gallery/inst.png"></a></li>
+		  <li><a href="https://www.pinterest.com/forberz" rel="nofollow" target="_blank"><img class="social_icon" src="gallery/picon.png"></a></li>
+		  <li><a href="https://www.ebay.com/usr/forberz" rel="nofollow" target="_blank"><img class="social_icon" src="gallery/ebay.png"></a></li>
+		  <li><a href="https://www.youtube.com/channel/UCAbqdXaaKgwwDavvTwkQ8yQ" rel="nofollow" target="_blank"><img class="social_icon" src="gallery/ycon.png"></a></li>
 		</ul>
 		<ul class="lang_menu">  
 		  <li><a href="<?= $current_page ?>?lang=he<?= $ID ? '&id=' . $ID : '' ?>" <?= $LANG === 'he' ? 'class="grey"' : ''?>>עברית</a></li>
