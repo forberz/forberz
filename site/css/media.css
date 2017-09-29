@@ -7,7 +7,7 @@
 		display: none;
 	}
 
-    #gallery .gallery-img.prodgal {
+    #gallery .gallery-img {
         width: 100% !important;
         height: 200px !important;
         margin: 0.5rem auto;

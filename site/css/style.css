@@ -35,7 +35,9 @@ img {
     display: block;
     border-radius: 3px;
 }
-
+img.social_icon {
+    display: inline-block;
+}
 a {
     transition: color .2s ease-in-out;
     transition: background-color .2s ease-in-out;
