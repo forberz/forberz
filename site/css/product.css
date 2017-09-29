@@ -8,17 +8,6 @@ div.page_menu {
 
 
 }
-a.page_nav {
-    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
-    background-color: #0A0A0A;
-    margin: auto;
-    display: block;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-a.page_nav:hover {
-    background-color: #111
-}
 
 
 img.product_eng {
@@ -231,7 +220,7 @@ ul.other_point li{
 }
 
 .buttons_before_prod a.cat_nav {
-    width: 120px;
+    width: 7em;
     margin: 1rem 0.5rem 0 0.5rem;
     height: 1rem;
     line-height: 1rem;
