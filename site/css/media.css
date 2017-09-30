@@ -134,6 +134,9 @@
         align-items: center;
         bottom: 3rem;
     }
+    .payment_btn input[type="submit"] {
+        font-size: 1.5em;
+    }
     .payment_btn:after {
         width: 90%;
         padding: 0 5%;

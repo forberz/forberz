@@ -51,7 +51,7 @@ $result = $DB->query("SELECT id, prod_id, img, thumb,
 						title_{$LANG} AS title,
 						subtitle_{$LANG} AS subtitle
 					FROM `gallery` 
-					WHERE id IN (6,7,8,9,10,11,12,13) ORDER BY id");
+					WHERE id IN (106,107,108,109,110,111,112,113) ORDER BY id");
 ?>
 
 <div class="main_clients">

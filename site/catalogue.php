@@ -91,14 +91,14 @@ while ($row = $result->fetch_assoc()) {
 						<input type="hidden" name="return" value="https://www.forberz.com/#thank-you">
 						<!-- <input type="hidden" name="notify_url" value="https://homzit.com/order/paypal"> -->
 						<input type="hidden" name="cancel_return" value="https://www.forberz.com/">
+						<div id="coupon_wrapper">
+							<input type="text" name="coupon" id="coupon" placeholder="<?= $DICT['coupon']?>" maxlength="8">
+							<div id="coupon_button" onclick="handle_coupon(event, '<?=$row['id']?>')">OK</div>
+						</div>
 						<input type="submit" value="<?= $DICT['buybtn']?>">
 						<input type="image" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" border="0" name="submit" 
 							alt="PayPal - The safer, easier way to pay online!" id="buynow">
 						
-						<div id="coupon_wrapper">
-							<input type="text" name="coupon" id="coupon" placeholder="COUPON" maxlength="8">
-							<div id="coupon_button" onclick="handle_coupon(event, '<?=$row['id']?>')">OK</div>
-						</div>
 						
 						<span class="buy_info"><?= $DICT['buyshortterm']?></span>
 					</form>

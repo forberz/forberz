@@ -59,13 +59,13 @@ div.top {
     width: 100%;
     margin: auto;
     background-image: url("../../img/strip1.jpg");
-    display: block;
+    display: inline-block;
     text-align: center;
     border-radius: 0;
 }
 img.logo {
     margin: 0 auto;
-    width: 18em;
+    width: 20em;
     background-color: rgba(0,0,0,0.5);
     padding: 2rem 1.5rem 1rem 1.5rem;
     display: block;
