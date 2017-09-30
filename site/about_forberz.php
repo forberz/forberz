@@ -11,7 +11,7 @@ include('header.php');
 			<img class="about_img" src="img/a11.jpg" alt="Forberz">
 		</div>
 		<div class="about_forberz_text">
-			<br><img src="img/forberz.png" alt="Forberz - Natural Care and Detailing Products for Cars and Bikes" /><br><br>
+			<br><img class="about_logo" src="img/forberz.png" alt="Forberz - Natural Care and Detailing Products for Cars and Bikes" /><br><br>
 			<?= $DICT['about_forberz_text']?>
 		</div>
 		
