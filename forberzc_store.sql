@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 30, 2017 at 02:15 AM
+-- Generation Time: Sep 30, 2017 at 12:00 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -71,7 +71,7 @@ INSERT INTO `dict` (`id`, `lang_key`, `lang_he`, `lang_en`, `lang_ru`) VALUES
 (3, 'main_h1', 'ברוכים הבאים לעולם של דיטיילינג בחומרים טבעיים בלבד', '', 'Добро пожаловать в мир натурального дитэйлинга!'),
 (4, 'main_h2', '', '', 'Форберз'),
 (5, 'main_p', 'מוצרי דיטיילינג טבעיים\n(טיפוח רכב ודו-גלגלי).\nמוצרי שחזור, שימור וחידוש לפלסטיק, עור, גומי, ויניל, צבע ועוד.\nתכשירי ניקוי עור, בד, פלסטיק, ויניל ועוד.', '', 'Извините, страница не закончена.'),
-(6, 'social_on', 'פורברז גם ב:', 'Forberz on:', 'Форберз на:'),
+(6, 'social_on', 'גם ב', 'Social', 'Форберз на:'),
 (7, 'cata', 'קטלוג מוצרים', 'Products Catalogue', 'Каталог'),
 (8, 'wherebuy', 'איפה קונים?', 'Where to buy?', 'Где купить?'),
 (9, 'protreat', 'המומחים שלנו', 'Pro-Treatment', 'Про-Сервис'),
@@ -83,7 +83,7 @@ INSERT INTO `dict` (`id`, `lang_key`, `lang_he`, `lang_en`, `lang_ru`) VALUES
 (15, 'adress', 'כתובת', 'Address', 'Адресс'),
 (16, 'phone', 'טלפון', 'Phone', 'Телефон'),
 (17, 'mail', 'מייל', 'Mail', 'Мэйл'),
-(18, 'adresss', 'ת.ד. 5051, ערד, ישראל', 'POB 5051, Arad, Israel', 'ПЯ 5051, Арад, Израиль'),
+(18, 'adresss', 'ת.ד. 5051, ערד', 'P.O. Box 5051, Arad, Israel', 'ПЯ 5051, Арад, Израиль'),
 (19, 'phones', '072-2482228', '+972-72-2482228', '+972-72-2482228'),
 (20, 'product_subtitle', 'משחת שחזור, חידוש וטיפוח לפלסטיק וגומי.', 'High quality detailing, restore and care compound for motor vehicles.', 'Восстановитель пластика и резины.'),
 (21, 'how_to_use', 'הוראות שימוש', 'HOW TO USE', 'ИНСТРУКЦИЯ'),

@@ -32,7 +32,7 @@ ul.social_menu {
 ul.social_menu li {
     display: inline;
     text-decoration: none;
-    padding: 0 0.5rem;
+    padding: 0 0.2rem;
 }
 ul.lang_menu {
     list-style-type: none;

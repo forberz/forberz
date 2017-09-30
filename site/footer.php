@@ -5,9 +5,9 @@
 				</div>
 				<div class="footer_contact">
 					<table class="foot_cont_rtl">
-						<tr>
+						<!-- <tr>
 							<th><h2><?= $DICT['forberz']?></h2></th>
-						</tr>
+						</tr> -->
 						<tr>
 							<td><h4 class="grey"><?= $DICT['adress']?></h4></td>
 							<td colspan="2"><h4><?= $DICT['adresss']?></h4></td>
@@ -23,6 +23,15 @@
 								echo str_pad((string)rand(12323, 99997), 5, "0"). strtoupper($LANG); 
 							?>" target="_blank">sales@forberz.com</a></h4></td>
 						</tr>
+						<tr>
+							<td><h4 class="grey"><?= $DICT['social_on']?></h4></td>
+							<td><ul class="social_menu">
+							  <li><a href="https://www.facebook.com/forberz" rel="nofollow" target="_blank"><img class="social_icon" src="gallery/fb-art.png"></a></li>
+							  <li><a href="https://www.google.com/+Forberz" rel="nofollow" target="_blank"><img class="social_icon" src="gallery/g-plus.png"></a></li>
+							  <li><a href="https://www.pinterest.com/forberz" rel="nofollow" target="_blank"><img class="social_icon" src="gallery/picon.png"></a></li>
+							  <li><a href="https://www.instagram.com/forberz" rel="nofollow" target="_blank"><img class="social_icon" src="gallery/inst.png"></a></li>
+							  <li><a href="https://www.youtube.com/channel/UCAbqdXaaKgwwDavvTwkQ8yQ" rel="nofollow" target="_blank"><img class="social_icon" src="gallery/ycon.png"></a></li>
+					</ul></td>
 					</table>
 					
 				</div>
