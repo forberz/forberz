@@ -1,3 +1,4 @@
+<h2 class="feedback_header"><?=$DICT['feedback']?></h2>
 <div id="disqus_thread"></div>
 <script>
 

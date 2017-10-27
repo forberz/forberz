@@ -134,7 +134,8 @@ INSERT INTO `dict` (`id`, `lang_key`, `lang_he`, `lang_en`, `lang_ru`) VALUES
 (67, 'jobs_text', 'ברגע זה אין משרות פנויות בחברה.', 'No open vacancies at the moment.', 'В данный момент нет открытых вакансий.'),
 (68, 'ammount', 'כמות', 'Qty.', 'Кол.'),
 (69, 'coupon', 'קוד קופון', 'Coupon code', ''),
-(70, 'tips', 'טיפים', 'Tips', '');
+(70, 'tips', 'טיפים', 'Tips', ''),
+(71, 'feedback', 'תגובות', 'Feedback', '');
 
 -- --------------------------------------------------------
 

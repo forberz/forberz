@@ -142,9 +142,15 @@ img.about_logo {
     width: 70%;
 }
 
+h2.feedback_header {
+	margin-top: 5rem;
+	text-align: center;
+	font-size: 2rem;
+}
+
 #disqus_thread {
-    width: 70%;
-    margin: 5rem auto;
+	width: 70%;
+	margin: 1rem auto 5rem auto;
 }
 
 @media screen and (max-width: 1000px) {
