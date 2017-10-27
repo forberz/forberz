@@ -12,9 +12,13 @@ if (strpos($current_page, 'index.php') === false && $current_page !== '' && $cur
 	<div class="black_wrap">
 	<div class="social">
 		<ul class="lang_menu">  
-		  <li><a href="<?= $current_page ?>?lang=he<?= $ID ? '&id=' . $ID : '' ?>" <?= $LANG === 'he' ? 'class="grey"' : ''?>>עברית</a></li>
-		  <!-- <li><a href="<?= $current_page ?>?lang=ru<?= $ID ? '&id=' . $ID : '' ?>" <?= $LANG === 'ru' ? 'class="grey"' : ''?>>Русский</a></li> -->
-		  <li><a href="<?= $current_page ?>?lang=en<?= $ID ? '&id=' . $ID : '' ?>" <?= $LANG === 'en' ? 'class="grey"' : ''?>>English</a></li>
+			<?php
+				$LANGS_TITLES = array('he' => 'עברית', /*'ru' => 'Русский', */'en' => 'English');
+			
+				foreach ($LANGS_TITLES AS $L => $LT) {
+					echo '<li><a href="'.$current_page.'?lang='.$L.($ID ? '&id=' . $ID : '').'" '.($LANG === $L ? 'class="grey"' : '').'>'.$LT.'</a></li>';
+				}
+			?>
 		</ul>
 	</div>
 	<div class="top">

@@ -80,7 +80,8 @@ while ($row = $result->fetch_assoc()) {
 						<input type="hidden" name="charset" value="utf-8">
 						<input type="hidden" name="currency_code" value="<?= $LANG === 'he' ? 'ILS' : 'USD' ?>">
 						<input type="hidden" name="lc" value="US">
-						<input type="hidden" name="item_name" id="item_name_<?=$row['id']?>" value="<?=htmlentities($row['title'].' - '.$row['subtitle'])?>">
+						<input type="hidden" name="item_name" id="item_name_<?=$row['id']?>" 
+							value="<?=htmlentities(strip_tags($row['title']).' - '.strip_tags($row['subtitle']))?>">
 						<input type="hidden" name="item_number" value="9">
 						<!-- <input type="hidden" name="invoice" value="5906270250f"> -->
 						<input type="hidden" name="amount" id="item_price_<?=$row['id']?>" value="<?=$prices[0]?>">
@@ -99,8 +100,20 @@ while ($row = $result->fetch_assoc()) {
 						<input type="image" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" border="0" name="submit" 
 							alt="PayPal - The safer, easier way to pay online!" id="buynow">
 						
-						
 						<span class="buy_info"><?= $DICT['buyshortterm']?></span>
+						
+						<div class="main">
+							<h2><?= $DICT['tips']?></h2>
+							<ul class="other_point">
+							<?php
+								$points = explode(" @@ ", $row['howtotips']);
+								
+								foreach ($points as $p) {
+									echo '<li>'.$p.'</li>';
+								}
+							?>
+							</ul>
+						</div>
 					</form>
 				<?php } ?>
 			</div>
@@ -186,7 +199,7 @@ while ($row = $result->fetch_assoc()) {
 	</div>
 	
 	<?php
-	if (isset($_GET['id'])) {
+	if ($ID) {
 		include('product_page_bottom.php');
 	}
 }

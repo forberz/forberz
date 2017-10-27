@@ -18,7 +18,11 @@ $prev_area = '';
 	<div class="main" id="gallery">
 	<?php
 		while ($row = $result->fetch_assoc()) {?>
-				<div class="gallery-img" style="background-image: url('<?=$row['thumb']?>')" onclick="choosePic('<?=trim($row['img'])?>', '<?=trim(str_replace("'", "\\'", $row['title']))?>', '<?=trim(str_replace("'", "\\'", $row['subtitle']))?>', <?=isset($row['video']) ? "'".trim($row['video'])."'" : 'null' ?>)">
+				<div class="gallery-img" style="background-image: url('<?=$row['thumb']?>')" onclick="choosePic(
+						'<?=trim($row['img'])?>', 
+						'<?=trim(str_replace("'", "\\'", htmlspecialchars($row['title'])))?>', 
+						'<?=trim(str_replace("'", "\\'", htmlspecialchars($row['subtitle'])))?>', 
+						<?=isset($row['video']) ? "'".trim($row['video'])."'" : 'null' ?>)">
 					<div class="fader"><b><?=$row['title']?></b><br><?=$row['subtitle']?></div>
 					<?php if (isset($row['video'])) { ?><div class="videomark">VIDEO</div><?php } ?>
 				</div>
