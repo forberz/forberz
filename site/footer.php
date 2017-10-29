@@ -36,32 +36,32 @@
 					
 				</div>
 				<ul class="footer_menu">
-					<li class="foot_li"><a href="/"><?= $DICT['main']?></a></li>
-					<li><a href="site/about_forberz.php"><?= $DICT['about_forberz']?></a></li>
-					<li><a href="site/shops.php"><?= $DICT['wherebuy']?></a></li>
-					<li><a href="site/affiliate.php"><?= $DICT['affiliate']?></a></li>
-					<li><a href="site/jobs.php"><?= $DICT['jobs']?></a></li>
-					<li><a href="site/contact.php"><?= $DICT['contact']?></a></li>
+					<li class="foot_li"><a href="/<?=get_lang()?>"><?= $DICT['main']?></a></li>
+					<li><a href="site/about_forberz.php<?=get_lang()?>"><?= $DICT['about_forberz']?></a></li>
+					<li><a href="site/shops.php<?=get_lang()?>"><?= $DICT['wherebuy']?></a></li>
+					<li><a href="site/affiliate.php<?=get_lang()?>"><?= $DICT['affiliate']?></a></li>
+					<li><a href="site/jobs.php<?=get_lang()?>"><?= $DICT['jobs']?></a></li>
+					<li><a href="site/contact.php<?=get_lang()?>"><?= $DICT['contact']?></a></li>
 				</ul>
 				<!-- <ul class="footer_menu">
-					<li class="foot_li"><a href="site/guide.php"><?= $DICT['guide']?></a></li>	
+					<li class="foot_li"><a href="site/guide.php<?=get_lang()?>"><?= $DICT['guide']?></a></li>
 					<?php
 						$result = $DB->query("SELECT id, footer_{$LANG} AS title
 							FROM `guide` ORDER BY id LIMIT 5");
 
 						while ($row = $result->fetch_assoc()) {
-							echo '<li><a href="site/guide.php?id='.$row['id'].'">'.$row['title'].'</a></li>';
+							echo '<li><a href="site/guide.php?id='.$row['id'].get_lang(false).'">'.$row['title'].'</a></li>';
 						}
 					?>
 				</ul> -->
 				<ul class="footer_menu">
-					<li class="foot_li"><a href="site/catalogue.php?limit=5"><?= $DICT['cata']?></a></li>
+					<li class="foot_li"><a href="site/catalogue.php?limit=5<?=get_lang(false)?>"><?= $DICT['cata']?></a></li>
 					<?php
 						$result = $DB->query("SELECT id, footer_{$LANG} AS title
 							FROM `products` ORDER BY id LIMIT 5");
 
 						while ($row = $result->fetch_assoc()) {
-							echo '<li><a href="site/catalogue.php?id='.$row['id'].'">'.$row['title'].'</a></li>';
+							echo '<li><a href="site/catalogue.php?id='.$row['id'].get_lang(false).'">'.$row['title'].'</a></li>';
 						}
 					?>
 				</ul>

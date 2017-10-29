@@ -66,13 +66,17 @@ switch ($PAGE) {
 }
 $TITLE = strip_tags($result->fetch_assoc()['title']);
 
+function get_lang($is_first=true) {
+	return $GLOBALS['LANG'] === 'en' ? '' : ($is_first ? '?' : '&') . 'lang=' . $GLOBALS['LANG'];
+}
+
 ?><!DOCTYPE html>
 <html lang="<?= $LANG?>">
 	<head>
 		<?php 
 			foreach ($LANGS as $L) {
 				if ($L !== $LANG) {
-					echo '<link rel="alternate" href="?lang='.$L.'" hreflang="'.$L.'">';
+					echo '<link rel="alternate" href="?lang='.$L.($ID ? '&id='.$ID : '').'" hreflang="'.$L.'">';
 				}
 			}
 			

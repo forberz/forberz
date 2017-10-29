@@ -52,8 +52,7 @@ while ($row = $result->fetch_assoc()) {
 			<h4><?=$row['icons']?></h4>
 		</div>
 
-		<div class="catdiv" <?= $ID ? '' : 
-						'onclick="document.location=\'site/catalogue.php?id=' . $row['id'] . '\'"' ?>>
+		<div class="catdiv" <?= $ID ? '' : 'onclick="document.location=\'site/catalogue.php?id=' . $row['id'] . get_lang(false) . '\'"' ?>>
 			<div class="prod_img_buy <?= $ID ? 'product' : '' ?>">
 				<img class="product_eng" src="<?=$row['image']?>" alt="<?=$row['img_alt']?>" />
 				<?php if ($ID) { ?>
@@ -188,8 +187,8 @@ while ($row = $result->fetch_assoc()) {
 						echo mb_substr(strip_tags($row['maintext']), 0, 300, 'utf-8') . '...';
 						?>
 							<div class="buttons_before_prod">
-								<a href="site/catalogue.php?id=<?=$row['id']?>" class="cat_nav"><?= $DICT['moreinfo']?></a>
-								<a href="site/catalogue.php?id=<?=$row['id']?>" class="cat_nav"><?= $DICT['buybtn']?></a>
+								<a href="site/catalogue.php?id=<?=$row['id'].get_lang(false)?>" class="cat_nav"><?= $DICT['moreinfo']?></a>
+								<a href="site/catalogue.php?id=<?=$row['id'].get_lang(false)?>" class="cat_nav"><?= $DICT['buybtn']?></a>
 							</div>
 						<?php
 					} 
