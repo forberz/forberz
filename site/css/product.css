@@ -40,7 +40,7 @@ div.cat_wrap, div.cat_wrap * {
     cursor:pointer;
 }
 div.product_header {
-    background-color: #000029;
+    background-color: #011638;
     height: auto;
     width: 88.7%;
     margin: 0 auto;
@@ -49,7 +49,7 @@ div.product_header {
 }
 div.product_icons {
     width: 88.7%;
-    background-color: green;
+    background-color: #009900;
     height: auto;
     margin: 0 auto;
     padding: 0.5rem 1rem;
@@ -59,7 +59,7 @@ div.prod_img_buy {
     width: 30%;
     min-width: 280px;
     min-height: 100px;
-    background-color: #050505;
+    background-color: #000000;
     display: inline-block;
     margin: 0 auto;
     padding: 0;
@@ -114,7 +114,7 @@ select.sel {
 .payment_btn input[type="submit"] {
     transition: background .2s ease-in-out;
     color: #fff;
-    background: #000039;
+    background: #031926;
     font-size: 2em;
     cursor: pointer;
     border: 0;
@@ -126,7 +126,7 @@ select.sel {
     border-radius: 3px;
 }
 .payment_btn input[type="submit"]:hover {
-    background: #000066;
+    background: #009900;
 }
 .payment_btn input[type="number"] {
     width: 4rem;
@@ -231,13 +231,13 @@ ul.other_point li{
     margin: 0 auto;
 }
 .product_header.black h2 {
-    color: lightgrey;
+    color: #EAEAEA;
 }
 span.cat_sub {
     font-size: 0.7em;
     display: inline-block;
-    color: lightgrey;
+    color: #D5D5D5;
 }
 h1.fship {
-    color: orange;
+    color: #FFA400;
 }

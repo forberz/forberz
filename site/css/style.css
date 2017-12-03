@@ -142,6 +142,20 @@ img.about_logo {
     width: 70%;
 }
 
-@media screen and (max-width: 1000px) {
+h2.feedback_header {
+	margin-top: 5rem;
+	text-align: center;
+	font-size: 2rem;
+}
 
+#disqus_thread {
+	width: 70%;
+	margin: 1rem auto 5rem auto;
+}
+
+@media screen and (max-width: 1000px) {
+	#disqus_thread {
+	    width: 100%;
+	    margin: 5rem auto 0 auto;
+	}
 }

@@ -17,7 +17,7 @@ $result = $DB->query("SELECT
 	<span class="highline"><?=$DICT['main_p']?></span>
 </div> -->
 
-<div class="slide_img">
+<!-- <div class="slide_img">
 	<?php while ($row = $result->fetch_assoc()) {?>
     <div><img src="<?=$row['img']?>"></div>
     <?php }?>
@@ -35,7 +35,7 @@ $result = $DB->query("SELECT
  			autoplaySpeed: 5000
       });
     });
-  </script>
+  </script> -->
 
 <div class="main_mii">
 	<div class="main_mii_title">
@@ -54,7 +54,7 @@ $result = $DB->query("SELECT id, prod_id, img, thumb,
 					WHERE id IN (106,107,108,109,110,111,112,113) ORDER BY id");
 ?>
 
-<div class="main_clients">
+<!-- <div class="main_clients">
 	<div class="main_clients_title">
 		<h2><i><?= $DICT['clients']?></i></h2>
 	</div>
@@ -63,7 +63,7 @@ $result = $DB->query("SELECT id, prod_id, img, thumb,
     	<div class="client_logo"><img class="client_logo" src="<?=$row['img']?>"></div>
     	<?php }?>
 	</div>
-</div>
+</div> -->
 
 <div class="main_natural">
 	<div class="main_natural_title">
@@ -74,7 +74,7 @@ $result = $DB->query("SELECT id, prod_id, img, thumb,
 	</div>
 </div>
 
-<div class="main_nosilicone">
+<!-- <div class="main_nosilicone">
 	<div class="main_nosilicone_title">
 		<h1><?= $DICT['nosilicone_title']?></h1>
 	</div>
@@ -91,12 +91,12 @@ $result = $DB->query("SELECT id, prod_id, img, thumb,
 		<?= $DICT['easyuse_text']?>
 	</div>
 </div>
-
-<div class="main_reviews">
+ -->
+<!-- <div class="main_reviews">
 	<div class="main_reviews_title">
 		<h1><?= $DICT['reviews']?></h1>
 	</div>
 	<div class="main_reviews_text">
 		<?= $DICT['review_text']?>
 	</div>
-</div>
+</div> -->
