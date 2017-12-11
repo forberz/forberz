@@ -74,6 +74,29 @@ $result = $DB->query("SELECT id, prod_id, img, thumb,
 	</div>
 </div>
 
+<div class="ecoflex">
+	<div class="ecosqr">
+		<div class="ecoico">
+		</div>
+		<div class="ecotxt">
+			<h1>100% NATURAL</h1>
+		</div>
+	</div>
+	<div class="ecosqr">
+		<div class="ecoico">
+		</div>
+		<div class="ecotxt">
+			<h1>LONG LASTING</h1>
+		</div>
+	</div>
+	<div class="ecosqr">
+		<div class="ecoico">
+		</div>
+		<div class="ecotxt">
+			<h1>NO SILICONE</h1>
+		</div>
+	</div>
+</div>
 <!-- <div class="main_nosilicone">
 	<div class="main_nosilicone_title">
 		<h1><?= $DICT['nosilicone_title']?></h1>

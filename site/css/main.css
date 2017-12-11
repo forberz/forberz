@@ -8,6 +8,27 @@ div.main_mii {
 	justify-content: space-between;
 	align-items: center;
 }
+
+div.ecoflex {
+    width: 91.1%;
+    margin: 0 auto;
+    margin-top: 0.5rem;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+}
+
+div.ecosqr {
+    background-color: rgba(0,0,0,0.9);
+    width: 32.3%;
+    border: 3px solid #009900
+}
+
+div.ecotxt {
+    padding: 0.5rem;
+}
+
 div.main_mii_title {
 	margin: 2rem auto;
 }
