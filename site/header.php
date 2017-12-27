@@ -56,7 +56,7 @@ if ($result = $DB->query("SELECT lang_key, lang_{$LANG} AS word FROM dict")) {
 }
 
 $TITLE = "Forberz - Natural Detailing Products for Your Car and Bike";
-$PAGE = preg_replace('/(.*\/)|(\.php)/', '', $_SERVER['PHP_SELF']);
+$PAGE = substr(preg_replace('/(.*\/)|(\.php)/', '', $_SERVER['PHP_SELF']), 0, 32); // Taking only first 32 chars for safety
 switch ($PAGE) {
 	case 'catalogue':
 		if ($ID) {
