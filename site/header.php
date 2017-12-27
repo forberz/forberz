@@ -7,6 +7,14 @@ date_default_timezone_set('UTC');
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+if(preg_match('/www./', $_SERVER['HTTP_HOST'])) {
+	$_SERVER['HTTP_HOST'] = str_replace('www.', '', $_SERVER['HTTP_HOST']);
+	$redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+	header('HTTP/1.1 301 Moved Permanently');
+	header('Location: ' . $redirect);
+	exit();
+}
+
 if(!is_dir('C:\\Windows') && !is_dir('/Users') && (empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] == "off")) {
 	$redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 	header('HTTP/1.1 301 Moved Permanently');
@@ -14,23 +22,25 @@ if(!is_dir('C:\\Windows') && !is_dir('/Users') && (empty($_SERVER['HTTPS']) || $
 	exit();
 }
 
-session_start();
+$SITES = array(
+	'en' => 'forberz.com',
+	'he' => 'forberz.co.il',
+	// 'ru' => 'forberz.ru',
+	'forberz.com' => 'en',
+	'forberz.co.il' => 'he'/*,
+	'forberz.ru' => 'ru'*/
+);
 
-if (preg_match('/(www.)?forberz.co.il/', $_SERVER['HTTP_HOST'])) {
-	header('HTTP/1.1 301 Moved Permanently');
-	header('Location: https://forberz.com' . $_SERVER['SCRIPT_URL'] . '?lang=he&' . $_SERVER['QUERY_STRING']);
-	exit();
-}
+session_start();
 
 // $LANGS = array('he', 'en', 'ru');
 $LANGS = array('he', 'en');
 
-$LANG = isset($_GET['lang']) ? strtolower($_GET['lang']) : 
-		(isset($_SESSION['lang']) ? strtolower($_SESSION['lang']) : 'en');
-
-if (!in_array($LANG, $LANGS)) {
-	$LANG = 'en';
+$LANG = 'en';
+if (in_array($_SERVER['HTTP_HOST'], $SITES)) {
+	$LANG = $SITES[$_SERVER['HTTP_HOST']];
 }
+
 $ID = isset($_GET['id']) ? intval($_GET['id']) : false;
 $LIMIT = isset($_GET['limit']) ? intval($_GET['limit']) : false;
 $_SESSION['lang'] = $LANG;
@@ -67,7 +77,8 @@ switch ($PAGE) {
 $TITLE = strip_tags($result->fetch_assoc()['title']);
 
 function get_lang($is_first=true) {
-	return $GLOBALS['LANG'] === 'en' ? '' : ($is_first ? '?' : '&') . 'lang=' . $GLOBALS['LANG'];
+	return '';
+	// return $GLOBALS['LANG'] === 'en' ? '' : ($is_first ? '?' : '&') . 'lang=' . $GLOBALS['LANG'];
 }
 
 ?><!DOCTYPE html>
@@ -86,7 +97,7 @@ function get_lang($is_first=true) {
 			} elseif (is_dir('/Users')) {
 				echo '<base href="http://127.0.0.1/forberz/" />';
 			} else {
-				echo '<base href="https://www.forberz.com/" />';
+				echo '<base href="https://' . $SITES[$LANG] . '/" />';
 			}
 		?>
 		

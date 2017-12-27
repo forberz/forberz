@@ -16,7 +16,7 @@ if (strpos($current_page, 'index.php') === false && $current_page !== '' && $cur
 				$LANGS_TITLES = array('he' => 'עברית', /*'ru' => 'Русский', */'en' => 'English');
 			
 				foreach ($LANGS_TITLES AS $L => $LT) {
-					echo '<li><a href="'.$current_page.'?lang='.$L.($ID ? '&id=' . $ID : '').'" '.($LANG === $L ? 'class="grey"' : '').'>'.$LT.'</a></li>';
+					echo '<li><a href="https://'.$SITES[$L].'/'.$current_page.'?'.($ID ? 'id=' . $ID : '').'" '.($LANG === $L ? 'class="grey"' : '').'>'.$LT.'</a></li>';
 				}
 			?>
 		</ul>
