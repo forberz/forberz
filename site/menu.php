@@ -1,13 +1,3 @@
-<?php
-$current_page = pathinfo($_SERVER['PHP_SELF'])['basename'];
-
-if (strpos($current_page, 'index.php') === false && $current_page !== '' && $current_page !== '/') {
-	$current_page = 'site/' . $current_page;
-} else {
-	$current_page = '';
-}
-
-?>
 <header>
 	<div class="black_wrap">
 	<div class="social">
@@ -16,7 +6,7 @@ if (strpos($current_page, 'index.php') === false && $current_page !== '' && $cur
 				$LANGS_TITLES = array('he' => 'עברית', /*'ru' => 'Русский', */'en' => 'English');
 			
 				foreach ($LANGS_TITLES AS $L => $LT) {
-					echo '<li><a href="https://'.$SITES[$L].'/'.$current_page.'?'.($ID ? 'id=' . $ID : '').'" '.($LANG === $L ? 'class="grey"' : '').'>'.$LT.'</a></li>';
+					echo '<li><a href="https://'.$SITES[$L].'/'.$current_page.($ID ? '?id=' . $ID : '').'" '.($LANG === $L ? 'class="grey"' : '').'>'.$LT.'</a></li>';
 				}
 			?>
 		</ul>

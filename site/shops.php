@@ -33,10 +33,11 @@ $prev_area = '';
 			?>
 
 			<tr>
-				<td><?php if ($prev_area !== $row['area']) {
+				<td class="pc"><?php if ($prev_area !== $row['area']) {
 					$prev_area = $row['area'];
 					echo $row['area'];
 				} ?></td>
+				<td class="mobile"><?= $row['area']; ?></td>
 				<td><?= $row['city']; ?></td>
 				<td><?= $row['store']; ?></td>
 				<td class="pc"><?= $row['adress']; ?></td>
