@@ -20,7 +20,10 @@
 	
 	foreach ($pages as $p) {
 		foreach ($LANGS as $l) {
-			echo '<url><loc>https://'.$SITES[$l].'/'.$p.($l !== 'en' ? '?lang='.$l : '').'</loc><priority>'.(!$p && $l === 'en' ? 1 : 0.8).'</priority></url>';
+			echo '<url>'.
+				'<loc>https://'.$SITES[$l].'/'.$p.'</loc>'.
+				'<priority>'.(!$p && $l === 'en' ? 1 : 0.8).'</priority>'.
+			'</url>';
 		}
 	}
 	
@@ -32,9 +35,9 @@
 			for ($i = 1; $i <= $row['c']; ++$i) {
 				foreach ($LANGS as $l) {
 					echo '<url>'.
-							'<loc>https://'.$SITES[$l].'/'.$p.'?id='.$i.($l !== 'en' ? '?lang='.$l : '').
-							'</loc><priority>'.($table === 'products' ? 0.7 : 0.5).'</priority>'.
-						'</url>';
+						'<loc>https://'.$SITES[$l].'/'.$p.'?id='.$i.'</loc>'.
+						'<priority>'.($table === 'products' ? 0.7 : 0.5).'</priority>'.
+					'</url>';
 				}
 			}
 		}
