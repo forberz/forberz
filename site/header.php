@@ -14,13 +14,13 @@ if(!is_dir('C:\\Windows') && !is_dir('/Users') && (empty($_SERVER['HTTPS']) || $
 	exit();
 }
 
-if ($_SERVER['HTTP_HOST'] === 'forberz.co.il') {
+session_start();
+
+if (preg_match('/(www.)?forberz.co.il/', $_SERVER['HTTP_HOST'])) {
 	header('HTTP/1.1 301 Moved Permanently');
-	header('Location: https://forberz.com');
+	header('Location: https://forberz.com' . $_SERVER['SCRIPT_URL'] . '?lang=he&' . $_SERVER['QUERY_STRING']);
 	exit();
 }
-
-session_start();
 
 // $LANGS = array('he', 'en', 'ru');
 $LANGS = array('he', 'en');
