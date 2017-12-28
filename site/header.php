@@ -45,6 +45,10 @@ $ID = isset($_GET['id']) ? intval($_GET['id']) : false;
 $LIMIT = isset($_GET['limit']) ? intval($_GET['limit']) : false;
 $_SESSION['lang'] = $LANG;
 
+if ($ID === 0) {
+	$ID = false;
+}
+
 @include 'conn.php';
 @include '../conn.php';
 
@@ -76,18 +80,7 @@ switch ($PAGE) {
 }
 $TITLE = strip_tags($result->fetch_assoc()['title']);
 
-$current_page = pathinfo($_SERVER['PHP_SELF'])['basename'];
-
-if (strpos($current_page, 'index.php') === false && $current_page !== '' && $current_page !== '/') {
-	$current_page = 'site/' . $current_page;
-} else {
-	$current_page = '';
-}
-
-function get_lang($is_first=true) {
-	return '';
-	// return $GLOBALS['LANG'] === 'en' ? '' : ($is_first ? '?' : '&') . 'lang=' . $GLOBALS['LANG'];
-}
+$current_page = preg_replace('/(index)?\.php/', '', pathinfo($_SERVER['PHP_SELF'])['basename']);
 
 ?><!DOCTYPE html>
 <html lang="<?= $LANG?>">
@@ -95,7 +88,7 @@ function get_lang($is_first=true) {
 		<?php 
 			foreach ($LANGS as $L) {
 				if ($L !== $LANG) {
-					echo '<link rel="alternate" href="https://'.$SITES[$L].'/'.$current_page.($ID ? '?id='.$ID : '').'" hreflang="'.$L.'">';
+					echo '<link rel="alternate" href="https://'.$SITES[$L].'/'.$current_page.($ID ? '/' . $ID : '').'" hreflang="'.$L.'">';
 				}
 			}
 			

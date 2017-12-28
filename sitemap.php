@@ -13,21 +13,18 @@
 	
 	// var_dump($LANGS);
 	
-	$pages = array(
-		'', 'catalogue.php', 'shops.php', 'protreat.php', 'gallery.php', 'about_forberz.php', 
-		'about_detailing.php', 'affiliate.php', 'jobs.php', 'contact.php'
-	);
+	$pages = array('', 'catalogue', 'shops', 'protreat', 'gallery', 'about_forberz', 'about_detailing', 'affiliate', 'jobs', 'contact');
 	
 	foreach ($pages as $p) {
 		foreach ($LANGS as $l) {
 			echo '<url>'.
-				'<loc>https://'.$SITES[$l].'/'.$p.'</loc>'.
+				'<loc>https://'.$SITES[$l].'/'.$p.($p ? '/' : '').'</loc>'.
 				'<priority>'.(!$p && $l === 'en' ? 1 : 0.8).'</priority>'.
 			'</url>';
 		}
 	}
 	
-	$pages = array('catalogue.php' => 'products', 'guides.php' => 'guide');
+	$pages = array('catalogue' => 'products', 'guide' => 'guide');
 	
 	foreach ($pages as $p => $table) {
 		if ($result = $DB->query("SELECT COUNT(*) AS c FROM ".$table)) {
@@ -35,7 +32,7 @@
 			for ($i = 1; $i <= $row['c']; ++$i) {
 				foreach ($LANGS as $l) {
 					echo '<url>'.
-						'<loc>https://'.$SITES[$l].'/'.$p.'?id='.$i.'</loc>'.
+						'<loc>https://'.$SITES[$l].'/'.$p.'/'.$i.'</loc>'.
 						'<priority>'.($table === 'products' ? 0.7 : 0.5).'</priority>'.
 					'</url>';
 				}
