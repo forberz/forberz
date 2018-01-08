@@ -4,7 +4,8 @@ img.footer_logo {
     padding: 1.5em 1em
 }
 div.footer_main {
-    background-color: #0A0A0A;
+    background-color: #000;
+    border-top: 1px solid #222;
     height: auto;
     width: 100%;
     margin: auto;
@@ -17,14 +18,14 @@ div.footer_flex {
     width: 90%;
     margin: auto;
     justify-content: space-between;
-    background-color: #0A0A0A;
+    background-color: #000;
 }
 div.footer_info {
     margin: auto;
     padding: 0;
     width: auto;
     height: auto;
-    background-color: #0A0A0A;
+    background-color: #000;
     margin-top: 1em;
 }
 div.footer_contact {
@@ -32,13 +33,13 @@ div.footer_contact {
     padding: 0;
     width: 15em;
     height: auto;
-    background-color: #0A0A0A;
+    background-color: #000;
     margin-top: 1em;
 }
 div.footer_bottom_back {
     width: auto;
     margin: auto;
-    background-color: #0E0E0E;
+    background-color: #000;
 }
 div.footer_bottom {
     width: 90%;
@@ -56,8 +57,7 @@ ul.footer_menu {
     list-style-type: none;
 }
 .foot_li a {
-    transition: color .2s ease-in-out;
-    font-size: 0.85em; 
+    transition: color .2s ease-in-out; 
     color: #aaa;
 }
 .foot_li a:hover {

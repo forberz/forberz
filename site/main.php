@@ -17,7 +17,7 @@ $result = $DB->query("SELECT
 	<span class="highline"><?=$DICT['main_p']?></span>
 </div> -->
 
-<!-- <div class="slide_img">
+<div class="slide_img">
 	<?php while ($row = $result->fetch_assoc()) {?>
     <div><img src="<?=$row['img']?>"></div>
     <?php }?>
@@ -35,16 +35,16 @@ $result = $DB->query("SELECT
  			autoplaySpeed: 5000
       });
     });
-  </script> -->
+  </script>
 
-<div class="main_mii">
+<!-- <div class="main_mii">
 	<div class="main_mii_title">
 		<h1><?= $DICT['mii_title']?></h1>
 	</div>
 	<div class="main_mii_text">
 		<?= $DICT['mii_text']?>
 	</div>
-</div>
+</div> -->
 
 <?php
 $result = $DB->query("SELECT id, prod_id, img, thumb,
@@ -54,46 +54,36 @@ $result = $DB->query("SELECT id, prod_id, img, thumb,
 					WHERE id IN (106,107,108,109,110,111,112,113) ORDER BY id");
 ?>
 
-<!-- <div class="main_clients">
-	<div class="main_clients_title">
-		<h2><i><?= $DICT['clients']?></i></h2>
-	</div>
-	<div class="main_clients_text">
-		<?php while ($row = $result->fetch_assoc()) {?>
-    	<div class="client_logo"><img class="client_logo" src="<?=$row['img']?>"></div>
-    	<?php }?>
-	</div>
-</div> -->
 
-<div class="main_natural">
+<!-- <div class="main_natural">
 	<div class="main_natural_title">
 		<h1><?= $DICT['natural_title']?></h1>
 	</div>
 	<div class="main_natural_text">
 		<?= $DICT['natural_text']?>
 	</div>
-</div>
+</div> -->
 
 <div class="ecoflex">
-	<div class="ecosqr">
+	<div class="ecosqr1">
 		<div class="ecoico">
 		</div>
 		<div class="ecotxt">
-			<h1>100% NATURAL</h1>
+			<h1>Israeli Technology<br>Original Recipe</h1>
 		</div>
 	</div>
 	<div class="ecosqr">
 		<div class="ecoico">
 		</div>
 		<div class="ecotxt">
-			<h1>LONG LASTING</h1>
+			<h1>100% Natural<br>Eco Friendly</h1>
 		</div>
 	</div>
-	<div class="ecosqr">
+	<div class="ecosqr2">
 		<div class="ecoico">
 		</div>
 		<div class="ecotxt">
-			<h1>NO SILICONE</h1>
+			<h1>Professional Detailing<br>Paint Shop Safe</h1>
 		</div>
 	</div>
 </div>
@@ -115,11 +105,22 @@ $result = $DB->query("SELECT id, prod_id, img, thumb,
 	</div>
 </div>
  -->
-<!-- <div class="main_reviews">
+ <br>
+<div class="main_reviews">
 	<div class="main_reviews_title">
 		<h1><?= $DICT['reviews']?></h1>
 	</div>
 	<div class="main_reviews_text">
 		<?= $DICT['review_text']?>
 	</div>
-</div> -->
+</div>
+<div class="main_clients">
+	<div class="main_clients_title">
+		<h2><?= $DICT['clients']?></h2>
+	</div>
+	<div class="main_clients_text">
+		<?php while ($row = $result->fetch_assoc()) {?>
+    	<div class="client_logo"><img class="client_logo" src="<?=$row['img']?>"></div>
+    	<?php }?>
+	</div>
+</div>

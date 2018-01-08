@@ -3,7 +3,8 @@ input {
 }
 
 div.black_wrap {
-    background-color: #0A0A0A;
+    background-color: #000;
+    border-bottom: 1px solid #222;
     height: auto;
     width: 100%;
     margin: 0 auto;
@@ -11,7 +12,7 @@ div.black_wrap {
     border-radius: 0;
 }
 div.social {
-    background-color: #0A0A0A;
+    background-color: #000;
     min-height: 1.5rem;
     height: auto;
     width: 90%;
@@ -54,7 +55,7 @@ ul.lang_menu li {
     padding: 0 0.5rem;
 }
 div.top {
-    background-color: #0A0A0A;
+    background-color: #000;
     height: auto;
     width: 100%;
     margin: auto;
@@ -66,13 +67,13 @@ div.top {
 img.logo {
     margin: 0 auto;
     width: 20em;
-    background-color: rgba(1,22,56,1);
+    background-color: rgba(0,0,0,0.8);
     padding: 2rem 1.5rem 1rem 1.5rem;
     display: block;
     border-radius: 0;
 }
 div.main_menu {
-    background-color: #0A0A0A;
+    background-color: #000;
     min-height: 2rem;
     height: auto;
     width: 90%;
@@ -81,7 +82,7 @@ div.main_menu {
     border-radius: 0;
 }
 ul.main_menu {
-    background-color: #0A0A0A;
+    background-color: #000;
     list-style-type: none;
     padding: 0;
     margin: 0 auto;
