@@ -61,7 +61,7 @@ div.prod_img_buy {
     width: 30%;
     min-width: 280px;
     min-height: 100px;
-    background-color: #000000;
+    background-color: #000;
     display: inline-block;
     margin: 0 auto;
     padding: 0;
@@ -111,24 +111,25 @@ select.sel {
 .payment_btn {
     height: auto;
     margin: 0 auto;
-    padding: 1rem 0.5rem;
+    /*padding: 1rem 0.5rem;*/
 }
 .payment_btn input[type="submit"] {
     transition: background .2s ease-in-out;
     color: #fff;
-    background: #031926;
-    font-size: 2em;
+    background: #000;
+    font-size: 1.7em;
     cursor: pointer;
-    border: 0;
-    margin: 0.5rem 1rem;
-    padding: 0 0.5rem;
-    width: 7em;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    margin: 1rem 1.1rem;
+   /* padding: 0 0.5rem;*/
+    width: 80%;
     height: 1.5em;
     text-align: center;
-    border-radius: 3px;
 }
 .payment_btn input[type="submit"]:hover {
-    background: #009900;
+    color: #FFA400;
+    border: 2px solid #FFA400;
 }
 .payment_btn input[type="number"] {
     width: 4rem;
@@ -209,10 +210,13 @@ ul.other_point li{
     display: inline-block;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 1.2em;
+    font-size: 1.5em;
     text-align: center;
-    background: #000039;
+    background: #000;
     color: #fefefe;
+}
+#coupon_button:hover {
+    color: #FFA400;
 }
 
 .buttons_before_prod, body.rtl .buttons_before_prod {
@@ -239,7 +243,4 @@ span.cat_sub {
     font-size: 0.7em;
     display: inline-block;
     color: #D5D5D5;
-}
-h1.fship {
-    color: #FFA400;
 }

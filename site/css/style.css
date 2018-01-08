@@ -45,7 +45,8 @@ a {
     transition: color .3s ease-in-out;
     color: #fefefe;
     text-decoration: none;
-    padding: 0
+    padding: 0;
+    cursor: pointer;
 }
 a:not(.grey):hover {
     color: orange;

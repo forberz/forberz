@@ -34,7 +34,7 @@ $query = "SELECT
 		GROUP_CONCAT(G.video SEPARATOR ',') AS images_videos
 	FROM `products` AS P 
 		LEFT JOIN `gallery` AS G ON (P.id = G.prod_id)
-	".($ID ? "WHERE P.id = {$ID}" : "")."
+	WHERE active = 1 ".($ID ? " AND P.id = {$ID}" : "")."
 	GROUP BY P.id
 	ORDER BY priority 
 	LIMIT " . ($ID !== false ? 1 : ($LIMIT ? $LIMIT : 100) );
@@ -57,7 +57,7 @@ while ($row = $result->fetch_assoc()) {
 			<div class="prod_img_buy <?= $ID ? 'product' : '' ?>">
 				<img class="product_eng" src="<?=$row['image']?>" alt="<?=$row['img_alt']?>" />
 				<?php if ($ID) { ?>
-					<div class="buy_title"><?=$DICT['pack_size']?></div>
+					<div class="buy_title"><?=$DICT['size']?></div>
 					
 					<select class="sel" onchange="setPrice(this.value, <?=$row['id']?>)">
 					<?php

@@ -3,7 +3,7 @@
 	$images = explode(',', $row['images']);
 	$titles = explode('^^^', $row['images_titles']);
 	$subtitles = explode('^^^', $row['images_subtitles']);
-	$videos = explode(',', $row['images_videos']);
+	$videos = $row['images_videos'] ? explode(',', $row['images_videos']): array();
 	foreach ($images as $k => $img) {
 	  if ($img) { ?>
 		<div class="gallery-img prodgal" style="background-image: url('<?=$img?>')" onclick="choosePic('<?=trim($img)?>', <?=isset($titles[$k]) ? "'".trim(str_replace("'", "\\'", $titles[$k]))."'" : 'null' ?>, <?=isset($subtitles[$k]) ? "'".trim(str_replace("'", "\\'", $subtitles[$k]))."'" : 'null' ?>, <?=isset($videos[$k]) ? "'".trim($videos[$k])."'" : 'null' ?>)">
