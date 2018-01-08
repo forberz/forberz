@@ -85,6 +85,7 @@ $current_page = preg_replace('/(index)?\.php/', '', pathinfo($_SERVER['PHP_SELF'
 ?><!DOCTYPE html>
 <html lang="<?= $LANG?>">
 	<head>
+		<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
 		<?php 
 			foreach ($LANGS as $L) {
 				if ($L !== $LANG) {

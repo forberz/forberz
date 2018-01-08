@@ -1,12 +1,12 @@
 body {
-    background: #1a1a1a;
-    background-image: url("../../img/forberz_back3.png");
+    background: #000;
+    /*background-image: url("../../img/forberz_back3.png");*/
     margin: 0px;
     padding: 0px;
     width: 100%;
     height: 100%;
     color: #fefefe;
-    font-family: "Arial", helvetica, sans-serif; 
+    font-family: 'Varela Round', sans-serif; 
     min-width: 320px;
 }
 
@@ -42,8 +42,7 @@ img.social_icon {
     padding: 0;
 }
 a {
-    transition: color .2s ease-in-out;
-    transition: background-color .2s ease-in-out;
+    transition: color .3s ease-in-out;
     color: #fefefe;
     text-decoration: none;
     padding: 0
@@ -60,12 +59,12 @@ div {
     border-radius: 3px;
 }
 div.main {
-    background-color: #0A0A0A;
+    background-color: #000;
     height: auto;
-    width: 88.7%;
+    width: 91.1%;
     margin: 0 auto;
     margin-top: 1em;
-    padding: 0.5rem 1rem;
+    /*padding: 0.5rem 1rem;*/
 }
 
 div.cat_wrap h2 {
@@ -107,13 +106,12 @@ p {
 
 /*about*/
 div.about_forberz {
-    background-color: #0A0A0A;
+    background-color: #000;
     width: 91.1%;
     min-height: 300px;
     height: 100%;
     margin: 0 auto;
     padding: 0;
-    margin-top: 1rem;
 }
 div.about_side_pic {
     width: auto;

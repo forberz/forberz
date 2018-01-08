@@ -94,10 +94,11 @@ a.cat_nav {
     margin: 0.5rem auto;
     font-size: 1.4em;
     display: block;
-    background: #000039;
+    background: #000;
     border-radius: 3px;
 }
 a.cat_nav:hover {
     color: lightblue;
-    background-color: #000099;
+    background-color: #000;
+    color: #FFA400;
 }

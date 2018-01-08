@@ -4,6 +4,7 @@ include('header.php');
 	<div class="main">
 		<h1><?= $DICT['about_forberz']?></h1>
 		<h4 class="grey"><?= $DICT['about_forberz_sub']?></h4>
+		<br>
 	</div>
 	
 	<div class="about_forberz">

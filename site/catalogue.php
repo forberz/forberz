@@ -5,6 +5,7 @@ if (!isset($_GET['id'])) {
 	<div class="main">
 		<h1><?= $DICT['cata']?></h1>
 		<h4 class="grey"><?= $DICT['cata_sub']?></h4>
+		<br>
 	</div>
 	<?php
 }
@@ -188,7 +189,7 @@ while ($row = $result->fetch_assoc()) {
 						?>
 							<div class="buttons_before_prod">
 								<a href="catalogue/<?=$row['id']?>" class="cat_nav"><?= $DICT['moreinfo']?></a>
-								<a href="catalogue/<?=$row['id']?>" class="cat_nav"><?= $DICT['buybtn']?></a>
+								<!-- <a href="catalogue/<?=$row['id']?>" class="cat_nav"><?= $DICT['buybtn']?></a> -->
 							</div>
 						<?php
 					} 

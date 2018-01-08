@@ -1,13 +1,13 @@
 <div class="footer_main">
 			<div class="footer_flex">
 				<div class="footer_info">
-					<img class="footer_logo" src="img/forberz.png" alt="Forberz - Natural Care and Detailing Products for Cars and Bikes">
+					<a href="/"><img class="footer_logo" src="img/forberz.png" alt="Forberz - Natural Care and Detailing Products for Cars and Bikes"></a>
 				</div>
-				<div class="footer_contact">
+				<!-- <div class="footer_contact">
 					<table class="foot_cont_rtl">
-						<!-- <tr>
+						<tr>
 							<th><h2><?= $DICT['forberz']?></h2></th>
-						</tr> -->
+						</tr>
 						<tr>
 							<td><h4 class="grey"><?= $DICT['adress']?></h4></td>
 							<td colspan="2"><h4><?= $DICT['adresss']?></h4></td>
@@ -31,17 +31,23 @@
 							  <li><a href="https://www.pinterest.com/forberz" rel="nofollow" target="_blank"><img class="social_icon" src="gallery/picon.png"></a></li>
 							  <li><a href="https://www.instagram.com/forberz" rel="nofollow" target="_blank"><img class="social_icon" src="gallery/inst.png"></a></li>
 							  <li><a href="https://www.youtube.com/channel/UCAbqdXaaKgwwDavvTwkQ8yQ" rel="nofollow" target="_blank"><img class="social_icon" src="gallery/ycon.png"></a></li>
-					</ul></td>
+					</ul></td></tr>
 					</table>
 					
-				</div>
+				</div> -->
 				<ul class="footer_menu">
 					<li class="foot_li"><a href="/"><?= $DICT['main']?></a></li>
 					<li><a href="about_forberz/"><?= $DICT['about_forberz']?></a></li>
 					<li><a href="shops/"><?= $DICT['wherebuy']?></a></li>
 					<li><a href="affiliate/"><?= $DICT['affiliate']?></a></li>
-					<li><a href="jobs/"><?= $DICT['jobs']?></a></li>
 					<li><a href="contact/"><?= $DICT['contact']?></a></li>
+					<li><ul class="social_menu">
+							  <li><a href="https://www.facebook.com/forberz" rel="nofollow" target="_blank"><img class="social_icon" src="gallery/fb-art.png"></a></li>
+							  <li><a href="https://www.google.com/+Forberz" rel="nofollow" target="_blank"><img class="social_icon" src="gallery/g-plus.png"></a></li>
+							  <li><a href="https://www.pinterest.com/forberz" rel="nofollow" target="_blank"><img class="social_icon" src="gallery/picon.png"></a></li>
+							  <li><a href="https://www.instagram.com/forberz" rel="nofollow" target="_blank"><img class="social_icon" src="gallery/inst.png"></a></li>
+							  <li><a href="https://www.youtube.com/channel/UCAbqdXaaKgwwDavvTwkQ8yQ" rel="nofollow" target="_blank"><img class="social_icon" src="gallery/ycon.png"></a></li>
+					</ul></li>
 				</ul>
 				<!-- <ul class="footer_menu">
 					<li class="foot_li"><a href="guide/"><?= $DICT['guide']?></a></li>
