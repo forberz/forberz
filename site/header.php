@@ -85,7 +85,6 @@ $current_page = preg_replace('/(index)?\.php/', '', pathinfo($_SERVER['PHP_SELF'
 ?><!DOCTYPE html>
 <html lang="<?= $LANG?>">
 	<head>
-		<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
 		<?php 
 			foreach ($LANGS as $L) {
 				if ($L !== $LANG) {
@@ -126,6 +125,8 @@ $current_page = preg_replace('/(index)?\.php/', '', pathinfo($_SERVER['PHP_SELF'
 		<meta name="description" content="Forberz - 100% Natural Car and Bike Care and Detailing Products">
 		<meta name="author" content="Forberz">
 		<meta name="Copyright" content="Copyright (c) 2013-2017 Forberz, Inc.">
+		
+		<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
 		
 		<?php include "splashscreens.php" ?>
 		
