@@ -64,6 +64,28 @@ $result = $DB->query("SELECT id, prod_id, img, thumb,
 	</div>
 </div> -->
 
+
+<div class="buyflex">
+	<div class="buysqr">
+		<br>
+		<h2>Forberz ReWax Cold White</h2>
+		<br>
+		<img src="img/forberz_rewax_cold_white.jpg">
+	</div>
+	<div class="buysqr">
+		<br>
+		<h2>Forberz ReWax Hot Black</h2>
+		<br>
+		<img src="img/forberz_rewax_hot_black.jpg">
+	</div>
+	<div class="buysqr">
+		<br>
+		<h2>Forberz Jantie</h2>
+		<br>
+		<img src="img/forberz_jantie.jpg">
+	</div>
+</div>
+<br><br>
 <div class="ecoflex">
 	<div class="ecosqr1">
 		<div class="ecoico">
@@ -82,24 +104,6 @@ $result = $DB->query("SELECT id, prod_id, img, thumb,
 	<div class="ecosqr2">
 		<div class="ecoico">
 		</div>
-		<div class="ecotxt">
-			<h1>Professional Detailing<br>Paint Shop Safe</h1>
-		</div>
-	</div>
-</div>
-
-<div class="buyflex">
-	<div class="buysqr">
-		<div class="ecotxt">
-			<h1>Israeli Technology<br>Original Recipe</h1>
-		</div>
-	</div>
-	<div class="buysqr">
-		<div class="ecotxt">
-			<h1>100% Natural<br>Eco Friendly</h1>
-		</div>
-	</div>
-	<div class="buysqr">
 		<div class="ecotxt">
 			<h1>Professional Detailing<br>Paint Shop Safe</h1>
 		</div>
