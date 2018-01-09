@@ -201,7 +201,18 @@ div.main_reviews_text {
     -moz-column-gap: 0 !important; /* Firefox */
     column-gap: 0 !important;
     }
-        
+    
+    div.buyflex, div.ecoflex {
+    display: block;
+    }
+    
+    div.ecosqr, div.ecosqr1, div.ecosqr2 {
+        width: 100%;
+    }
+
+    img.main_prod {
+        width: 100%;
+    }    
         
     }
 

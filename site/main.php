@@ -70,21 +70,21 @@ $result = $DB->query("SELECT id, prod_id, img, thumb,
 		<br>
 		<h2>Forberz ReWax Cold White</h2>
 		<br>
-		<img src="img/forberz_rewax_cold_white.jpg">
+		<img class="main_prod" src="img/forberz_rewax_cold_white.jpg">
 	</div></a>
 	<a href="catalogue/5">
 		<div class="buysqr">
 		<br>
 		<h2>Forberz ReWax Hot Black</h2>
 		<br>
-		<img src="img/forberz_rewax_hot_black.jpg">
+		<img class="main_prod" src="img/forberz_rewax_hot_black.jpg">
 	</div></a>
 	<a href="catalogue/7">
 		<div class="buysqr">
 		<br>
 		<h2>Forberz Jantie</h2>
 		<br>
-		<img src="img/forberz_jantie.jpg">
+		<img class="main_prod" src="img/forberz_jantie.jpg">
 	</div></a>
 </div>
 <br><br>
