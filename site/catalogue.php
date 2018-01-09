@@ -56,23 +56,30 @@ while ($row = $result->fetch_assoc()) {
 		<div class="catdiv" <?= $ID ? '' : 'onclick="document.location=\'catalogue/' . $row['id'] . '\'"' ?>>
 			<div class="prod_img_buy <?= $ID ? 'product' : '' ?>">
 				<img class="product_eng" src="<?=$row['image']?>" alt="<?=$row['img_alt']?>" />
-				<?php if ($ID) { ?>
-					<div class="buy_title"><?=$DICT['size']?></div>
-					
-					<select class="sel" onchange="setPrice(this.value, <?=$row['id']?>)">
-					<?php
-						$prices = explode(',', $row['prices']);
-						$sizes = explode(',', $row['sizes']);
-
-						foreach($prices as $k => $p) {
-							echo '<option value="'.$p.'">'.$sizes[$k].'</option>';
-						}
-					?>
-					</select>
-					
-					<h4><b id="item_show_price_<?=$row['id']?>"><?=$prices[0]?></b> <?=$DICT['currency']?></h4>
-
+								
 					<form class="payment_btn" id="rideeffect" name="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+				<?php if ($ID) { ?>
+				<table class="buy">
+					<tr valign="bottom">
+						<td>
+							<div class="buy_title"><?=$DICT['size']?></div>
+						</td>
+						<td>
+							<select class="sel" onchange="setPrice(this.value, <?=$row['id']?>)">
+							<?php
+							$prices = explode(',', $row['prices']);
+							$sizes = explode(',', $row['sizes']);
+
+							foreach($prices as $k => $p) {
+							echo '<option value="'.$p.'">'.$sizes[$k].'</option>';
+							}
+							?>
+							</select>
+						</td>
+						<td>
+							<h1 class="price"><b id="item_show_price_<?=$row['id']?>"><?=$prices[0]?></b></h1><h5 class="curr"><?=$DICT['currency']?></h5>
+						</td>
+					</tr>
 						<input type="hidden" name="cmd" value="_xclick">
 						<input type="hidden" name="business" value="sales@forberz.com">
 						<input type="hidden" name="cpp_header_image" value="https://i.imgur.com/LYmEIWe.png">
@@ -86,20 +93,35 @@ while ($row = $result->fetch_assoc()) {
 						<!-- <input type="hidden" name="invoice" value="5906270250f"> -->
 						<input type="hidden" name="amount" id="item_price_<?=$row['id']?>" value="<?=$prices[0]?>">
 						<input type="hidden" name="shipping" value="0">
-						<span><?= isset($DICT['ammount']) ? $DICT['ammount'] : $row['ammount'] ?></span>
-						<input type="number" name="quantity" value="1" id="item_quantity_<?=$row['id']?>" min="1" pattern="[0-9]*" 
+					<tr>
+						<td>	
+							<span><?= isset($DICT['ammount']) ? $DICT['ammount'] : $row['ammount'] ?></span>
+						</td>
+						<td>
+							<input type="number" name="quantity" value="1" id="item_quantity_<?=$row['id']?>" min="1" pattern="[0-9]*" 
 							onchange="showPrice(<?=$row['id']?>)" oninput="showPrice(<?=$row['id']?>)">
-						<input type="hidden" name="return" value="https://www.forberz.com/#thank-you">
-						<!-- <input type="hidden" name="notify_url" value="https://homzit.com/order/paypal"> -->
-						<input type="hidden" name="cancel_return" value="https://www.forberz.com/">
-						<div id="coupon_wrapper">
+						</td>
+						<td></td>
+					</tr>
+							<input type="hidden" name="return" value="https://www.forberz.com/#thank-you">
+							<!-- <input type="hidden" name="notify_url" value="https://homzit.com/order/paypal"> -->
+							<input type="hidden" name="cancel_return" value="https://www.forberz.com/">
+							<div id="coupon_wrapper">
+					<tr>
+						<!-- <td></td> -->
+						<td colspan="2">
 							<input type="text" name="coupon" id="coupon" placeholder="<?= $DICT['coupon']?>" maxlength="8">
+						</td>
+						<td>
 							<div id="coupon_button" onclick="handle_coupon(event, '<?=$row['id']?>')">OK</div>
+						</td>
+					</tr>
 						</div>
+						</table>
 						<input type="submit" value="<?= $DICT['buybtn']?>">
 						<input type="image" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" border="0" name="submit" 
 							alt="PayPal - The safer, easier way to pay online!" id="buynow">
-						
+
 						<span class="buy_info"><?= $DICT['buyshortterm']?></span>
 						
 						<div class="main">
@@ -189,7 +211,7 @@ while ($row = $result->fetch_assoc()) {
 						?>
 							<div class="buttons_before_prod">
 								<a href="catalogue/<?=$row['id']?>" class="cat_nav"><?= $DICT['moreinfo']?></a>
-								<!-- <a href="catalogue/<?=$row['id']?>" class="cat_nav"><?= $DICT['buybtn']?></a> -->
+								<a href="catalogue/<?=$row['id']?>" class="cat_nav"><?= $DICT['buybtn']?></a>
 							</div>
 						<?php
 					} 

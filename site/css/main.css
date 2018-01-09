@@ -23,6 +23,20 @@ div.ecosqr {
     background-color: #009900;
     width: 32.7%;
 }
+div.buyflex {
+    width: 91.1%;
+    margin: 0 auto;
+    margin-top: 0.5rem;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+}
+
+div.buysqr {
+    background-color: #000;
+    width: 32.7%;
+}
 div.ecosqr1 {
     background-color: #011638;
     width: 32.7%;

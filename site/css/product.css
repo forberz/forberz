@@ -70,7 +70,7 @@ div.prod_img_buy {
 div.prod_text_box {
     width: 60%;
     min-height: 300px;
-    margin: 1rem 0 auto;
+    margin: 2rem 1rem auto;
     height: auto;
     display: inline-block;
     padding: 0 2rem;
@@ -93,7 +93,7 @@ div.prod_img_buy h4 {
 }
 	
 div.buy_title {
-	font-size: 1.2rem;
+	font-size: 1.3rem;
     margin: 0 auto;
     padding: 0;
     display: block;
@@ -101,12 +101,16 @@ div.buy_title {
 }
 
 select.sel {
-	font-size: 1.3rem;
+    background: #111;
+    color: #fff;
+    width: 81%;
+    height: 1.5em;
+    line-height: 1.5em;
+    display: inline-block;
+    border: 0;
+    font-size: 1.3em;
+    padding: 0 2%;
     margin: 0 auto;
-    margin-bottom: 1rem;
-    margin-top: 0.5rem;
-    display: block;
-    padding: 0.2rem;
 }
 .payment_btn {
     height: auto;
@@ -114,7 +118,7 @@ select.sel {
     /*padding: 1rem 0.5rem;*/
 }
 .payment_btn input[type="submit"] {
-    transition: background .2s ease-in-out;
+    transition: color .3s ease-in-out;
     color: #fff;
     background: #000;
     font-size: 1.7em;
@@ -123,35 +127,48 @@ select.sel {
     border-radius: 6px;
     margin: 1rem 1.1rem;
    /* padding: 0 0.5rem;*/
-    width: 80%;
+    width: 100%;
     height: 1.5em;
     text-align: center;
 }
 .payment_btn input[type="submit"]:hover {
+    transition: color .3s ease-in-out;
     color: #FFA400;
     border: 2px solid #FFA400;
 }
 .payment_btn input[type="number"] {
-    width: 4rem;
-    height: 2.5rem;
-    color: #fff;
     background: #111;
-    text-align: center;
-    font-size: 1.4rem;
+    color: #fff;
+    width: 77%;
+    height: 1.5em;
+    line-height: 1.5em;
+    margin: 0 auto;
+    display: inline-block;
     border: 0;
-    padding: 0;
+    cursor: text;
+    font-size: 1.3em;
+    padding: 0 0.2rem;
 }
 .payment_btn span {
     display: inline-block;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     padding: 0 1rem;
 }
 span.buy_info {
     color: #bbb;
     font-size: 0.8rem;
-    margin: 0.5rem 0;
+    margin: 0 auto;
 }
-
+h1.price {
+    font-size: 4rem;
+    display: inline;
+}
+h5.curr {
+    font-size: 1.2rem;
+    margin: 0 auto;
+    padding: 0;
+    display: inline;
+}
 
 .mobile {
     display: none;
@@ -190,12 +207,14 @@ ul.other_point li{
 }
 
 #coupon {
-    width: 50%;
+    background: #111;
+    color: #fff;
+    width: 77%;
     height: 1.5em;
     line-height: 1.5em;
-    margin: 1rem 0;
+    margin: 0.3rem 1rem;
     display: inline-block;
-    border-radius: 3px;
+    border: 0;
     cursor: text;
     font-size: 1.2em;
     padding: 0 2%;
@@ -206,11 +225,11 @@ ul.other_point li{
     width: 25%;
     height: 1.7em;
     line-height: 1.7em;
-    margin: 1rem;
+    margin: 0 auto;
     display: inline-block;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 1.5em;
+    font-size: 1.2em;
     text-align: center;
     background: #000;
     color: #fefefe;
