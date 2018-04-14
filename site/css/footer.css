@@ -1,11 +1,10 @@
 img.footer_logo {
-    width: 12em;
+    width: 15rem;
     margin: 0px;
-    padding: 1.5em 1em
+    padding: 2rem
 }
 div.footer_main {
-    background-color: #000;
-    border-top: 1px solid #222;
+    background-color: #111;
     height: auto;
     width: 100%;
     margin: auto;
@@ -18,14 +17,12 @@ div.footer_flex {
     width: 90%;
     margin: auto;
     justify-content: space-between;
-    background-color: #000;
 }
 div.footer_info {
     margin: auto;
     padding: 0;
     width: auto;
     height: auto;
-    background-color: #000;
     margin-top: 1em;
 }
 div.footer_contact {
@@ -33,13 +30,11 @@ div.footer_contact {
     padding: 0;
     width: 15em;
     height: auto;
-    background-color: #000;
     margin-top: 1em;
 }
 div.footer_bottom_back {
     width: auto;
     margin: auto;
-    background-color: #000;
 }
 div.footer_bottom {
     width: 90%;

@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="site/css/main.css"/>
-<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+<!-- <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script> -->
 
 <?php
 $result = $DB->query("SELECT 
@@ -10,14 +10,17 @@ $result = $DB->query("SELECT
 						FROM `gallery` 
 						WHERE id IN (50,51,54,53) ORDER BY id");
 ?>
-
+<p class="spacer">.</p>
+<div class="webstrip">
+	<img class="webstrip" src="img/webstrip.jpg" alt="Forberz - Natural Care and Detailing Products for Cars and Bikes" />
+</div>
 <!-- <div class="main">
 	<h1><?=$DICT['main_h1']?></h1>
 	<h3 class="grey"><?=$DICT['main_h2']?></h3>
 	<span class="highline"><?=$DICT['main_p']?></span>
 </div> -->
 
-<div class="slide_img">
+<!-- <div class="slide_img">
 	<?php while ($row = $result->fetch_assoc()) {?>
     <div><img src="<?=$row['img']?>"></div>
     <?php }?>
@@ -36,7 +39,7 @@ $result = $DB->query("SELECT
       });
     });
   </script>
-
+ -->
 <!-- <div class="main_mii">
 	<div class="main_mii_title">
 		<h1><?= $DICT['mii_title']?></h1>
@@ -65,7 +68,36 @@ $result = $DB->query("SELECT id, prod_id, img, thumb,
 </div> -->
 
 
-<div class="buyflex">
+<div class="ecoflex">
+	<div class="ecosqr1">
+		<div class="ecoico">
+		</div>
+		<div class="ecotxt">
+			<h1><?= $DICT['mii_title']?></h1>
+			<br>
+			<?= $DICT['mii_text']?>
+		</div>
+	</div>
+	<div class="ecosqr">
+		<div class="ecoico">
+		</div>
+		<div class="ecotxt">
+			<h1><?= $DICT['natural_title']?></h1>
+			<br>
+			<?= $DICT['natural_text']?>
+		</div>
+	</div>
+	<div class="ecosqr2">
+		<div class="ecoico">
+		</div>
+		<div class="ecotxt">
+			<h1><?= $DICT['pro_title']?></h1>
+			<br>
+			<?= $DICT['pro_text']?>
+		</div>
+	</div>
+</div>
+<!-- <div class="buyflex">
 	<a href="catalogue/6"><div class="buysqr">
 		<br>
 		<h2>Forberz ReWax Cold White</h2>
@@ -88,30 +120,7 @@ $result = $DB->query("SELECT id, prod_id, img, thumb,
 	</div></a>
 </div>
 <br><br>
-<div class="ecoflex">
-	<div class="ecosqr1">
-		<div class="ecoico">
-		</div>
-		<div class="ecotxt">
-			<h1>Israeli Technology<br>Original Recipe</h1>
-		</div>
-	</div>
-	<div class="ecosqr">
-		<div class="ecoico">
-		</div>
-		<div class="ecotxt">
-			<h1>100% Natural<br>Eco Friendly</h1>
-		</div>
-	</div>
-	<div class="ecosqr2">
-		<div class="ecoico">
-		</div>
-		<div class="ecotxt">
-			<h1>Professional Detailing<br>Paint Shop Safe</h1>
-		</div>
-	</div>
-</div>
-<!-- <div class="main_nosilicone">
+ --><!-- <div class="main_nosilicone">
 	<div class="main_nosilicone_title">
 		<h1><?= $DICT['nosilicone_title']?></h1>
 	</div>
@@ -129,15 +138,6 @@ $result = $DB->query("SELECT id, prod_id, img, thumb,
 	</div>
 </div>
  -->
- <br>
-<div class="main_reviews">
-	<div class="main_reviews_title">
-		<h1><?= $DICT['reviews']?></h1>
-	</div>
-	<div class="main_reviews_text">
-		<?= $DICT['review_text']?>
-	</div>
-</div>
 <div class="main_clients">
 	<div class="main_clients_title">
 		<h2><?= $DICT['clients']?></h2>
@@ -146,5 +146,13 @@ $result = $DB->query("SELECT id, prod_id, img, thumb,
 		<?php while ($row = $result->fetch_assoc()) {?>
     	<div class="client_logo"><img class="client_logo" src="<?=$row['img']?>"></div>
     	<?php }?>
+	</div>
+</div>
+<div class="main_reviews">
+	<div class="main_reviews_title">
+		<h1><?= $DICT['reviews']?></h1>
+	</div>
+	<div class="main_reviews_text">
+		<?= $DICT['review_text']?>
 	</div>
 </div>

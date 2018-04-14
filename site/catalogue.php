@@ -2,11 +2,11 @@
 include('header.php');
 if (!isset($_GET['id'])) {
 	?>
-	<div class="main">
+	<!-- <div class="main">
 		<h1><?= $DICT['cata']?></h1>
 		<h4 class="grey"><?= $DICT['cata_sub']?></h4>
 		<br>
-	</div>
+	</div> -->
 	<?php
 }
 

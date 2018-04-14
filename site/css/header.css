@@ -25,7 +25,7 @@ ul.social_menu {
     padding: 0.3rem 0;
     margin: auto;
     font-weight: bold;
-    font-size: 0.75em;
+    font-size: 1rem;
     height: auto;
     float:left;
     display: flex;
@@ -40,11 +40,12 @@ ul.lang_menu {
     padding: 0.3rem 0;
     margin: auto;
     font-weight: bold;
-    font-size: 0.75em;
+    font-size: 1rem;
     height: auto;
     float: right;
     direction: rtl;
     display: flex;
+    position: absolute;
 }
 ul.lang_menu li {
     display: inline;
@@ -68,7 +69,7 @@ div.top a {
     width: 100%;
     height: 100%;
     display: block;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,24,67,0.7);
 }
 img.logo {
     margin: 0 auto;

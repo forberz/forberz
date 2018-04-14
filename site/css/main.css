@@ -16,7 +16,21 @@ div.ecoflex {
     padding: 0;
     display: flex;
     justify-content: space-between;
-    align-items: center;   
+    /*align-items: center;*/   
+}
+
+div.webstrip {
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+}
+img.webstrip {
+    width: 100%
+}
+
+p.spacer {
+    color: #000;
+    font-size: 0.2rem;
 }
 
 div.ecosqr {
@@ -30,7 +44,8 @@ div.buyflex {
     padding: 0;
     display: flex;
     justify-content: space-between;
-    align-items: center;   
+    /*align-items: center;*/
+    align-self: flex-start;   
 }
 
 div.buysqr {

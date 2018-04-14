@@ -28,7 +28,6 @@ div.cat_wrap.insider, div.cat_wrap.insider * {
 }
 div.cat_wrap {
     margin: 0 auto;
-    border-top: 1px solid #222;
     padding: 0;
     display: block;
     width: auto;
