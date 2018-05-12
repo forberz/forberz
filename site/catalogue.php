@@ -140,6 +140,7 @@ while ($row = $result->fetch_assoc()) {
 			<div class="prod_text_box">
 				<h1 class="product"><?= $row['title']?></h1>
 				<h2 class="product"><?= $row['subtitle']?></h2>
+				<br>
 				<!-- <ul class="prod_point">
 					<?php
 						$points = explode(' @@ ', $row['points']);
@@ -152,7 +153,6 @@ while ($row = $result->fetch_assoc()) {
 
 				<?php if ($ID) { ?>
 					<div class="product_description">
-						<br>
 						<?=$row['maintext']?>
 					</div>
 					<div class="main" id="howto">
@@ -206,9 +206,10 @@ while ($row = $result->fetch_assoc()) {
 					<br><br>
 				<?php 
 					} else { 
-						// echo mb_substr(strip_tags($row['maintext']), 0, 300, 'utf-8') . '...';
+						echo mb_substr(strip_tags($row['maintext']), 0, 200, 'utf-8') . '...';
 						?>
 							<div class="buttons_before_prod">
+								<br><br>
 								<a href="catalogue/<?=$row['id']?>" class="cat_nav"><?= $DICT['moreinfo']?></a>
 								<!-- <a href="catalogue/<?=$row['id']?>" class="cat_nav"><?= $DICT['buybtn']?></a> -->
 							</div>

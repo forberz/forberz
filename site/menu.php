@@ -3,15 +3,6 @@
 	<!-- <div class="social">
 	</div> -->
 	<div class="top">
-		<ul class="lang_menu">  
-			<?php
-				$LANGS_TITLES = array('he' => ' עברית ', /*'ru' => 'Русский', */'en' => ' English ');
-				
-				foreach ($LANGS_TITLES AS $L => $LT) {
-					echo '<li><a href="https://'.$SITES[$L].'/'.$current_page.($ID ? '/' . $ID : '').'" '.($LANG === $L ? 'class="grey"' : '').'>'.$LT.'</a></li>';
-				}
-			?>
-		</ul>
 		<a href="/">
 			<img class="logo" src="img/forberz.png" alt="Forberz - Natural Care and Detailing Products for Cars and Bikes" />
 		</a>
@@ -26,6 +17,17 @@
 		  <li><a href="/gallery/"<?= strpos($_SERVER['PHP_SELF'], 'gallery') !== false ? 'class="grey"' : ''?>><?= $DICT['gallery']?></a></li>
 		  <!-- <li class="opmenu"><a href="/about_forberz/"<?= strpos($_SERVER['PHP_SELF'], 'about_forberz') !== false ? 'class="grey"' : ''?>><?= $DICT['about_forberz']?></a></li>
 		  <li class="opmenu"><a href="/about_detailing/"<?= strpos($_SERVER['PHP_SELF'], 'about_detailing') !== false ? 'class="grey"' : ''?>><?= $DICT['about_detailing']?></a></li> -->
+		  <li class="opmenu">
+		  	<ul class="lang_menu">  
+			<?php
+				$LANGS_TITLES = array('he' => 'עברית' , /*'ru' => 'Русский', */'en' => ' English ');
+				
+				foreach ($LANGS_TITLES AS $L => $LT) {
+					echo '<li><a href="https://'.$SITES[$L].'/'.$current_page.($ID ? '/' . $ID : '').'" '.($LANG === $L ? 'class="grey"' : '').'>'.$LT.'</a></li>';
+				}
+			?>
+		</ul>
+		  </li>
 		</ul>
 	</div> 
 	</div>

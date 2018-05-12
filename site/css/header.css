@@ -36,24 +36,7 @@ ul.social_menu li {
     padding: 0 0.2rem;
 }
 ul.lang_menu {
-    list-style-type: none;
-    padding: 0.3rem 0;
-    margin: auto;
-    font-weight: bold;
-    font-size: 1rem;
-    height: auto;
-    float: right;
-    direction: rtl;
-    display: flex;
-    position: absolute;
-}
-ul.lang_menu li {
-    display: inline;
-    text-decoration: none;
-    margin: 0;
-    height: auto;
-    width: auto;
-    padding: 0 0.5rem;
+    padding: 0.2rem 0;
 }
 div.top {
     background-color: #000;
@@ -70,6 +53,9 @@ div.top a {
     height: 100%;
     display: block;
     background: rgba(0,24,67,0.7);
+}
+div.top a:hover {
+    border: 0px;
 }
 img.logo {
     margin: 0 auto;
@@ -93,7 +79,7 @@ ul.main_menu {
     padding: 0;
     margin: 0 auto;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     padding: 0.3rem 0;
 }
 ul.main_menu li {
@@ -106,6 +92,7 @@ ul.main_menu li {
 }
 li.opmenu {
     float: right !important;
+    font-size: 1rem;
 }
 
 body.rtl li.opmenu {
