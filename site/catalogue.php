@@ -2,11 +2,11 @@
 include('header.php');
 if (!isset($_GET['id'])) {
 	?>
-	<!-- <div class="main">
+	<div class="main">
 		<h1><?= $DICT['cata']?></h1>
 		<h4 class="grey"><?= $DICT['cata_sub']?></h4>
 		<br>
-	</div> -->
+	</div>
 	<?php
 }
 
@@ -46,12 +46,9 @@ $result = $DB->query($query);
 while ($row = $result->fetch_assoc()) {
 	?>
 	<div class="cat_wrap <?php echo ($row['id'] % 2) === 0 ? 'left' : 'right'; ?> <?= $ID ? 'insider' : '' ?>">
-		<div class="product_header">
-			<h1><?= $row['title']?></h1>
-		</div>
-		<div class="product_icons">
+		<!-- <div class="product_icons">
 			<h4><?=$row['icons']?></h4>
-		</div>
+		</div> -->
 
 		<div class="catdiv" <?= $ID ? '' : 'onclick="document.location=\'catalogue/' . $row['id'] . '\'"' ?>>
 			<div class="prod_img_buy <?= $ID ? 'product' : '' ?>">
@@ -141,8 +138,9 @@ while ($row = $result->fetch_assoc()) {
 			</div>
 
 			<div class="prod_text_box">
-				<h2><?= $row['subtitle']?></h2>
-				<ul class="prod_point">
+				<h1 class="product"><?= $row['title']?></h1>
+				<h2 class="product"><?= $row['subtitle']?></h2>
+				<!-- <ul class="prod_point">
 					<?php
 						$points = explode(' @@ ', $row['points']);
 
@@ -150,10 +148,11 @@ while ($row = $result->fetch_assoc()) {
 							echo '<li>'.$p.'</li>';
 						}
 					?>
-				</ul>
+				</ul> -->
 
 				<?php if ($ID) { ?>
 					<div class="product_description">
+						<br>
 						<?=$row['maintext']?>
 					</div>
 					<div class="main" id="howto">
@@ -207,11 +206,11 @@ while ($row = $result->fetch_assoc()) {
 					<br><br>
 				<?php 
 					} else { 
-						echo mb_substr(strip_tags($row['maintext']), 0, 300, 'utf-8') . '...';
+						// echo mb_substr(strip_tags($row['maintext']), 0, 300, 'utf-8') . '...';
 						?>
 							<div class="buttons_before_prod">
 								<a href="catalogue/<?=$row['id']?>" class="cat_nav"><?= $DICT['moreinfo']?></a>
-								<a href="catalogue/<?=$row['id']?>" class="cat_nav"><?= $DICT['buybtn']?></a>
+								<!-- <a href="catalogue/<?=$row['id']?>" class="cat_nav"><?= $DICT['buybtn']?></a> -->
 							</div>
 						<?php
 					} 
