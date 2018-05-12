@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2018 at 11:26 PM
+-- Generation Time: May 12, 2018 at 11:52 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -418,7 +418,7 @@ INSERT INTO `stores` (`id`, `priority`, `area_en`, `area_he`, `area_ru`, `city_e
 (24, 32, 'Israel', 'מרכז', 'Израиль', 'Tel Aviv\n', 'תל אביב', 'Тель Авив', 'Fiat - Alfa Romeo', 'Fiat - Alfa Romeo', 'Fiat - Alfa Romeo', 'Shlomo Rd. 38', 'דרך שלמה 38', 'Шломо 38', '03-6814720'),
 (25, 31, 'Israel', 'מרכז', 'Израиль', 'Tel Aviv\n', 'תל אביב', 'Тель Авив', 'Daytona', 'דייטונה', 'Daytona', 'HaSadna 18', 'הסדנה 18', 'ХаСадна 18', '03-6816186'),
 (26, 35, 'Israel', 'מרכז', 'Израиль', 'Tel Aviv', 'תל אביב', 'Тель Авив', 'Bike Spa', 'בייק ספא', 'Bike Spa', 'Herzl 93', 'הרצל 93', 'Герцель 93', '03-5101443'),
-(27, 40, 'Israel', 'מרכז', 'Израиль', 'Ramat Gan', 'רמת גן', 'Рамат Ган', 'Daytona', 'דייטונה', 'Daytona', 'Jabotinsky 95', 'ז\'בוטינסקי 95', 'Жаботински 95', '077-4373008'),
+(27, 38, 'Israel', 'מרכז', 'Израиль', 'Ramat Gan', 'רמת גן', 'Рамат Ган', 'Daytona', 'דייטונה', 'Daytona', 'Jabotinsky 95', 'ז\'בוטינסקי 95', 'Жаботински 95', '077-4373008'),
 (28, 33, 'Israel', 'מרכז', 'Израиль', 'Tel Aviv', 'תל אביב', 'Тель Авив', 'Ducati', 'Ducati', 'Ducati', 'HaMasger 58', 'המסגר 58', 'ХаМасгер 58', '03-5189991'),
 (29, 34, 'Israel', 'מרכז', 'Израиль', 'Tel Aviv', 'תל אביב', 'Тель Авив', 'Mercedes', 'מרכז שרות 10', 'Mercedes', 'Azion Gever 5', 'עציון גבר 5', 'Ацион Гевер 5', '03-5183999'),
 (30, 71, 'Israel', 'צפון', 'Израиль', 'Akko', 'עכו', 'Akko', 'Kia', 'Kia', 'Kia', 'HaAmal 4', 'העמל 4', 'ХаАмаль 4', '04-9916571'),
@@ -463,7 +463,12 @@ INSERT INTO `stores` (`id`, `priority`, `area_en`, `area_he`, `area_ru`, `city_e
 (69, 37, 'Israel', 'מרכז', 'Израиль', 'Tel Aviv', 'תל אביב', 'Тель Авив', 'HRP', 'HRP', 'HRP', 'Shlomo Rd. 42', 'דרך שלמה 42', 'Шломо 42', '054-6773383'),
 (70, 18, 'Israel', 'דרום', NULL, 'Ashqelon', 'אשקלון', NULL, 'Kerramo', 'Kerramo', 'Kerramo', 'HaKishor 14', 'הכישור 14', NULL, '050-8281035'),
 (71, 19, 'Israel', 'דרום', 'Израиль', 'Ashdod', 'אשדוד', NULL, 'Ceramic Pro', 'Ceramic Pro', 'Ceramic Pro', 'HaAvoda 69', 'העבודה 69', NULL, '054-4557817'),
-(72, 24, 'Israel', 'ירושלים', 'Израиль', 'Jerusalem', 'ירושלים', 'Иерусалим', 'Anti Sun', 'אנטי סאן', 'Anti Sun', 'Harashey HaBarzel 1', 'חרשי הברזל 1', NULL, '054-5588300');
+(72, 24, 'Israel', 'ירושלים', 'Израиль', 'Jerusalem', 'ירושלים', 'Иерусалим', 'Anti Sun', 'אנטי סאן', 'Anti Sun', 'Harashey HaBarzel 1', 'חרשי הברזל 1', NULL, '054-5588300'),
+(73, 57, 'Israel', 'חיפה והקריות', 'Израиль', 'Haifa', 'חיפה', 'Хайфа', 'Adrenaline Bikes', 'אדרנלין אופנועים', 'Adrenaline Bikes', 'Halutzey HaTaasiya 10', 'חלוצי התעשייה 10', 'Бар Йехуда 5', ' 04-8738815'),
+(74, 30, 'Israel', 'מרכז', 'Израиль', 'Holon', 'חולון', 'Реховот', 'Dor HaGolan Car Wash', 'שטיפת דור הגולן', 'Dor HaGolan Car Wash', 'HaOrgim 6', 'האורגים 6', 'Галгал 23', '03-5567837'),
+(75, 42, 'Israel', 'מרכז', 'Израиль', 'Petah Tikva', 'פתח תקווה', 'Рош ХаАин', 'HaTiltan', 'מוסך התלתן', 'HaTiltan', 'HaYetsira 17', 'היצירה 17', 'ХаЕцира 8', '03-9246701'),
+(76, 53, 'Israel', 'חיפה והקריות', 'Израиль', 'Daliyat el Carmel', 'טירת הכרמל', 'Далият ЭльКармель', 'Green Extreme', 'גרין אקסטרים', 'Green Extreme', 'HaMelaha 5', 'המלאכה 5', 'Объездная Дорога', '1700-707375'),
+(77, 39, 'Israel', 'מרכז', 'Израиль', 'Bene Beraq', 'בני ברק', 'Рамат Ган', 'Merkaz HaTzipuim', 'מרכז הציפויים', 'Daytona', 'Mivtza Kadesh 49', 'מבצע קדש 49', 'Жаботински 95', '052-5259846');
 
 -- --------------------------------------------------------
 
@@ -582,7 +587,7 @@ ALTER TABLE `protreat`
 -- AUTO_INCREMENT for table `stores`
 --
 ALTER TABLE `stores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
