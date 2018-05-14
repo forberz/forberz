@@ -2,17 +2,20 @@
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 
-<?php
+<!-- <?php
 $result = $DB->query("SELECT 
 							id, prod_id, img, thumb,
 							title_{$LANG} AS title,
 							subtitle_{$LANG} AS subtitle
 						FROM `gallery` 
 						WHERE id IN (50,51,54,53) ORDER BY id");
-?>
+?> -->
 <p class="spacer">.</p>
 <div class="webstrip">
 	<img class="webstrip" src="img/webstrip.jpg" alt="Forberz - Natural Care and Detailing Products for Cars and Bikes" />
+</div>
+<div class="main_text">
+	<?= $DICT['main_text']?>
 </div>
 
 <?php
