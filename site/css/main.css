@@ -23,6 +23,7 @@ div.webstrip {
     height: auto;
     width: 99%;
     margin: 0 auto;
+    font-weight: 700;
 }
 img.webstrip {
     width: 100%
