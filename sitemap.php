@@ -28,10 +28,10 @@
 	
 	foreach ($LANGS as $l) {
 		foreach ($pages as $p => $table) {
-			if ($result = $DB->query("SELECT link_text_{$l} AS link_text FROM ".$table)) {
+			if ($result = $DB->query("SELECT linktxt_{$l} AS linktxt FROM ".$table)) {
 				while ($row = $result->fetch_assoc()) {
 					echo '<url>'.
-						'<loc>https://'.$SITES[$l].'/'.$p.'/'.$row['link_text'].'</loc>'.
+						'<loc>https://'.$SITES[$l].'/'.$p.'/'.$row['linktxt'].'</loc>'.
 						'<priority>'.($table === 'products' ? 0.7 : 0.5).'</priority>'.
 					'</url>';
 				}

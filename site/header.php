@@ -41,7 +41,7 @@ if (in_array($_SERVER['HTTP_HOST'], $SITES)) {
 	$LANG = $SITES[$_SERVER['HTTP_HOST']];
 }
 
-$ID = isset($_GET['id']) ? $_GET['id'] : false;
+$ID = !empty($_GET['id']) ? $_GET['id'] : false;
 $LIMIT = isset($_GET['limit']) ? intval($_GET['limit']) : false;
 $_SESSION['lang'] = $LANG;
 
@@ -64,13 +64,13 @@ $PAGE = preg_replace('/(.*\/)|(\.php)|[^a-zA-Z_\-]/', '', $_SERVER['PHP_SELF']);
 switch ($PAGE) {
 	case 'catalogue':
 		if ($ID) {
-			$result = $DB->query("SELECT title_{$LANG} AS title FROM products WHERE id = {$ID}");
+			$result = $DB->query("SELECT IF(\"" . $DB->escape_string($ID) . "\" = linktxt_{$LANG}, title_{$LANG}, FALSE) AS title, linktxt_{$LANG} AS linktxt FROM products WHERE \"" . $DB->escape_string($ID) . "\" IN (linktxt_en, linktxt_he, linktxt_ru)");
 			break;
 		}
 	
 	case 'guide':
 		if ($ID) {
-			$result = $DB->query("SELECT title_{$LANG} AS title FROM guide WHERE id = {$ID}");
+			$result = $DB->query("SELECT IF(\"" . $DB->escape_string($ID) . "\" = linktxt_{$LANG}, title_{$LANG}, FALSE) AS title, linktxt_{$LANG} AS linktxt FROM guide WHERE \"" . $DB->escape_string($ID) . "\" IN (linktxt_en, linktxt_he, linktxt_ru)");
 			break;
 		}
 	
@@ -78,7 +78,15 @@ switch ($PAGE) {
 		$result = $DB->query("SELECT title_{$LANG} AS title FROM titles WHERE page = '{$PAGE}'");
 		break;
 }
-$TITLE = strip_tags($result->fetch_assoc()['title']);
+$res = $result->fetch_assoc();
+$TITLE = strip_tags($res['title']);
+
+if ($TITLE === false) {
+	$redirect = 'https://' . ($LANG === 'en' ? $SITES['he'] : $SITES['en']) . '/' . $PAGE . '/' . $res['linktxt'];
+	header('HTTP/1.1 301 Moved Permanently');
+	header('Location: ' . $redirect);
+	exit();
+}
 
 $current_page = preg_replace('/(index)?\.php/', '', pathinfo($_SERVER['PHP_SELF'])['basename']);
 

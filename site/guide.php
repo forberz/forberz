@@ -2,12 +2,13 @@
 include('header.php');
 
 $result = $DB->query("SELECT id, 
+						linktxt_{$LANG} AS linktxt,
 						author_{$LANG} AS author,
 						title_{$LANG} AS title,
 						subtitle_{$LANG} AS subtitle,
 						text_{$LANG} AS text, img 
 					FROM `guide` 
-					".($ID ? "WHERE id = " . $DB->escape($ID) : "")." 
+					".($ID ? "WHERE \"" . $DB->escape_string($ID) . "\" IN (linktxt_en, linktxt_he, linktxt_ru)" : "")." 
 					ORDER BY id 
 					LIMIT " . ($ID !== false ? 1 : ($LIMIT ? $LIMIT : 100) ));
 
@@ -20,25 +21,25 @@ if ($ID === false) {
 <?php } ?>
 <div class="guide">
 	<?php while ($row = $result->fetch_assoc()) { ?>
-		<div class="guide_item" <?= $ID ? '' : 'onclick="document.location=\'/guide/' . $row['id'] . '\'"' ?>>
-			<div class="guide_header <?= isset($_GET['id']) ? 'inside' : '' ?>">
+		<div class="guide_item" <?= $ID ? '' : 'onclick="document.location=\'/guide/' . $row['linktxt'] . '\'"' ?>>
+			<div class="guide_header <?= !empty($_GET['id']) ? 'inside' : '' ?>">
 				<h1><?= $row['title']?></h1>
 				<h4 class="grey"><?= $row['subtitle']?></h4>
 
-				<div class="guide_body <?= isset($_GET['id']) ? 'inside' : '' ?>">
+				<div class="guide_body <?= !empty($_GET['id']) ? 'inside' : '' ?>">
 					<div class="guide_img <?= $ID ? 'guide' : '' ?>">
 						<img class="guide_thumb" src="<?= $row['img'] ?>">
 						<div>
 							<?= $ID ? $row['text'] : mb_substr(strip_tags($row['text']), 0, 300, 'utf-8') . '...' ?>
 						</div>
 						<?php if (!$ID) { ?>
-							<a href="guide/<?=$row['id']?>" class="cat_nav">More Info</a>
+							<a href="guide/<?=$row['linktxt']?>" class="cat_nav">More Info</a>
 						<?php } ?>
 					</div>
 				</div>
 			</div>
 			
-			<?php if (isset($_GET['id'])) { 
+			<?php if (!empty($_GET['id'])) { 
 				echo '<div class="guide_side_wrap">
 					<h2>More Guides</h2>';
 				$resultIn = $DB->query("SELECT id, 

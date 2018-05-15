@@ -1,6 +1,6 @@
 <?php
 include('header.php');
-if (!isset($_GET['id'])) {
+if (empty($_GET['id'])) {
 	?>
 	<div class="main">
 		<h1><?= $DICT['cata']?></h1>
@@ -14,7 +14,7 @@ $DB->query("SET SESSION group_concat_max_len=16000;");
 
 $query = "SELECT 
 		P.id, 
-		P.link_txt_{$LANG} AS link_txt,
+		P.linktxt_{$LANG} AS linktxt,
 		P.title_{$LANG} AS title,
 		P.subtitle_{$LANG} AS subtitle,
 		P.icons_{$LANG} AS icons,
@@ -35,7 +35,7 @@ $query = "SELECT
 		GROUP_CONCAT(G.video SEPARATOR ',') AS images_videos
 	FROM `products` AS P 
 		LEFT JOIN `gallery` AS G ON (P.id = G.prod_id)
-	WHERE active = 1 ".($ID ? " AND P.id = " . $DB->escape($ID) : "")."
+	WHERE active = 1 ".($ID ? " AND \"" . $DB->escape_string($ID) . "\" IN (P.linktxt_en, P.linktxt_he, P.linktxt_ru)" : "")."
 	GROUP BY P.id
 	ORDER BY priority 
 	LIMIT " . ($ID !== false ? 1 : ($LIMIT ? $LIMIT : 100) );
@@ -51,7 +51,7 @@ while ($row = $result->fetch_assoc()) {
 			<h4><?=$row['icons']?></h4>
 		</div> -->
 
-		<div class="catdiv" <?= $ID ? '' : 'onclick="document.location=\'catalogue/' . $row['link_txt'] . '\'"' ?>>
+		<div class="catdiv" <?= $ID ? '' : 'onclick="document.location=\'catalogue/' . $row['linktxt'] . '\'"' ?>>
 			<div class="prod_img_buy <?= $ID ? 'product' : '' ?>">
 				<img class="product_eng" src="<?=$row['image']?>" alt="<?=$row['img_alt']?>" />
 								
@@ -63,7 +63,7 @@ while ($row = $result->fetch_assoc()) {
 							<div class="buy_title"><?=$DICT['size']?></div>
 						</td>
 						<td>
-							<select class="sel" onchange="setPrice(this.value, '<?=$row['link_txt']?>')">
+							<select class="sel" onchange="setPrice(this.value, '<?=$row['linktxt']?>')">
 							<?php
 							$prices = explode(',', $row['prices']);
 							$sizes = explode(',', $row['sizes']);
@@ -75,7 +75,7 @@ while ($row = $result->fetch_assoc()) {
 							</select>
 						</td>
 						<td>
-							<h1 class="price"><b id="item_show_price_<?=$row['link_txt']?>"><?=$prices[0]?></b></h1><h5 class="curr"><?=$DICT['currency']?></h5>
+							<h1 class="price"><b id="item_show_price_<?=$row['linktxt']?>"><?=$prices[0]?></b></h1><h5 class="curr"><?=$DICT['currency']?></h5>
 						</td>
 					</tr>
 						<input type="hidden" name="cmd" value="_xclick">
@@ -85,19 +85,19 @@ while ($row = $result->fetch_assoc()) {
 						<input type="hidden" name="charset" value="utf-8">
 						<input type="hidden" name="currency_code" value="<?= $LANG === 'he' ? 'ILS' : 'USD' ?>">
 						<input type="hidden" name="lc" value="US">
-						<input type="hidden" name="item_name" id="item_name_<?=$row['link_txt']?>" 
+						<input type="hidden" name="item_name" id="item_name_<?=$row['linktxt']?>" 
 							value="<?=htmlentities(strip_tags($row['title']).' - '.strip_tags($row['subtitle']))?>">
 						<input type="hidden" name="item_number" value="9">
 						<!-- <input type="hidden" name="invoice" value="5906270250f"> -->
-						<input type="hidden" name="amount" id="item_price_<?=$row['link_txt']?>" value="<?=$prices[0]?>">
+						<input type="hidden" name="amount" id="item_price_<?=$row['linktxt']?>" value="<?=$prices[0]?>">
 						<input type="hidden" name="shipping" value="0">
 					<tr>
 						<td>	
 							<span><?= isset($DICT['ammount']) ? $DICT['ammount'] : $row['ammount'] ?></span>
 						</td>
 						<td>
-							<input type="number" name="quantity" value="1" id="item_quantity_<?=$row['link_txt']?>" min="1" pattern="[0-9]*" 
-							onchange="showPrice('<?=$row['link_txt']?>')" oninput="showPrice('<?=$row['link_txt']?>')">
+							<input type="number" name="quantity" value="1" id="item_quantity_<?=$row['linktxt']?>" min="1" pattern="[0-9]*" 
+							onchange="showPrice('<?=$row['linktxt']?>')" oninput="showPrice('<?=$row['linktxt']?>')">
 						</td>
 						<td></td>
 					</tr>
@@ -111,7 +111,7 @@ while ($row = $result->fetch_assoc()) {
 							<input type="text" name="coupon" id="coupon" placeholder="<?= $DICT['coupon']?>" maxlength="8">
 						</td>
 						<td>
-							<div id="coupon_button" onclick="handle_coupon(event, '<?=$row['link_txt']?>')">OK</div>
+							<div id="coupon_button" onclick="handle_coupon(event, '<?=$row['linktxt']?>')">OK</div>
 						</td>
 					</tr>
 						</div>
@@ -210,8 +210,8 @@ while ($row = $result->fetch_assoc()) {
 						?>
 							<div class="buttons_before_prod">
 								<br><br>
-								<a href="catalogue/<?=$row['link_txt']?>" class="cat_nav"><?= $DICT['moreinfo']?></a>
-								<!-- <a href="catalogue/<?=$row['link_txt']?>" class="cat_nav"><?= $DICT['buybtn']?></a> -->
+								<a href="catalogue/<?=$row['linktxt']?>" class="cat_nav"><?= $DICT['moreinfo']?></a>
+								<!-- <a href="catalogue/<?=$row['linktxt']?>" class="cat_nav"><?= $DICT['buybtn']?></a> -->
 							</div>
 						<?php
 					} 
