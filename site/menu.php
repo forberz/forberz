@@ -23,7 +23,7 @@
 				$LANGS_TITLES = array('he' => 'עברית' , /*'ru' => 'Русский', */'en' => ' English ');
 				
 				foreach ($LANGS_TITLES AS $L => $LT) {
-					echo '<li><a href="https://'.$SITES[$L].'/'.$current_page.($ID ? '/' . $ID : '').'" '.($LANG === $L ? 'class="grey"' : '').'>'.$LT.'</a></li>';
+					echo '<li><a href="https://'.$SITES[$L].'/'.$current_page.($ID ? '/' . ($LANG === $L ? $ID : $res['linktxt']) : '').'" '.($LANG === $L ? 'class="grey"' : '').'>'.$LT.'</a></li>';
 				}
 			?>
 		</ul>

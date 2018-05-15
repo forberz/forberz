@@ -64,24 +64,24 @@ $PAGE = preg_replace('/(.*\/)|(\.php)|[^a-zA-Z_\-]/', '', $_SERVER['PHP_SELF']);
 switch ($PAGE) {
 	case 'catalogue':
 		if ($ID) {
-			$result = $DB->query("SELECT IF(\"" . $DB->escape_string($ID) . "\" = linktxt_{$LANG}, title_{$LANG}, FALSE) AS title, linktxt_{$LANG} AS linktxt FROM products WHERE \"" . $DB->escape_string($ID) . "\" IN (linktxt_en, linktxt_he, linktxt_ru)");
+			$result = $DB->query("SELECT IF(\"" . $DB->escape_string($ID) . "\" = linktxt_{$LANG}, TRUE, FALSE) AS cur, title_{$LANG} AS title, linktxt_" . ($LANG === 'en' ? 'he' : 'en') . " AS linktxt FROM products WHERE \"" . $DB->escape_string($ID) . "\" IN (linktxt_en, linktxt_he, linktxt_ru)");
 			break;
 		}
 	
 	case 'guide':
 		if ($ID) {
-			$result = $DB->query("SELECT IF(\"" . $DB->escape_string($ID) . "\" = linktxt_{$LANG}, title_{$LANG}, FALSE) AS title, linktxt_{$LANG} AS linktxt FROM guide WHERE \"" . $DB->escape_string($ID) . "\" IN (linktxt_en, linktxt_he, linktxt_ru)");
+			$result = $DB->query("SELECT IF(\"" . $DB->escape_string($ID) . "\" = linktxt_{$LANG}, TRUE, FALSE) AS cur, title_{$LANG} AS title, linktxt_" . ($LANG === 'en' ? 'he' : 'en') . " AS linktxt FROM guide WHERE \"" . $DB->escape_string($ID) . "\" IN (linktxt_en, linktxt_he, linktxt_ru)");
 			break;
 		}
 	
 	default:
-		$result = $DB->query("SELECT title_{$LANG} AS title FROM titles WHERE page = '{$PAGE}'");
+		$result = $DB->query("SELECT TRUE AS cur, title_{$LANG} AS title FROM titles WHERE page = '{$PAGE}'");
 		break;
 }
 $res = $result->fetch_assoc();
 $TITLE = strip_tags($res['title']);
 
-if ($TITLE === false) {
+if (!$res['cur']) {
 	$redirect = 'https://' . ($LANG === 'en' ? $SITES['he'] : $SITES['en']) . '/' . $PAGE . '/' . $res['linktxt'];
 	header('HTTP/1.1 301 Moved Permanently');
 	header('Location: ' . $redirect);
