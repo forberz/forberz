@@ -52,22 +52,22 @@
 				<!-- <ul class="footer_menu">
 					<li class="foot_li"><a href="guide/"><?= $DICT['guide']?></a></li>
 					<?php
-						$result = $DB->query("SELECT id, footer_{$LANG} AS title
+						$result = $DB->query("SELECT id, link_txt_{$LANG} AS link_txt, footer_{$LANG} AS title
 							FROM `guide` ORDER BY id LIMIT 5");
 
 						while ($row = $result->fetch_assoc()) {
-							echo '<li><a href="guide/'.$row['id'].'">'.$row['title'].'</a></li>';
+							echo '<li><a href="guide/'.$row['link_txt'].'">'.$row['title'].'</a></li>';
 						}
 					?>
 				</ul> -->
 				<ul class="footer_menu">
 					<li class="foot_li"><a href="catalogue/0/5"><?= $DICT['cata']?></a></li>
 					<?php
-						$result = $DB->query("SELECT id, footer_{$LANG} AS title
+						$result = $DB->query("SELECT id, link_txt_{$LANG} AS link_txt, footer_{$LANG} AS title
 							FROM `products` ORDER BY id LIMIT 5");
 
 						while ($row = $result->fetch_assoc()) {
-							echo '<li><a href="catalogue/'.$row['id'].'">'.$row['title'].'</a></li>';
+							echo '<li><a href="catalogue/'.$row['link_txt'].'">'.$row['title'].'</a></li>';
 						}
 					?>
 				</ul>

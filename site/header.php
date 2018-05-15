@@ -41,7 +41,7 @@ if (in_array($_SERVER['HTTP_HOST'], $SITES)) {
 	$LANG = $SITES[$_SERVER['HTTP_HOST']];
 }
 
-$ID = isset($_GET['id']) ? intval($_GET['id']) : false;
+$ID = isset($_GET['id']) ? $_GET['id'] : false;
 $LIMIT = isset($_GET['limit']) ? intval($_GET['limit']) : false;
 $_SESSION['lang'] = $LANG;
 

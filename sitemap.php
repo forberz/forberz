@@ -26,13 +26,12 @@
 	
 	$pages = array('catalogue' => 'products', 'guide' => 'guide');
 	
-	foreach ($pages as $p => $table) {
-		if ($result = $DB->query("SELECT COUNT(*) AS c FROM ".$table)) {
-			$row = $result->fetch_assoc();
-			for ($i = 1; $i <= $row['c']; ++$i) {
-				foreach ($LANGS as $l) {
+	foreach ($LANGS as $l) {
+		foreach ($pages as $p => $table) {
+			if ($result = $DB->query("SELECT link_text_{$l} AS link_text FROM ".$table)) {
+				while ($row = $result->fetch_assoc()) {
 					echo '<url>'.
-						'<loc>https://'.$SITES[$l].'/'.$p.'/'.$i.'</loc>'.
+						'<loc>https://'.$SITES[$l].'/'.$p.'/'.$row['link_text'].'</loc>'.
 						'<priority>'.($table === 'products' ? 0.7 : 0.5).'</priority>'.
 					'</url>';
 				}

@@ -7,7 +7,7 @@ $result = $DB->query("SELECT id,
 						subtitle_{$LANG} AS subtitle,
 						text_{$LANG} AS text, img 
 					FROM `guide` 
-					".($ID ? "WHERE id = {$ID}" : "")." 
+					".($ID ? "WHERE id = " . $DB->escape($ID) : "")." 
 					ORDER BY id 
 					LIMIT " . ($ID !== false ? 1 : ($LIMIT ? $LIMIT : 100) ));
 

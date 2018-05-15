@@ -13,8 +13,8 @@
 	RewriteRule ^(403|404|500)$ /index.php [R=302,L]
 	
 	RewriteRule ^$ /index.php [QSA,L]
-	RewriteRule ^catalogue/?(\d+)?/?(\d+)?$ /site/catalogue.php?id=$1&limit=$2 [QSA,L]
-	RewriteRule ^guide/?(\d+)?/?(\d+)?$ /site/guide.php?id=$1&limit=$2 [QSA,L]
+	RewriteRule ^catalogue/?(.*)?/?(\d+)?$ /site/catalogue.php?id=$1&limit=$2 [QSA,L]
+	RewriteRule ^guide/?(.*)?/?(\d+)?$ /site/guide.php?id=$1&limit=$2 [QSA,L]
 	RewriteRule ^protreat/?$ /site/protreat.php [QSA,L]
 	RewriteRule ^shops/?$ /site/shops.php [QSA,L]
 	RewriteRule ^gallery/?$ /site/gallery.php [QSA,L]
