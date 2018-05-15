@@ -121,19 +121,7 @@ while ($row = $result->fetch_assoc()) {
 
 						<span class="buy_info"><?= $DICT['buyshortterm']?></span>
 						
-						<div class="main">
-							<h2><?= $DICT['tips']?></h2>
-							<ul class="other_point">
-							<?php
-								$points = explode(" @@ ", $row['howtotips']);
-								
-								foreach ($points as $p) {
-									echo '<li>'.$p.'</li>';
-								}
-							?>
-							</ul>
-						</div>
-					</form>
+						</form>
 				<?php } ?>
 			</div>
 
@@ -169,7 +157,18 @@ while ($row = $result->fetch_assoc()) {
 
 						<?=$row['howtotext']?>
 					</div>
-
+					<div class="main">
+							<h2><?= $DICT['tips']?></h2>
+							<ul class="other_point">
+							<?php
+								$points = explode(" @@ ", $row['howtotips']);
+								
+								foreach ($points as $p) {
+									echo '<li>'.$p.'</li>';
+								}
+							?>
+							</ul>
+						</div>
 					<div class="main" id="faq">
 					  <h2><?= $DICT['freq']?></h2>
 						<ul class="other_point">
@@ -179,7 +178,7 @@ while ($row = $result->fetch_assoc()) {
 							foreach ($points as $p) {
 							  $qANDa = preg_split("/\r?\n\r?\n/", $p);
 							  if (count($qANDa) > 1) {
-								echo '<li><b>'.$qANDa[0].'</b><br><i>'.$qANDa[1].'</i></li>';
+								echo '<li><b>'.$qANDa[0].'</b><br>'.$qANDa[1].'</li>';
 							  } else {
 								echo "<li>$p</li>";
 							  }

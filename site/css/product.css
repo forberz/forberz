@@ -34,7 +34,7 @@ div.cat_wrap.insider, div.cat_wrap.insider * {
 }
 div.cat_wrap {
     background-color: #000;
-    margin: 2rem 0 auto;
+    margin: 0.5rem 0 1.5rem 0 ;
     padding: 0;
     display: block;
     width: auto;
