@@ -81,7 +81,7 @@ switch ($PAGE) {
 $res = $result->fetch_assoc();
 $TITLE = strip_tags($res['title']);
 
-if (!$res['cur']) {
+if (!$res['cur'] && $_SERVER['PHP_SELF'] !== '/sitemap.php') {
 	$redirect = 'https://' . ($LANG === 'en' ? $SITES['he'] : $SITES['en']) . '/' . $PAGE . '/' . $res['linktxt'];
 	header('HTTP/1.1 301 Moved Permanently');
 	header('Location: ' . $redirect);
