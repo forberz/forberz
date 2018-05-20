@@ -297,7 +297,7 @@
 }
 
 @media (min-width: 1400px) {
-	div.cat_wrap {
+	div.cat_wrap:not(.insider) {
 		width: 49%;
 		display: inline-block;
 	}
