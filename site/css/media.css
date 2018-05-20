@@ -295,3 +295,10 @@
 		display: none;
 	}
 }
+
+@media (min-width: 1400px) {
+	div.cat_wrap {
+		width: 49%;
+		display: inline-block;
+	}
+}
