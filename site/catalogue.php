@@ -1,14 +1,14 @@
 <?php
 include('header.php');
-if (empty($_GET['id'])) {
+/*if (empty($_GET['id'])) {
 	?>
-	<!-- <div class="main">
+	<div class="main">
 		<h1><?= $DICT['cata']?></h1>
 		<h4 class="grey"><?= $DICT['cata_sub']?></h4>
 		<br>
-	</div> -->
+	</div>
 	<?php
-}
+}*/
 
 $DB->query("SET SESSION group_concat_max_len=16000;");
 
@@ -43,10 +43,12 @@ $query = "SELECT
 // var_dump($query);
 
 $result = $DB->query($query);
+$sider = ($LANG === 'he') - 1;
 
 while ($row = $result->fetch_assoc()) {
+	++$sider;
 	?>
-	<div class="cat_wrap <?php echo ($row['id'] % 2) === 0 ? 'left' : 'right'; ?> <?= $ID ? 'insider' : '' ?>">
+	<div class="cat_wrap <?php echo ($sider % 2) === 0 ? 'left' : 'right'; ?> <?= $ID ? 'insider' : '' ?>">
 		<!-- <div class="product_icons">
 			<h4><?=$row['icons']?></h4>
 		</div> -->
@@ -75,7 +77,7 @@ while ($row = $result->fetch_assoc()) {
 							</select>
 						</td>
 						<td>
-							<h1 class="price"><b id="item_show_price_<?=$row['linktxt']?>"><?=$prices[0]?></b></h1><h5 class="curr"><?=$DICT['currency']?></h5>
+							
 						</td>
 					</tr>
 						<input type="hidden" name="cmd" value="_xclick">
@@ -91,6 +93,7 @@ while ($row = $result->fetch_assoc()) {
 						<!-- <input type="hidden" name="invoice" value="5906270250f"> -->
 						<input type="hidden" name="amount" id="item_price_<?=$row['linktxt']?>" value="<?=$prices[0]?>">
 						<input type="hidden" name="shipping" value="0">
+						<tr><td colspan="3"><h1 class="price"><b id="item_show_price_<?=$row['linktxt']?>"><?=$prices[0]?></b></h1><h5 class="curr"><?=$DICT['currency']?></h5></td></tr>
 					<tr>
 						<td>	
 							<span><?= isset($DICT['ammount']) ? $DICT['ammount'] : $row['ammount'] ?></span>
@@ -174,7 +177,7 @@ while ($row = $result->fetch_assoc()) {
 					  <h2><?= $DICT['freq']?></h2>
 						<ul class="other_point">
 						  <?php
-							$points = explode("\n--", $row['faqpoints']);
+							$points = explode("--", $row['faqpoints']);
 
 							foreach ($points as $p) {
 							  $qANDa = preg_split("/\r?\n\r?\n/", $p);
@@ -200,7 +203,6 @@ while ($row = $result->fetch_assoc()) {
 						?>
 						</ul>
 
-						<br>
 						<?= $row['msdstext'] ?>
 					</div>
 					<br><br>

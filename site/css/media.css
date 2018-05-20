@@ -148,6 +148,7 @@
 	}
 	.payment_btn input[type="submit"] {
 		font-size: 1.5em;
+		width: 85%;
 	}
 	.payment_btn:after {
 		width: 90%;
@@ -169,6 +170,7 @@
 		margin: 0 auto !important;
 		width: 100% !important;
 	}
+
 	
 	div.prod_text_box {
 	width: 95% !important;
@@ -299,6 +301,31 @@
 @media (min-width: 1400px) {
 	div.cat_wrap:not(.insider) {
 		width: 49%;
+		height: 39rem;
 		display: inline-block;
+		vertical-align: top;
+	}
+
+	div.cat_wrap:not(.insider):nth-of-type(odd) {
+		margin-left: 1.5%;
+	}
+
+	body.rtl div.cat_wrap:not(.insider):nth-of-type(odd) {
+		margin-left: 0;
+		margin-right: 1.5%;
+	}
+
+	div.cat_wrap:not(.insider) div.catdiv {
+		height: 37rem;
+		display: inline-block;
+	}
+
+	div.cat_wrap:not(.insider) .prod_img_buy {
+		height: auto;
+		margin-left: 4%;
+	}
+
+	div.cat_wrap:not(.insider) .prod_text_box {
+		width: 80%;
 	}
 }
