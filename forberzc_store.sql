@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2018 at 09:53 PM
+-- Generation Time: Jun 01, 2018 at 10:27 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -72,7 +72,7 @@ INSERT INTO `dict` (`id`, `lang_key`, `lang_he`, `lang_en`, `lang_ru`) VALUES
 (4, 'main_h2', '', '', 'Форберз'),
 (5, 'main_p', 'מוצרי דיטיילינג טבעיים\n(טיפוח רכב ודו-גלגלי).\nמוצרי שחזור, שימור וחידוש לפלסטיק, עור, גומי, ויניל, צבע ועוד.\nתכשירי ניקוי עור, בד, פלסטיק, ויניל ועוד.', '', 'Извините, страница не закончена.'),
 (6, 'social_on', 'גם ב', 'Social', 'Форберз на:'),
-(7, 'cata', 'מוצרים', 'Products', 'Каталог'),
+(7, 'cata', 'קטלוג מוצרים', 'Products Catalogue', 'Каталог'),
 (8, 'wherebuy', 'חנויות', 'Shops', 'Где купить?'),
 (9, 'protreat', 'מומחים', 'Pro-Treatment', 'Про-Сервис'),
 (10, 'guide', 'הדרכה ויעוץ', 'Guides', 'Школа Дитэйлинга'),

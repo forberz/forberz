@@ -72,6 +72,12 @@
 	div.main {
 		margin-top: 0.5em;
 	}
+	div.ecosqr {
+		margin: 0.5rem 0;
+	}
+	div.banner {
+		width: 95%;
+	}
 	div.catdiv {
 		border-bottom: 1px solid #FFA400;
 	}
@@ -247,6 +253,9 @@
 
 	div.main_clients_text > *, div.page_menu > * {
 		width: 91%;
+	}
+	div.main_clients {
+		width: 86% !important;
 	}
 
 	div.about {

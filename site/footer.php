@@ -40,7 +40,7 @@
 					<li><a href="about_forberz/"><?= $DICT['about_forberz']?></a></li>
 					<li><a href="about_detailing/"><?= $DICT['about_detailing']?></a></li>
 					<li><a href="shops/"><?= $DICT['wherebuy']?></a></li>
-					<li><a href="contact/"><?= $DICT['contact']?></a></li>
+					<li><a href="catalogue/"><?= $DICT['cata']?></a></li>
 					<li><ul class="social_menu">
 							  <li><a href="https://www.facebook.com/forberz" rel="nofollow" target="_blank"><img class="social_icon" src="gallery/fb-art.png"></a></li>
 							  <li><a href="https://www.google.com/+Forberz" rel="nofollow" target="_blank"><img class="social_icon" src="gallery/g-plus.png"></a></li>

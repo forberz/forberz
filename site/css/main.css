@@ -3,10 +3,12 @@ div.banner {
     margin: 0 auto;
     margin-top: 0.5rem;
     padding: 0;
+    max-width: 100%;
 }
 
 img.banner {
     width: 100%;
+    max-width: 100%;
 }
 div.ecoflex {
     width: 91.1%;
