@@ -1,3 +1,13 @@
+div.banner {
+    width: 91.1%;
+    margin: 0 auto;
+    margin-top: 0.5rem;
+    padding: 0;
+}
+
+img.banner {
+    width: 100%;
+}
 div.ecoflex {
     width: 91.1%;
     margin: 0 auto;
@@ -35,18 +45,19 @@ p.spacer {
 }
 
 div.ecosqr {
-    background-color: #009900;
+    background-image: url("../../img/websqr2.jpg");
     width: 32.7%;
 }
 div.ecosqr1 {
-    background-color: #011638;
+    background-image: url("../../img/websqr1.jpg");
     width: 32.7%;
 }
 div.ecosqr2 {
-    background-color: #222;
+    background-image: url("../../img/websqr3.jpg");
     width: 32.7%;
 }
 div.ecotxt {
+    font-size: 1.1rem;
     padding: 1rem 1.2rem;
 }
 div.main_clients {
