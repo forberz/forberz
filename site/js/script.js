@@ -26,7 +26,7 @@ var choosePic = function(src, title, subtitle, video) {
 		document.getElementById('the-video').src = video;
 		document.getElementById('the-video').removeAttribute('class');
 	} else {
-		document.getElementById('the-pic').src = src;
+		document.getElementById('the-pic').src = '/watermark.php?src=' + src;
 		document.getElementById('the-pic').removeAttribute('class');
 
 	}
