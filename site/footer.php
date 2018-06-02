@@ -42,11 +42,11 @@
 					<li><a href="shops/"><?= $DICT['wherebuy']?></a></li>
 					<li><a href="catalogue/"><?= $DICT['cata']?></a></li>
 					<li><ul class="social_menu">
-							  <li><a href="https://www.facebook.com/forberz" rel="nofollow" target="_blank"><img class="social_icon" src="gallery/fb-art.png"></a></li>
-							  <li><a href="https://www.google.com/+Forberz" rel="nofollow" target="_blank"><img class="social_icon" src="gallery/g-plus.png"></a></li>
-							  <li><a href="https://www.pinterest.com/forberz" rel="nofollow" target="_blank"><img class="social_icon" src="gallery/picon.png"></a></li>
-							  <li><a href="https://www.instagram.com/forberz" rel="nofollow" target="_blank"><img class="social_icon" src="gallery/inst.png"></a></li>
-							  <li><a href="https://www.youtube.com/channel/UCAbqdXaaKgwwDavvTwkQ8yQ" rel="nofollow" target="_blank"><img class="social_icon" src="gallery/ycon.png"></a></li>
+							  <li><a href="https://www.facebook.com/forberz" rel="nofollow" target="_blank"><img class="social_icon" src="img/a-forberz-facebook.png"></a></li>
+							  <li><a href="https://www.google.com/+Forberz" rel="nofollow" target="_blank"><img class="social_icon" src="img/a-forberz-google-plus.png"></a></li>
+							  <li><a href="https://www.pinterest.com/forberz" rel="nofollow" target="_blank"><img class="social_icon" src="img/a-forberz-pinterest.png"></a></li>
+							  <li><a href="https://www.instagram.com/forberz" rel="nofollow" target="_blank"><img class="social_icon" src="img/a-forberz-instagram.png"></a></li>
+							  <li><a href="https://www.youtube.com/channel/UCAbqdXaaKgwwDavvTwkQ8yQ" rel="nofollow" target="_blank"><img class="social_icon" src="img/a-forberz-youtube.png"></a></li>
 					</ul></li>
 				</ul>
 				<!-- <ul class="footer_menu">

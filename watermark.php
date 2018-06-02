@@ -26,9 +26,9 @@ if (file_exists($image_path)) {
 
 	// Copy the stamp image onto our photo using the margin offsets and the photo 
 	// width to calculate positioning of the stamp. 
-	// imagescale($im, 1024);
+	// $im = imagescale($im, 1024);
 	imagecopy($im, $stamp, $marge_left, $marge_top, 0, 0, imagesx($stamp), imagesy($stamp));
-	imagetruecolortopalette($im, false, 256);
+	// imagetruecolortopalette($im, false, 256);
 
 	// Output and free memory
 	imagepng($im, null, 9);
