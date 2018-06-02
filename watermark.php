@@ -15,7 +15,7 @@ if (file_exists($image_path)) {
 	$src = verify_local_resourse($src, $image_path);
 
 	// Load the stamp and the photo to apply the watermark to
-	$stamp = imagecreatefrompng('./img/forberz.png');
+	$stamp = imagecreatefrompng('./img/watermark.png');
 	$im = imagecreatefromjpeg($src);
 
 	// Set the margins for the stamp and get the height/width of the stamp image
