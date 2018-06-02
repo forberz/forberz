@@ -1,3 +1,5 @@
+FileETag MTime Size
+
 <IfModule mod_rewrite.c>
 	RewriteEngine On
 	RewriteBase /
@@ -11,6 +13,9 @@
 	ErrorDocument 500 /500
 
 	RewriteRule ^(403|404|500)$ /index.php [R=302,L]
+
+	RewriteRule ^thumbnail/(.*/.*)$ /thumbnail.php?src=$1 [QSA,L]
+	RewriteRule ^watermark/(.*/.*)$ /watermark.php?src=$1 [QSA,L]
 	
 	RewriteRule ^$ /index.php [QSA,L]
 	RewriteRule ^catalogue/?(.*)?/?(\d+)?$ /site/catalogue.php?id=$1&limit=$2 [QSA,L]

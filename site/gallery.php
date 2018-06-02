@@ -18,7 +18,7 @@ $prev_area = '';
 	<div class="main" id="gallery">
 	<?php
 		while ($row = $result->fetch_assoc()) {?>
-				<div class="gallery-img" style="background-image: url('<?=$row['thumb']?>')" onclick="choosePic(
+				<div class="gallery-img" style="background-image: url('/thumbnail.php?src=<?= preg_match('/^(https?:)?\/\//', $row['thumb']) ? urlencode($row['thumb']) : $row['thumb']?>')" onclick="choosePic(
 						'<?=trim($row['img'])?>', 
 						'<?=trim(str_replace("'", "\\'", htmlspecialchars($row['title'])))?>', 
 						'<?=trim(str_replace("'", "\\'", htmlspecialchars($row['subtitle'])))?>', 
