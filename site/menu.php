@@ -15,6 +15,7 @@
 		  <li><a href="/protreat/"<?= strpos($_SERVER['PHP_SELF'], 'protreat') !== false ? 'class="grey"' : ''?>><?= $DICT['protreat']?></a></li>
 		  <!-- <li><a href="/guide/"<?= strpos($_SERVER['PHP_SELF'], 'guide') !== false ? 'class="grey"' : ''?>><?= $DICT['guide']?></a></li> -->
 		  <li><a href="/gallery/"<?= strpos($_SERVER['PHP_SELF'], 'gallery') !== false ? 'class="grey"' : ''?>><?= $DICT['gallery']?></a></li>
+		  <li><a href="/contact/"<?= strpos($_SERVER['PHP_SELF'], 'contact') !== false ? 'class="grey"' : ''?>><?= $DICT['contact']?></a></li>
 		  <!-- <li class="opmenu"><a href="/about_forberz/"<?= strpos($_SERVER['PHP_SELF'], 'about_forberz') !== false ? 'class="grey"' : ''?>><?= $DICT['about_forberz']?></a></li>
 		  <li class="opmenu"><a href="/about_detailing/"<?= strpos($_SERVER['PHP_SELF'], 'about_detailing') !== false ? 'class="grey"' : ''?>><?= $DICT['about_detailing']?></a></li> -->
 		  <li class="opmenu">
