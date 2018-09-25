@@ -13,7 +13,7 @@ include('header.php');
 		<div class="about_forberz_text">
 			<?= $DICT['contact_text']?>
 	<?php 
-	include('disqus.php'); 	
+	include('comment.php'); 	
 	?>
 		</div>
 	</div>

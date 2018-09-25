@@ -69,7 +69,7 @@ $result = $DB->query("SELECT id, prod_id, img, thumb,
 	<a href="/catalogue"><img class="banner" src="<?php echo $LANG === 'en' ? 'img/banner1en.jpg' : 'img/banner1he.jpg' ?>" alt="Forberz - Natural Care and Detailing Products for Cars and Bikes" /></a>
 </div>
 <?php 
-	include('disqus.php'); 	
+	include('comment.php'); 	
 	?>
 <!-- <div class="main_reviews">
 	<div class="main_reviews_title">

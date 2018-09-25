@@ -13,7 +13,7 @@
 	  <?php
 	  }
 	}
-	include('disqus.php');
+	include('comment.php');
 ?>
 </div>
 

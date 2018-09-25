@@ -31,6 +31,11 @@ $SITES = array(
 	'forberz.ru' => 'ru'*/
 );
 
+$TABLE_NAMES = array(
+	'products' => 'category',
+	'guide' => 'guide'
+);
+
 session_start();
 
 // $LANGS = array('he', 'en', 'ru');
@@ -63,25 +68,29 @@ if ($result = $DB->query("SELECT lang_key, lang_{$LANG} AS word FROM dict")) {
 
 $TITLE = "Forberz - Natural Detailing Products for Your Car and Bike";
 $PAGE = preg_replace('/(.*\/)|(\.php)|[^a-zA-Z_\-]/', '', $_SERVER['PHP_SELF']);
+$TABLE_NAME = 'gallery';
 switch ($PAGE) {
 	case 'catalogue':
+		$TABLE_NAME = 'products';
 		if ($ID) {
-			$result = $DB->query("SELECT IF(\"" . $DB->escape_string($ID) . "\" = linktxt_{$LANG}, TRUE, FALSE) AS cur, title_{$LANG} AS title, linktxt_" . ($LANG === 'en' ? 'he' : 'en') . " AS linktxt FROM products WHERE \"" . $DB->escape_string($ID) . "\" IN (linktxt_en, linktxt_he, linktxt_ru)");
+			$result = $DB->query("SELECT id, IF(\"" . $DB->escape_string($ID) . "\" = linktxt_{$LANG}, TRUE, FALSE) AS cur, title_{$LANG} AS title, linktxt_" . ($LANG === 'en' ? 'he' : 'en') . " AS linktxt FROM products WHERE \"" . $DB->escape_string($ID) . "\" IN (linktxt_en, linktxt_he, linktxt_ru)");
 			break;
 		}
 	
 	case 'guide':
+		$TABLE_NAME = 'guide';
 		if ($ID) {
-			$result = $DB->query("SELECT IF(\"" . $DB->escape_string($ID) . "\" = linktxt_{$LANG}, TRUE, FALSE) AS cur, title_{$LANG} AS title, linktxt_" . ($LANG === 'en' ? 'he' : 'en') . " AS linktxt FROM guide WHERE \"" . $DB->escape_string($ID) . "\" IN (linktxt_en, linktxt_he, linktxt_ru)");
+			$result = $DB->query("SELECT id, IF(\"" . $DB->escape_string($ID) . "\" = linktxt_{$LANG}, TRUE, FALSE) AS cur, title_{$LANG} AS title, linktxt_" . ($LANG === 'en' ? 'he' : 'en') . " AS linktxt FROM guide WHERE \"" . $DB->escape_string($ID) . "\" IN (linktxt_en, linktxt_he, linktxt_ru)");
 			break;
 		}
 	
 	default:
-		$result = $DB->query("SELECT TRUE AS cur, title_{$LANG} AS title FROM titles WHERE page = '{$PAGE}'");
+		$result = $DB->query("SELECT id, TRUE AS cur, title_{$LANG} AS title FROM titles WHERE page = '{$PAGE}'");
 		break;
 }
 $res = $result->fetch_assoc();
 $TITLE = strip_tags($res['title']);
+$obj_id = intval($res['id']);
 
 if (!$res['cur'] && $_SERVER['PHP_SELF'] !== '/sitemap.php') {
 	$redirect = 'https://' . ($LANG === 'en' ? $SITES['he'] : $SITES['en']) . '/' . $PAGE . '/' . $res['linktxt'];
@@ -153,6 +162,7 @@ $current_page = preg_replace('/(index)?\.php/', '', pathinfo($_SERVER['PHP_SELF'
 		<link rel="stylesheet" href="site/css/gallery.css"/>
 		<link rel="stylesheet" href="site/css/footer.css"/>
 		<link rel="stylesheet" href="site/css/media.css"/>
+		<link rel="stylesheet" href="site/css/comment.css"/>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
 		<title><?=$TITLE?></title>
