@@ -11,6 +11,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$_SESSION['timeout_' . $TITLE] = time();
 
 		// var_dump($_POST);
+		
+		$_POST['comment_data'] = mb_substr($_POST['comment_data'], 0, 1024, 'utf-8');
+		$_POST['comment_author'] = mb_substr($_POST['comment_author'], 0, 256, 'utf-8');
+		$_POST['comment_business'] = mb_substr($_POST['comment_business'], 0, 256, 'utf-8');
 
 		$query = "INSERT INTO `comments` (`lang`, `table_name`, `obj_id`, `data`, `author`, `business`) 
 				VALUES ('{$LANG}', '{$TABLE_NAME}', '{$obj_id}', \"" . $DB->escape_string($_POST['comment_data']) . "\", " . (isset($_POST['comment_author']) ? '"' . $DB->escape_string($_POST['comment_author']) . '"' : "NULL") . ", " . (isset($_POST['comment_business']) ? '"' . $DB->escape_string($_POST['comment_business']) . '"' : "NULL") . ")";
@@ -34,10 +38,10 @@ $query = "SELECT
 		C.priority,
 		C.edit_date
 	FROM `comments` AS C 
-	WHERE C.active = 1 
+	WHERE C.active = 1 AND C.lang = \"" . $LANG . "\"
 		".($ID ? " AND C.table_name = \"" . $TABLE_NAME . "\" AND C.obj_id = \"" . $obj_id . '"' : "") ."
 	ORDER BY " . ($ID ? "C.priority, C.edit_date DESC" : (isset($new_id) ? "id={$new_id}, " : "") . "RAND()") . " 
-	". ($ID ? "" : "LIMIT 10"); // AND C.lang = \"" . $LANG . "\"
+	". ($ID ? "" : "LIMIT 10");
 
 // var_dump($query);
 
