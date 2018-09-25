@@ -2,21 +2,26 @@
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	if (empty($_POST['comment_hack']) || $_POST['comment_hack'] !== 'ok') {
+		header("HTTP/1.1 301 Moved Permanently");
 		header('Location: /');
 		exit(-1);
 	}
+	
+	if (!isset($_SESSION['timeout_' . $TITLE]) || $_SESSION['timeout_' . $TITLE] + 1800 > time()) {
+		$_SESSION['timeout_' . $TITLE] = time();
 
-	// var_dump($_POST);
+		// var_dump($_POST);
 
-	$query = "INSERT INTO `comments` (`lang`, `table_name`, `obj_id`, `data`, `author`, `business`) 
-			VALUES ('{$LANG}', '{$TABLE_NAME}', '{$obj_id}', \"" . $DB->escape_string($_POST['comment_data']) . "\", " . (isset($_POST['comment_author']) ? "\"" . $DB->escape_string($_POST['comment_author']) . "\"" : "NULL") . ", " . (isset($_POST['comment_business']) ? "\"" . $DB->escape_string($_POST['comment_business']) . "\"" : "NULL") . ")";
+		$query = "INSERT INTO `comments` (`lang`, `table_name`, `obj_id`, `data`, `author`, `business`) 
+				VALUES ('{$LANG}', '{$TABLE_NAME}', '{$obj_id}', \"" . $DB->escape_string($_POST['comment_data']) . "\", " . (isset($_POST['comment_author']) ? '"' . $DB->escape_string($_POST['comment_author']) . '"' : "NULL") . ", " . (isset($_POST['comment_business']) ? '"' . $DB->escape_string($_POST['comment_business']) . '"' : "NULL") . ")";
 
-	// var_dump($query);
+		// var_dump($query);
 
-	$result = $DB->query($query);
-	$new_id = $DB->insert_id;
+		$result = $DB->query($query);
+		$new_id = $DB->insert_id;
 
-	@mail('forberz@012.net.il', 'You got new commment :)', 'New comment from - ' . (isset($_POST['comment_author']) ? "\"" . $DB->escape_string($_POST['comment_author']) . "\"" : "") . (isset($_POST['business']) ? "\"" . $DB->escape_string($_POST['business']) . "\"" : "") . "\n\nDATA: " . (isset($_POST['comment_data']) ? "\"" . $DB->escape_string($_POST['comment_data']) . "\"" : "NULL"));
+		@mail('forberz@012.net.il', 'You got new commment :)', 'New comment from - ' . (isset($_POST['comment_author']) ? '"' . $_POST['comment_author'] . '"' : "") . (isset($_POST['business']) ? '"' . $_POST['business'] . '"' : "") . "\n\nDATA: " . (isset($_POST['comment_data']) ? '"' . $_POST['comment_data'] . '"' : "NULL"));
+	}
 }
 
 $query = "SELECT 
@@ -30,7 +35,7 @@ $query = "SELECT
 		C.edit_date
 	FROM `comments` AS C 
 	WHERE C.active = 1 
-		".($ID ? " AND C.table_name = \"" . $TABLE_NAME . "\" AND C.obj_id = \"" . $obj_id . "\"" : "") ."
+		".($ID ? " AND C.table_name = \"" . $TABLE_NAME . "\" AND C.obj_id = \"" . $obj_id . '"' : "") ."
 	ORDER BY " . ($ID ? "C.priority, C.edit_date DESC" : (isset($new_id) ? "id={$new_id}, " : "") . "RAND()") . " 
 	". ($ID ? "" : "LIMIT 10"); // AND C.lang = \"" . $LANG . "\"
 
