@@ -1,3 +1,8 @@
+#comments_title {
+	padding: 1rem 5%;
+	text-align: initial;
+}
+
 div#comments {
 	width: 100%;
 	margin: 0 auto;
@@ -15,7 +20,7 @@ div.comment {
 	width: 30%;
 	display: inline-block;
 	vertical-align: top;
-	margin: 1%;
+	margin: 0.5%;
 	padding: 0.7rem;
 }
 
