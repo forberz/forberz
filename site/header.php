@@ -161,8 +161,8 @@ $current_page = preg_replace('/(index)?\.php/', '', pathinfo($_SERVER['PHP_SELF'
 		<link rel="stylesheet" href="site/css/product.css"/>
 		<link rel="stylesheet" href="site/css/gallery.css"/>
 		<link rel="stylesheet" href="site/css/footer.css"/>
-		<link rel="stylesheet" href="site/css/media.css"/>
 		<link rel="stylesheet" href="site/css/comment.css"/>
+		<link rel="stylesheet" href="site/css/media.css"/>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
 		<title><?=$TITLE?></title>

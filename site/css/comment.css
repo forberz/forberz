@@ -1,18 +1,23 @@
 div#comments {
-	width: 90%;
+	width: 100%;
 	margin: 0 auto;
 	margin-top: 2rem;
 	padding-bottom: 1rem;
-	}
+
+	display: flex;
+	flex-flow: column wrap; /* Shorthand – you could use ‘flex-direction: column’ and ‘flex-wrap: wrap’ instead */
+	justify-content: flex-start;
+	align-items: flex-start;
+}
 
 div.comment {
 	background-color: #111;
 	width: 30%;
 	display: inline-block;
 	vertical-align: top;
-	margin-top: 1rem;
+	margin: 1%;
 	padding: 0.7rem;
-	}
+}
 
 div.comment-author {
 	font-weight: bold;
@@ -59,6 +64,7 @@ form input[type="submit"] {
     height: 1.5em;
     text-align: center;
 }
+
 form input[type="submit"]:hover {
     transition: color 0.4s ease-in-out, border 0.5s ease-in-out, font 0.6s ease-in-out, background-color 0.7s ease-in-out;
     color: #000;
@@ -67,3 +73,10 @@ form input[type="submit"]:hover {
     border-color: #000;
     font-weight: bold;
 }
+
+a.commentproductname {
+	font-size: 0.7rem;
+	color: #aaa;
+	font-weight: bold;
+}
+

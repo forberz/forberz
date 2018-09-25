@@ -82,8 +82,8 @@ foreach ($items as $table => $ids) {
 
 ?>
 
-<div id="comments">
-	<h1><?=$DICT['feedback']?></h1>
+<h2 id="comments_title"><?=$DICT['feedback']?></h2>
+<div id="comments" style="height: <?= 300 * (1 + ceil(count($comments)/3))?>px">
 
 	<?php
 		foreach ($comments as $row) {
@@ -97,7 +97,8 @@ foreach ($items as $table => $ids) {
 			<div class="comment-business"><?=$row['business']?></div>
 		<?php } ?>
 		<?php if (isset($TABLE_NAMES[$row['table_name']])) { ?>
-		<a href="<?=$TABLE_NAMES[$row['table_name']]?>/<?=$items[$row['table_name']][$row['obj_id']]['linktxt']?>" class="cat_nav"><?=$items[$row['table_name']][$row['obj_id']]['title']?> - <?=$items[$row['table_name']][$row['obj_id']]['subtitle']?></a>
+			<br>
+		<a class="commentproductname" href="<?=$TABLE_NAMES[$row['table_name']]?>/<?=$items[$row['table_name']][$row['obj_id']]['linktxt']?>" class="cat_nav"><?=$items[$row['table_name']][$row['obj_id']]['title']?> - <?=$items[$row['table_name']][$row['obj_id']]['subtitle']?></a>
 		<?php } ?>
 	</div>
 	<?php

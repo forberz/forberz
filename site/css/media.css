@@ -46,6 +46,15 @@
 	div {
 		margin: auto;
 	}
+
+	div#comments {
+		height: auto !important;
+		flex-flow: column !important;
+	}
+
+	div.comment, form.comment {
+		width: 95%;
+	}
 		
 	div.about_forberz {
 	background-color: #0A0A0A;
