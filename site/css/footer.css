@@ -3,8 +3,11 @@ img.footer_logo {
     margin: 0px;
     padding: 2rem
 }
+div.footer_img{
+    background-image: url("../../img/strip1.jpg");
+}
 div.footer_main {
-    background-color: #111;
+    background-color: rgba(0,0,0,0.8);
     height: auto;
     width: 100%;
     margin: auto;
@@ -12,6 +15,8 @@ div.footer_main {
     padding-bottom: 1rem;
 }
 div.footer_flex {
+    background-color: #000
+    opacity: 0.5;
     display: flex;
     flex-flow: row wrap;
     width: 90%;
@@ -33,6 +38,7 @@ div.footer_contact {
     margin-top: 1em;
 }
 div.footer_bottom_back {
+    background-color: rgba(0,0,0,0.9);
     width: auto;
     margin: auto;
 }

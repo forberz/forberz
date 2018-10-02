@@ -8,6 +8,7 @@ body {
     color: #fefefe;
     font-family: 'Varela Round', sans-serif; 
     min-width: 320px;
+    background-image: url("../../img/back.png");
 }
 
 body.rtl, body.rtl * {

@@ -1,12 +1,20 @@
 #comments_title {
+	margin-top: 1rem;
 	padding: 1rem 5%;
+	padding-bottom: 0;
 	text-align: initial;
+	font-size: 2rem;
+	background-color: rgba(0,0,0,0.8);
+}
+div.h_img {
+	background-image: url("../../img/strip1.jpg");
+	background-position: top-right;
 }
 
 div#comments {
-	width: 100%;
+	width: 85%;
 	margin: 0 auto;
-	margin-top: 2rem;
+	margin-top: 1rem;
 	padding-bottom: 1rem;
 
 	display: flex;
