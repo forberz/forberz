@@ -7,20 +7,20 @@ date_default_timezone_set('UTC');
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-if(preg_match('/www./', $_SERVER['HTTP_HOST'])) {
-	$_SERVER['HTTP_HOST'] = str_replace('www.', '', $_SERVER['HTTP_HOST']);
-	$redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-	header('HTTP/1.1 301 Moved Permanently');
-	header('Location: ' . $redirect);
-	exit();
-}
+// if(preg_match('/www./', $_SERVER['HTTP_HOST'])) {
+// 	$_SERVER['HTTP_HOST'] = str_replace('www.', '', $_SERVER['HTTP_HOST']);
+// 	$redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+// 	header('HTTP/1.1 301 Moved Permanently');
+// 	header('Location: ' . $redirect);
+// 	exit();
+// }
 
-if(!is_dir('C:\\Windows') && !is_dir('/Users') && (empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] == "off")) {
-	$redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-	header('HTTP/1.1 301 Moved Permanently');
-	header('Location: ' . $redirect);
-	exit();
-}
+// if(!is_dir('C:\\Windows') && !is_dir('/Users') && (empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] == "off")) {
+// 	$redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+// 	header('HTTP/1.1 301 Moved Permanently');
+// 	header('Location: ' . $redirect);
+// 	exit();
+// }
 
 $SITES = array(
 	'en' => 'forberz.com',
@@ -92,12 +92,12 @@ $res = $result->fetch_assoc();
 $TITLE = strip_tags($res['title']);
 $obj_id = intval($res['id']);
 
-if (!$res['cur'] && $_SERVER['PHP_SELF'] !== '/sitemap.php') {
-	$redirect = 'https://' . ($LANG === 'en' ? $SITES['he'] : $SITES['en']) . '/' . $PAGE . '/' . $res['linktxt'];
-	header('HTTP/1.1 301 Moved Permanently');
-	header('Location: ' . $redirect);
-	exit();
-}
+// if (!$res['cur'] && !in_array($_SERVER['PHP_SELF'], array('/forberz/sitemap.php', '/sitemap.php', '/forberz/site/cart.php', '/site/cart.php', '/cart.php'))) {
+// 	$redirect = 'https://' . ($LANG === 'en' ? $SITES['he'] : $SITES['en']) . '/' . $PAGE . '/' . $res['linktxt'];
+// 	header('HTTP/1.1 301 Moved Permanently');
+// 	header('Location: ' . $redirect);
+// 	exit();
+// }
 
 $current_page = preg_replace('/(index)?\.php/', '', pathinfo($_SERVER['PHP_SELF'])['basename']);
 

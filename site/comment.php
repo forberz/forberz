@@ -17,14 +17,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$_POST['comment_business'] = mb_substr($_POST['comment_business'], 0, 256, 'utf-8');
 
 		$query = "INSERT INTO `comments` (`lang`, `table_name`, `obj_id`, `data`, `author`, `business`) 
-				VALUES ('{$LANG}', '{$TABLE_NAME}', '{$obj_id}', \"" . $DB->escape_string($_POST['comment_data']) . "\", " . (isset($_POST['comment_author']) ? '"' . $DB->escape_string($_POST['comment_author']) . '"' : "NULL") . ", " . (isset($_POST['comment_business']) ? '"' . $DB->escape_string($_POST['comment_business']) . '"' : "NULL") . ")";
+				VALUES ('{$LANG}', '{$TABLE_NAME}', '{$obj_id}', \"" . $DB->escape_string(strip_tags($_POST['comment_data'])) . "\", " . 
+					(isset($_POST['comment_author']) ? '"' . $DB->escape_string(strip_tags($_POST['comment_author'])) . '"' : "NULL") . ", " . 
+					(isset($_POST['comment_business']) ? '"' . $DB->escape_string(strip_tags($_POST['comment_business'])) . '"' : "NULL") . ")";
 
 		// var_dump($query);
 
 		$result = $DB->query($query);
 		$new_id = $DB->insert_id;
 
-		@mail('forberz@012.net.il', 'You got new commment :)', 'New comment from - ' . (isset($_POST['comment_author']) ? '"' . $_POST['comment_author'] . '"' : "") . (isset($_POST['business']) ? '"' . $_POST['business'] . '"' : "") . "\n\nDATA: " . (isset($_POST['comment_data']) ? '"' . $_POST['comment_data'] . '"' : "NULL"));
+		@mail('forberz@012.net.il', 'You got new commment :)', 'New comment from - ' . 
+			(isset($_POST['comment_author']) ? '"' . strip_tags($_POST['comment_author']) . '"' : "") . 
+			(isset($_POST['business']) ? '"' . strip_tags($_POST['business']) . '"' : "") . 
+			"\n\nDATA: " . (isset($_POST['comment_data']) ? '"' . strip_tags($_POST['comment_data']) . '"' : "NULL"));
 	}
 }
 

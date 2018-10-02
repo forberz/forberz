@@ -7,7 +7,7 @@ require '../conn.php';
 
 $query = "SELECT C.min_quantity, C.price_". $DB->real_escape_string($_POST['lang']) ." AS price, C.size
 	FROM `coupons` AS C 
-	WHERE id = '". $DB->real_escape_string($_POST['coupon']) ."' AND prod_id = '". $DB->real_escape_string($_POST['prod_id']) ."'
+	WHERE code = '". $DB->real_escape_string($_POST['coupon']) ."' AND prod_id = '". $DB->real_escape_string($_POST['prod_id']) ."'
 	LIMIT 1";
 
 // var_dump($query);
