@@ -1,4 +1,5 @@
-<div class="footer_main">
+	<div class="footer_img">
+		<div class="footer_main">
 			<div class="footer_flex">
 				<div class="footer_info">
 					<a href="/"><img class="footer_logo" src="img/forberz.png" alt="Forberz - Natural Care and Detailing Products for Cars and Bikes"></a>
@@ -79,5 +80,6 @@
 			<p>design by mdnt</p>
 		</div>
 		</div>
+	</div>
 	</body>
 </html>

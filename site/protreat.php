@@ -1,5 +1,4 @@
 <?php
-include('header.php');
 $result = $DB->query("SELECT 
 						area_{$LANG} AS area,
 						city_{$LANG} AS city,
@@ -48,7 +47,3 @@ $prev_area = '';
 			?>
 		</table>
 	</div>
-
-<?php 
-include('footer.php');
-?>

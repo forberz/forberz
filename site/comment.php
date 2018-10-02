@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$result = $DB->query($query);
 		$new_id = $DB->insert_id;
 
-		@mail('forberz@012.net.il', 'You got new commment :)', 'New comment from - ' . 
+		@mail('sales@forberz.com', 'You got new commment :)', 'New comment from - ' . 
 			(isset($_POST['comment_author']) ? '"' . strip_tags($_POST['comment_author']) . '"' : "") . 
 			(isset($_POST['business']) ? '"' . strip_tags($_POST['business']) . '"' : "") . 
 			"\n\nDATA: " . (isset($_POST['comment_data']) ? '"' . strip_tags($_POST['comment_data']) . '"' : "NULL"));
@@ -90,8 +90,9 @@ foreach ($items as $table => $ids) {
 }
 
 ?>
-
+<div class="h_img">
 <h2 id="comments_title"><?=$DICT['feedback']?></h2>
+</div>
 <div id="comments" style="height: <?= 300 * max(1, ceil(count($comments)/3))?>px">
 
 	<?php
