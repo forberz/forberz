@@ -4,11 +4,9 @@
 	padding-bottom: 0;
 	text-align: initial;
 	font-size: 2rem;
-	background-color: rgba(0,0,0,0.8);
+	background-color: black;
 }
 div.h_img {
-	background-image: url("../../img/strip1.jpg");
-	background-position: top-right;
 }
 
 div#comments {

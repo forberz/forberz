@@ -10,9 +10,11 @@ $result = $DB->query("SELECT
 					ORDER BY priority");
 $prev_area = '';
 ?>
+	<div class="blackback">
 	<div class="main">
 		<h1><?= $DICT['wherebuy']?></h1>
 		<h4 class="grey"><?= $DICT['wherebuy_sub']?></h4>
+	</div>
 	</div>
 	<div class="shops">
 		<table class="shops">

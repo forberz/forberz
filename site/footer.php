@@ -77,7 +77,7 @@
 		<div class="footer_bottom_back">
 		<div class="footer_bottom">
 			<p>&copy; <?= $DICT['rights']?> Forberz&trade; <?=date("Y")?></p>
-			<p>design by mdnt</p>
+			<p>design by <span style="color:red;">mdnt</span></p>
 		</div>
 		</div>
 	</div>
