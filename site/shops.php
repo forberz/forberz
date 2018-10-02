@@ -49,7 +49,7 @@ $prev_area = '';
 			?>
 		</table>
 	</div>
-
 <?php 
+include('protreat.php');
 include('footer.php');
 ?>
