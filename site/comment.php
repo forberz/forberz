@@ -93,7 +93,7 @@ foreach ($items as $table => $ids) {
 <div class="h_img">
 <h2 id="comments_title"><?=$DICT['feedback']?></h2>
 </div>
-<div id="comments" style="height: <?= 300 * max(1, ceil(count($comments)/3))?>px">
+<div id="comments" style="height: <?= 400 * max(1, ceil(count($comments)/3))?>px">
 
 	<?php
 		foreach ($comments as $row) {

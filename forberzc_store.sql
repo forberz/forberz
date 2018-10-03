@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 03, 2018 at 12:51 AM
+-- Generation Time: Oct 03, 2018 at 01:17 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -172,7 +172,8 @@ INSERT INTO `dict` (`id`, `lang_key`, `lang_he`, `lang_en`, `lang_ru`) VALUES
 (75, 'comment_data', 'ספרו לנו מה דעתכם', 'Tell us what You think', 'Tell us what You think'),
 (76, 'comment_send', 'שלח', 'SEND', 'SEND'),
 (77, 'tellus', 'ספרו לנו', 'Tell Us', 'Tell Us'),
-(78, 'yousure', 'בטוח?', 'SURE?', '');
+(78, 'yousure', 'בטוח?', 'SURE?', ''),
+(79, 'addtocart', 'הוסף לסל', 'Add to Cart', '');
 
 -- --------------------------------------------------------
 
@@ -689,7 +690,7 @@ ALTER TABLE `coupons`
 -- AUTO_INCREMENT for table `dict`
 --
 ALTER TABLE `dict`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 --
 -- AUTO_INCREMENT for table `gallery`
 --
