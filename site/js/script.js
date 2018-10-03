@@ -1,24 +1,42 @@
 
 var price_timeout = null;
-var showPrice = function(i) {
+var showPrice = function(id) {
 	
 	if (price_timeout) {
 		clearTimeout(price_timeout);
 	}
 	
 	price_timeout = setTimeout(function() {
-		if (document.getElementById('item_quantity_' + i).value < parseInt(document.getElementById('item_quantity_' + i).getAttribute('min'))) {
-			document.getElementById('item_quantity_' + i).value = parseInt(document.getElementById('item_quantity_' + i).getAttribute('min'));
+		if (document.getElementById('item_quantity_' + id).value < parseInt(document.getElementById('item_quantity_' + id).getAttribute('min'))) {
+			if (document.getElementById('item_quantity_' + id).value < 0) {
+				document.getElementById('item_quantity_' + id).value = 0;
+			} else {
+				document.getElementById('item_quantity_' + id).value = parseInt(document.getElementById('item_quantity_' + id).getAttribute('min'));
+			}
 		}
 		
-		document.getElementById('item_show_price_' + i).innerHTML = 
-			parseInt(document.getElementById('item_price_' + i).value) * parseInt(document.getElementById('item_quantity_' + i).value);
+		if (document.getElementById('item_total_show_price')) {
+			document.getElementById('item_total_price_' + id).value = parseInt(document.getElementById('item_price_' + id).value);
+			document.getElementById('item_total_quantity_' + id).value = parseInt(document.getElementById('item_quantity_' + id).value);
+			
+			var total = 0;
+			
+			for (var j = document.querySelectorAll('[data-total-name]').length; j>0; j--) {
+				total += parseInt(document.getElementsByName('amount_' + j)[0].value) * parseInt(document.getElementsByName('quantity_' + j)[0].value);
+			}
+			
+			document.getElementById('item_total_show_price').innerHTML = total;
+		}
+		
+		document.getElementById('item_show_price_' + id).innerHTML = 
+			parseInt(document.getElementById('item_price_' + id).value) * parseInt(document.getElementById('item_quantity_' + id).value);
 	}, 800);
 };
 
-var setPrice = function(val, i) {
-	document.getElementById('item_price_' + i).value = val;
-	showPrice(i);
+var setPrice = function(e, val, id) {
+	e.preventDefault();
+	document.getElementById('item_price_' + id).value = val;
+	showPrice(id);
 };
 
 var choosePic = function(src, title, subtitle, video) {
@@ -144,3 +162,88 @@ var handle_coupon = function(e, id) {
 		document.getElementById('item_quantity_' + id).value = 1;
 	}
 }*/
+
+/** CART */
+
+var CART = JSON.parse(localStorage.getItem('cart') || '{}');
+
+var removeItem = function(id) {
+	var el = document.getElementById('cart_item_' + id),
+		form_item_name = document.getElementById('item_total_name_' + id),
+		form_item_price = document.getElementById('item_total_price_' + id),
+		form_item_quantity = document.getElementById('item_total_quantity_' + id),
+		idx = parseInt(form_item_name.getAttribute('data-total-name')),
+		indeces = document.querySelectorAll('[data-total-name]').length,
+		tmp;
+	
+	console.log(idx, indeces);
+	
+	el.parentNode.removeChild(el);
+	form_item_name.parentNode.removeChild(form_item_name);
+	form_item_price.parentNode.removeChild(form_item_price);
+	form_item_quantity.parentNode.removeChild(form_item_quantity);
+	
+	for (var i=idx; i<indeces; ++i) {
+		document.getElementsByName('item_name_' + (i+1))[0].setAttribute('data-total-name', i);
+		document.getElementsByName('item_name_' + (i+1))[0].setAttribute('name', 'item_name_' + i);
+		document.getElementsByName('amount_' + (i+1))[0].setAttribute('name', 'amount_' + i);
+		document.getElementsByName('quantity_' + (i+1))[0].setAttribute('name', 'quantity_' + i);
+	}
+	
+	var items = document.getElementsByName('item_name_1');
+	
+	if (items.length) {
+		remove_from_cart(id);
+		showPrice(id);
+	} else {
+		el = document.getElementById('rideeffect');
+		el.parentNode.removeChild(el);
+	}
+};
+
+var save_cart = function() {
+	localStorage.setItem('cart', JSON.stringify(CART));
+};
+
+var add_to_cart = function(e, id) {
+	e.preventDefault();
+	
+	// if ()
+	CART[id] = {
+		'id': parseInt(document.querySelector('[data-item-id]').getAttribute('data-item-id')),
+		'quantity': parseInt(document.getElementById('item_quantity_' + id).value),
+		'size': parseInt(document.querySelectorAll('.sel option')[document.querySelector('.sel').selectedIndex].innerText),
+		'price': parseInt(document.querySelector('.sel').value)
+	};
+	
+	var cart_details = [];
+	
+	for (var i in CART) {
+		cart_details.push(CART[i].id + ',' + CART[i].quantity + ',' + CART[i].size + ';');
+	}
+	
+	console.log('>>> ', cart_details);
+	
+	save_cart();
+	
+	setTimeout(function() {
+		document.location = 'site/cart.php?ids=' + cart_details.join('');
+		// document.location = 'cart/' + cart_details.join(';');
+	}, 500);
+};
+
+var remove_from_cart = function(id) {
+	if (!confirm(document.getElementById('yousure').innerText)) {
+		return false;
+	}
+	
+	if (CART[id]) {
+		delete CART[id];
+	}
+	
+	save_cart();
+};
+
+var set_cart_item = function(id, quantity, size, price) {
+	
+};

@@ -1,82 +1,83 @@
-# FileETag MTime Size
+FileETag MTime Size
 
-# <IfModule mod_rewrite.c>
-# 	RewriteEngine On
-# 	RewriteBase /
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /
 
-# 	#RewriteCond %{REQUEST_FILENAME} !-f
-# 	#RewriteCond %{REQUEST_FILENAME} !-d
-# 	#RewriteRule . index.php [L]
+	#RewriteCond %{REQUEST_FILENAME} !-f
+	#RewriteCond %{REQUEST_FILENAME} !-d
+	#RewriteRule . index.php [L]
 
-# 	ErrorDocument 403 /403
-# 	ErrorDocument 404 /404
-# 	ErrorDocument 500 /500
+	ErrorDocument 403 /403
+	ErrorDocument 404 /404
+	ErrorDocument 500 /500
 
-# 	RewriteRule ^(403|404|500)$ /index.php [R=302,L]
+	RewriteRule ^(403|404|500)$ /index.php [R=302,L]
 
-# 	RewriteRule ^thumbnail/(.*/.*)$ /thumbnail.php?src=$1 [QSA,L]
-# 	RewriteRule ^watermark/(.*/.*)$ /watermark.php?src=$1 [QSA,L]
+	RewriteRule ^thumbnail/(.*/.*)$ /thumbnail.php?src=$1 [QSA,L]
+	RewriteRule ^watermark/(.*/.*)$ /watermark.php?src=$1 [QSA,L]
 	
-# 	RewriteRule ^$ /index.php [QSA,L]
-# 	RewriteRule ^catalogue/?(.*)?/?(\d+)?$ /site/catalogue.php?id=$1&limit=$2 [QSA,L]
-# 	RewriteRule ^guide/?(.*)?/?(\d+)?$ /site/guide.php?id=$1&limit=$2 [QSA,L]
-# 	RewriteRule ^protreat/?$ /site/protreat.php [QSA,L]
-# 	RewriteRule ^shops/?$ /site/shops.php [QSA,L]
-# 	RewriteRule ^gallery/?$ /site/gallery.php [QSA,L]
-# 	RewriteRule ^about_forberz/?$ /site/about_forberz.php [QSA,L]
-# 	RewriteRule ^about_detailing/?$ /site/about_detailing.php [QSA,L]
-# 	RewriteRule ^affiliate/?$ /site/affiliate.php [QSA,L]
-# 	RewriteRule ^contact/?$ /site/contact.php [QSA,L]
-# 	RewriteRule ^jobs/?$ /site/jobs.php [QSA,L]
+	RewriteRule ^$ /index.php [QSA,L]
+	RewriteRule ^catalogue/?(.*)?/?(\d+)?$ /site/catalogue.php?id=$1&limit=$2 [QSA,L]
+	RewriteRule ^cart/?(\d+,\d+,\d+;)+$ /site/cart.php?ids=$1 [QSA,L]
+	RewriteRule ^guide/?(.*)?/?(\d+)?$ /site/guide.php?id=$1&limit=$2 [QSA,L]
+	RewriteRule ^protreat/?$ /site/protreat.php [QSA,L]
+	RewriteRule ^shops/?$ /site/shops.php [QSA,L]
+	RewriteRule ^gallery/?$ /site/gallery.php [QSA,L]
+	RewriteRule ^about_forberz/?$ /site/about_forberz.php [QSA,L]
+	RewriteRule ^about_detailing/?$ /site/about_detailing.php [QSA,L]
+	RewriteRule ^affiliate/?$ /site/affiliate.php [QSA,L]
+	RewriteRule ^contact/?$ /site/contact.php [QSA,L]
+	RewriteRule ^jobs/?$ /site/jobs.php [QSA,L]
 
-# 	RewriteCond %{HTTP_USER_AGENT} libwww-perl.*
-# 	RewriteRule .* – [F,L]
-# </IfModule>
+	RewriteCond %{HTTP_USER_AGENT} libwww-perl.*
+	RewriteRule .* – [F,L]
+</IfModule>
 
-# <IfModule mod_expires.c>
-# 	ExpiresActive On
-# 	ExpiresDefault "access plus 1 month"
-# 	ExpiresByType application/rss+xml "access plus 1 hour"
-# 	ExpiresByType image/gif "access plus 1 month"
-# 	ExpiresByType image/png "access plus 1 month"
-# 	ExpiresByType image/jpeg "access plus 1 month"
-# 	ExpiresByType text/plain "access plus 1 month"
-# 	ExpiresByType text/css "access plus 1 year"
-# 	ExpiresByType text/html "access plus 1 month"
-# 	ExpiresByType text/x-javascript "access plus 1 year"
-# 	ExpiresByType text/javascript "access plus 1 year"
-# 	ExpiresByType application/javascript "access plus 1 year"
-# 	ExpiresByType application/x-javascript "access plus 1 year"
-# 	ExpiresByType application/json "access plus 1 year"
-# 	ExpiresByType image/x-icon "access plus 1 year"
-# 	ExpiresByType font/truetype "access plus 1 year"
-# 	ExpiresByType font/opentype "access plus 1 year"
-# 	ExpiresByType application/x-font-woff "access plus 1 year"
-# 	ExpiresByType image/svg+xml "access plus 1 year"
-# 	ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
-# 	ExpiresByType application/x-shockwave-flash "access plus 1 month"
-# </IfModule>
+<IfModule mod_expires.c>
+	ExpiresActive On
+	ExpiresDefault "access plus 1 month"
+	ExpiresByType application/rss+xml "access plus 1 hour"
+	ExpiresByType image/gif "access plus 1 month"
+	ExpiresByType image/png "access plus 1 month"
+	ExpiresByType image/jpeg "access plus 1 month"
+	ExpiresByType text/plain "access plus 1 month"
+	ExpiresByType text/css "access plus 1 year"
+	ExpiresByType text/html "access plus 1 month"
+	ExpiresByType text/x-javascript "access plus 1 year"
+	ExpiresByType text/javascript "access plus 1 year"
+	ExpiresByType application/javascript "access plus 1 year"
+	ExpiresByType application/x-javascript "access plus 1 year"
+	ExpiresByType application/json "access plus 1 year"
+	ExpiresByType image/x-icon "access plus 1 year"
+	ExpiresByType font/truetype "access plus 1 year"
+	ExpiresByType font/opentype "access plus 1 year"
+	ExpiresByType application/x-font-woff "access plus 1 year"
+	ExpiresByType image/svg+xml "access plus 1 year"
+	ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+	ExpiresByType application/x-shockwave-flash "access plus 1 month"
+</IfModule>
 
-# <ifModule mod_deflate.c>
-# 	<filesMatch "\.(js|css|html|php|json)$">
-# 		SetOutputFilter DEFLATE
-# 	</filesMatch>
-# </ifModule>
+<ifModule mod_deflate.c>
+	<filesMatch "\.(js|css|html|php|json)$">
+		SetOutputFilter DEFLATE
+	</filesMatch>
+</ifModule>
 
-# <ifModule mod_headers.c>
-# 	Header set Connection keep-alive
-# 	AddType application/json .json
-# 	<FilesMatch "\.(json)$">
-# 		Header append Vary: Accept-Encoding
-# 	</FilesMatch>
-# </ifModule>
+<ifModule mod_headers.c>
+	Header set Connection keep-alive
+	AddType application/json .json
+	<FilesMatch "\.(json)$">
+		Header append Vary: Accept-Encoding
+	</FilesMatch>
+</ifModule>
 
-# AddCharset 'text/plain; charset=UTF-8' .map
-# AddCharset 'text/html; charset=UTF-8' .map
-# AddCharset 'font/opentype; charset=UTF-8' .ttf
-# AddCharset 'text/javascript; charset=UTF-8' .js
-# AddCharset 'application/javascript; charset=UTF-8' .js
+AddCharset 'text/plain; charset=UTF-8' .map
+AddCharset 'text/html; charset=UTF-8' .map
+AddCharset 'font/opentype; charset=UTF-8' .ttf
+AddCharset 'text/javascript; charset=UTF-8' .js
+AddCharset 'application/javascript; charset=UTF-8' .js
 
-# <FilesMatch "\.(ttf)$">
-#    ForceType 'font/opentype; charset=UTF-8'
-# </FilesMatch>
+<FilesMatch "\.(ttf)$">
+   ForceType 'font/opentype; charset=UTF-8'
+</FilesMatch>
