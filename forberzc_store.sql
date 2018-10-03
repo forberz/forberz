@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 03, 2018 at 12:02 AM
+-- Generation Time: Oct 03, 2018 at 12:51 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -202,14 +202,14 @@ CREATE TABLE `gallery` (
 --
 
 INSERT INTO `gallery` (`id`, `prod_id`, `in_gallery`, `meta`, `title_en`, `title_he`, `title_ru`, `subtitle_en`, `subtitle_he`, `subtitle_ru`, `thumb`, `img`, `video`) VALUES
-(1, 0, 0, 'Toyota Select Logo', 'Toyota Select', 'טויוטה סלקט כמו חדש', '', '', '', '', 'img/a-forberz-toyota.png', 'img/a-forberz-toyota.png', NULL),
-(2, 0, 0, 'Chevrolet Logo', 'Chevrolet', 'שברולט', '', '', '', '', 'img/a-forberz-chevrolet.jpg', 'img/a-forberz-chevrolet.jpg', NULL),
+(1, 0, 0, 'Ducati Logo', 'Ducati', 'דוקאטי', '', '', '', '', 'img/a-forberz-ducati.jpg', 'img/a-forberz-ducati.jpg', NULL),
+(2, 0, 0, 'Bavarian Motors', 'Bavarian Motors', 'בווריאן מוטורס', '', '', '', '', 'img/a-forberz-bavarian.png', 'img/a-forberz-bavarian.png', NULL),
 (3, 0, 0, 'Land Rover Logo', 'Land Rover', 'לנד רובר', '', '', '', '', 'img/a-forberz-land-rover.png', 'img/a-forberz-land-rover.png', NULL),
-(4, 0, 0, 'Ford Logo', 'Ford', 'פורד', '', '', '', '', 'img/a-forberz-ford.jpg', 'img/a-forberz-ford.jpg', NULL),
-(5, 0, 0, 'Ducati Logo', 'Ducati', 'דוקאטי', '', '', '', '', 'img/a-forberz-ducati.jpg', 'img/a-forberz-ducati.jpg', NULL),
-(6, 0, 0, 'Opel Logo', 'Opel', 'אופל', '', '', '', '', 'img/a-forberz-opel.jpg', 'img/a-forberz-opel.jpg', NULL),
-(7, 0, 0, 'Odiva Art Logo', 'Odiva Art', 'אודיבה ארט', '', '', '', '', 'img/a-forberz-odiva-art.png', 'img/a-forberz-odiva-art.png', NULL),
-(8, 0, 0, 'Lease4u Logo', 'Lease4u', 'ליס4יו', '', '', '', '', 'img/a-forberz-lease4u.jpg', 'img/a-forberz-lease4u.jpg', NULL),
+(4, 0, 0, 'Odiva Art Logo', 'Odiva Art', 'אודיבה ארט', '', '', '', '', 'img/a-forberz-odiva-art.png', 'img/a-forberz-odiva-art.png', NULL),
+(5, 0, 0, 'Chevrolet Logo', 'Chevrolet', 'שברולט', '', '', '', '', 'img/a-forberz-chevrolet.jpg', 'img/a-forberz-chevrolet.jpg', NULL),
+(6, 0, 0, 'California Auto Spa', 'California Auto Spa', 'קליפורניה אוטו ספא', '', '', '', '', 'img/a-forberz-cali.png', 'img/a-forberz-cali.png', NULL),
+(7, 0, 0, 'Ford Logo', 'Ford', 'פורד', '', '', '', '', 'img/a-forberz-ford.jpg', 'img/a-forberz-ford.jpg', NULL),
+(8, 0, 0, 'Opel Logo', 'Opel', 'אופל', '', '', '', '', 'img/a-forberz-opel.jpg', 'img/a-forberz-opel.jpg', NULL),
 (101, 1, 1, 'A moped gets a treatment with Forberz Ride Effect and Forberz Detail HD קטנוע מקבל טיפול בפורברז רייד אפקט ופורברז דיטייל אייצ\' די', 'A moped gets a treatment with Forberz Ride Effect and Forberz Detail HD', 'קטנוע מקבל טיפול בפורברז רייד אפקט ופורברז דיטייל אייצ\' די', '', '', '', '', 'https://i.ytimg.com/vi/kst-AGvTW3M/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLD5fvi2sZEM6yfPSShdJxw9CJyg6g', 'https://i.ytimg.com/vi/kst-AGvTW3M/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLD5fvi2sZEM6yfPSShdJxw9CJyg6g', 'https://www.youtube.com/embed/kst-AGvTW3M'),
 (102, 1, 1, 'Forberz Ride Effect in action - Close Up פורברז רייד אפקט בפועלה', 'Forberz Ride Effect in action - Close Up', 'פורברז רייד אפקט בפועלה', '', 'Sun damaged plastic moped steering trim gets a quick revival treatment with Forberz Ride Effect', '', '', 'gallery/forberz-ride-effect-restore-plastic-and-rubber-trim-parts-on-car-and-bike.jpg', 'gallery/forberz-ride-effect-restore-plastic-and-rubber-trim-parts-on-car-and-bike.jpg', 'https://www.youtube.com/embed/srwUqEe6nTI'),
 (104, 1, 1, 'ride_effect_video', 'Forberz Ride Effect in action - Close Up', 'פורברז רייד אפקט בפעולה במבט מקרוב', 'video', 'Sun damaged plastic trim gets a quick revival treatment with Forberz Ride Effect', 'חלק פלסטיק שנשרף מהשמש מקבל טיפול מהיר בעזרת פורברז רייד אפקט', 'oy video', 'https://i.ytimg.com/vi/cmwOtn0bFSI/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAwOykCz2HbflFprTubC9x45cMUPg', 'https://i.ytimg.com/vi/cmwOtn0bFSI/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAwOykCz2HbflFprTubC9x45cMUPg', 'https://www.youtube.com/embed/cmwOtn0bFSI'),
@@ -460,15 +460,15 @@ CREATE TABLE `protreat` (
 
 INSERT INTO `protreat` (`id`, `priority`, `area_en`, `area_he`, `area_ru`, `city_en`, `city_he`, `city_ru`, `name_en`, `name_he`, `name_ru`, `adress_en`, `adress_he`, `adress_ru`, `phone`) VALUES
 (1, 22, 'Israel', 'מרכז', 'Израиль', 'Tel Aviv', 'תל אביב', 'Тель Авив', 'Bike Spa', 'בייק ספא', 'Bike Spa', 'Herzl 93', 'הרצל 93', 'Герцель 93', '03-5101443'),
-(2, 23, 'Israel', 'מרכז', 'Израиль', 'Tel Aviv', 'תל אביב', 'Тель Авив', 'Green Wash', 'רחיצה ירוקה', 'Green Wash', 'Shlomo Rd. 30', 'דרך שלמה 30', 'Шломо 30', '03-6878323'),
+(2, 33, 'Israel', 'צפון', 'Израиль', 'Yarka', 'ירכא', 'Тель Авив', 'Kastro Motors', 'קסטרו מוטורס', 'Green Wash', 'Main Rd.', 'כביש ראשי', 'Шломо 30', '04-6083733'),
 (3, 32, 'Israel', 'חיפה והקריות', 'Израиль', 'Kiryat Bialik', 'קריית ביאליק', 'Кирят Биялик', 'California Auto Spa', 'California Auto Spa', 'California Auto Spa', 'HaHaroshet 60', 'החרושת 60', 'ХаХарошет 60', '058-6336233'),
-(4, 2, 'Israel', 'דרום', 'Израиль', 'Be\'er Sheva', 'באר שבע', 'Бе\'ер Шева', 'Car Wash', 'Car Wash', 'Car Wash', 'HaPlada 18', 'הפלדה 18', 'ХаПлада 18', '052-8208143'),
-(5, 43, 'Israel', 'גליל תחתון', 'Израиль', 'Afula', 'עפולה', 'Афула', 'Motor Sport', 'Motor Sport', 'Motor Sport', 'Kehilat Zion 35', 'קהילת ציון 35', 'Кехилат Цион 35', '054-5760887'),
-(6, 31, 'Israel', 'חיפה והקריות', 'Израиль', 'Haifa', 'חיפה', 'Хайфа', 'Odiva Art', 'Odiva Art', 'Odiva Art', 'HaMusahim 27', 'המוסכים 27', 'ХаМусахим 27', '050-8939399'),
+(4, 0, 'Israel', 'תת_לא_פעיל', 'Израиль', 'Be\'er Sheva', 'באר שבע', 'Бе\'ер Шева', 'Car Wash', 'Car Wash', 'Car Wash', 'HaPlada 18', 'הפלדה 18', 'ХаПлада 18', '052-8208143'),
+(5, 0, 'Israel', 'תת_לא_פעיל', 'Израиль', 'Afula', 'עפולה', 'Афула', 'Motor Sport', 'Motor Sport', 'Motor Sport', 'Kehilat Zion 35', 'קהילת ציון 35', 'Кехилат Цион 35', '054-5760887'),
+(6, 0, 'Israel', 'תת_לא_פעיל', 'Израиль', 'Haifa', 'חיפה', 'Хайфа', 'Odiva Art', 'Odiva Art', 'Odiva Art', 'HaMusahim 27', 'המוסכים 27', 'ХаМусахим 27', '050-8939399'),
 (7, 26, 'Israel', 'שפלה', 'Израиль', 'Netanya', 'נתניה', 'Натанья', 'Odiva Art', 'Odiva Art', 'Odiva Art', 'Shechterman 26', 'שכטרמן 26', 'Шехтерман 26', '050-6324547'),
 (8, 19, 'Israel', 'מרכז', 'Израиль', 'Rehovot', 'רחובות', 'Реховот', 'HaSadna', 'הסדנה', 'HaSadna', 'Moshe Yatom 10', 'משה יתום 10', 'Моше Ятом 10', '050-5965960'),
 (9, 8, 'Israel', 'דרום', NULL, 'Ashdod', 'אשדוד', NULL, 'Ceramic Pro', 'Ceramic Pro', NULL, 'HaAvoda 69', 'העבודה 69', NULL, '054-4557817'),
-(10, 7, 'Israel', 'דרום', NULL, 'Ashqelon', 'אשקלון', NULL, 'Kerramo', 'Kerramo', NULL, 'HaKishor 14', 'הכישור 14', NULL, '050-8281035'),
+(10, 0, 'Israel', 'תת_לא_פעיל', NULL, 'Ashqelon', 'אשקלון', NULL, 'Kerramo', 'Kerramo', NULL, 'HaKishor 14', 'הכישור 14', NULL, '050-8281035'),
 (11, 20, 'Israel', 'מרכז', 'Израиль', 'Holon', 'חולון', 'Реховот', 'Dor HaGolan', 'שטיפת דור הגולן', 'HaSadna', 'HaOrgim 6', 'האורגים 6', 'Моше Ятом 10', '03-5567837');
 
 -- --------------------------------------------------------
@@ -503,12 +503,12 @@ CREATE TABLE `stores` (
 INSERT INTO `stores` (`id`, `priority`, `area_en`, `area_he`, `area_ru`, `city_en`, `city_he`, `city_ru`, `name_en`, `name_he`, `name_ru`, `adress_en`, `adress_he`, `adress_ru`, `phone`) VALUES
 (1, 2, 'Israel', 'דרום', 'Израиль', 'Be\'er Sheva', 'באר שבע', 'Бе\'ер Шева', 'Igal Car Accessories', 'יגאל אביזרי רכב', 'Igal Car Accessories', 'HaManof 21', 'המנוף 21', 'ХаМаноф 21', '054-2001554'),
 (2, 1, 'Israel', 'דרום', 'Израиль', 'Eilat', 'אילת', 'Эйлат', 'Auto Sound', 'אוטו סאונד', 'Auto Sound', 'HaMasger 11', 'המסגר 11', 'ХаМасгер 11', '08-6378142'),
-(3, 8, 'Israel', 'דרום', 'Израиль', 'Jerusalem', 'ירושלים', 'Иерусалим', 'Honda', 'Honda', 'Honda', 'HaOman 10', 'האמן 10', 'ХаОман 10', '02-6789422'),
+(3, 0, 'Israel', 'תת_לא_פעיל', 'Израиль', 'Jerusalem', 'ירושלים', 'Иерусалим', 'Honda', 'Honda', 'Honda', 'HaOman 10', 'האמן 10', 'ХаОман 10', '02-6789422'),
 (4, 16, 'Israel', 'מרכז', 'Израиль', 'Tel Aviv\r\n', 'תל אביב', 'Тель Авив', 'Avi Honda', 'אבי הונדה', 'Avi Honda', 'Menahem Begin 35', 'מנחם בגין 35', 'Menahem Begin 35', '03-5603879'),
 (5, 19, 'Israel', 'מרכז', 'Израиль', 'Bene Beraq', 'בני ברק', 'Рамат Ган', 'Zabar Bikes', 'צבר אופנועים', 'Zabar Bikes', 'Bar Kochva 14', 'בר כוכבא 14', 'Bar Cochva 14', '03-5706064'),
 (6, 20, 'Israel', 'מרכז', 'Израиль', 'Bene Beraq', 'בני ברק', 'Рамат Ган', 'Merkaz HaTzipuim', 'מרכז הציפויים', 'Merkaz HaTzipuim', 'Mivtza Kadesh 49', 'מבצע קדש 49', 'Жаботински 95', '052-5259846'),
 (7, 26, 'Israel', 'צפון', 'Израиль', 'Nazareth', 'נצרת', 'Назарет', 'Pimp My Car', 'Pimp My Car', 'Pimp My Car', 'HaMusachim Jn.', 'צומת המוסכים', 'Перекрёсток ХаМусахим', '050-5823137'),
-(8, 28, 'Israel', 'צפון', 'Израиль', 'Tirat HaCar mel', 'טירת הכרמל', 'Далият ЭльКармель', 'Green Motors', 'גרין מוטורס', 'Green Motors', 'HaMelaha 5', 'המלאכה 5', 'Объездная Дорога', '1700-707375'),
+(8, 22, 'Israel', 'מרכז', 'Израиль', 'Herzliya', 'הרצליה', 'Далият ЭльКармель', 'Car Kiosk', 'קיוסק לרכב', 'Green Motors', 'Maskit 9', 'משכית 9', 'Объездная Дорога', '09-7409929'),
 (9, 21, 'Israel', 'מרכז', 'Израиль', 'Petah Tikva', 'פתח תקווה', 'Рош ХаАин', 'HaTiltan', 'מוסך התלתן', 'HaTiltan', 'HaYetsira 17', 'היצירה 17', 'ХаЕцира 8', '03-9246701'),
 (10, 6, 'Israel', 'דרום', 'Израиль', 'Gush Azion', 'גוש עציון', 'Гуш Ацион', 'Yosef Yovel', 'יוסף יובל שיווק', 'Yossef Yovel', 'Kfar Azion', 'כפר עציון', 'Кфар Ацион', '054-6472044'),
 (11, 25, 'Israel', 'צפון', 'Израиль', 'Yoqneam', 'יקנעם', 'Йокнеам', 'Roni Gavriel Parts', 'רוני גבריאל חלפים', 'Roni Gavriel Parts', 'HaTaasiya7', 'התעשייה 7', 'ХаТаасия 7', '04-6588000'),
@@ -522,18 +522,18 @@ INSERT INTO `stores` (`id`, `priority`, `area_en`, `area_he`, `area_ru`, `city_e
 (19, 32, 'Israel', 'צפון', 'Израиль', 'Kiryat Bialik', 'קריית ביאליק', 'Кирят Бялик', 'Apex', 'אפקס', 'Apex', 'Yosef Levy 12', 'יוסף לוי 12', 'Йосеф Леви 12', '04-8742722'),
 (20, 27, 'Israel', 'צפון', 'Израиль', 'Isfiya', 'עספיא', 'Усфия', 'Perfect Car', 'פרפקט קאר', 'Perfect Car', 'Main Rd.', 'כביש ראשי', 'Главная дорога', '052-5495726'),
 (21, 7, 'Israel', 'דרום', 'Израиль', 'Beit Shemesh', 'בית שמש', 'Бейт Шемеш', 'Taliya System', 'טליה סיסטמס', 'Talia System', 'HaHarash 9', 'החרש 9', 'ХаХараш 9', '054-5595932'),
-(22, 4, 'Israel', 'דרום', NULL, 'Ashqelon', 'אשקלון', NULL, 'Kerramo', 'Kerramo', 'Kerramo', 'HaKishor 14', 'הכישור 14', NULL, '050-8281035'),
+(22, 0, 'Israel', 'תת_לא_פעיל', NULL, 'Ashqelon', 'אשקלון', NULL, 'Kerramo', 'Kerramo', 'Kerramo', 'HaKishor 14', 'הכישור 14', NULL, '050-8281035'),
 (24, 13, 'Israel', 'מרכז', 'Израиль', 'Tel Aviv', 'תל אביב', 'Тель Авив', 'Dr. Bike', 'ד"ר לאופנועים', 'Dr. Bike', 'Yedidya Frenkel 55', 'ידידיה פרנקל 55', 'Едидия Френкель 55', '03-6814307'),
 (25, 17, 'Israel', 'מרכז', 'Израиль', 'Tel Aviv\n', 'תל אביב', 'Тель Авив', 'Daytona', 'דייטונה', 'Daytona', 'HaSadna 18', 'הסדנה 18', 'ХаСадна 18', '03-6816186'),
 (26, 15, 'Israel', 'מרכז', 'Израиль', 'Tel Aviv', 'תל אביב', 'Тель Авив', 'Bike Spa', 'בייק ספא', 'Bike Spa', 'Herzl 93', 'הרצל 93', 'Герцель 93', '03-5101443'),
 (27, 18, 'Israel', 'מרכז', 'Израиль', 'Ramat Gan', 'רמת גן', 'Рамат Ган', 'Daytona', 'דייטונה', 'Daytona', 'Jabotinsky 95', 'ז\'בוטינסקי 95', 'Жаботински 95', '077-4373008'),
 (28, 12, 'Israel', 'מרכז', 'Израиль', 'Tel Aviv', 'תל אביב', 'Тель Авив', 'Ducati', 'Ducati', 'Ducati', 'HaMasger 58', 'המסגר 58', 'ХаМасгер 58', '03-5189991'),
-(30, 22, 'Israel', 'מרכז', 'Израиль', 'Netanya', 'נתניה', 'Натанья', 'Odiva Art', 'אודיבה ארט', 'Odiva Art', 'Shechterman 26', 'שכטרמן 26', 'Шехтерман 26', '050-6324547'),
-(31, 34, 'Israel', 'צפון', 'Израиль', 'Yarka', 'ירכא', 'Ярка', 'German Yarka', 'German Yarka', 'German Yarka', 'Main Rd.', 'כביש ראשי', 'Главная дорога', '04-8215758'),
-(32, 35, 'Israel', 'צפון', 'Израиль', 'Yarka', 'ירכא', 'Ярка', 'Kastro Motors', 'קסטרו מוטורס', 'Kastro Motors', 'Main Rd.', 'כביש ראשי', 'Главная дорога', '04-6083733'),
-(33, 36, 'Israel', 'צפון', 'Израиль', 'Nahaf', 'נחף', 'Нахаф', 'Ofnotrade', 'אופנוטרייד', 'Ofnotrade', '"Ofnotrade" on Waze', 'ליד מגרש הכדורגל', '"Ofnotrade" on Waze', '04-6585185'),
-(34, 29, 'Israel', 'צפון', 'Израиль', 'Haifa', 'חיפה', 'Хайфа', 'Odiva Art', 'אודיבה ארט', 'Odiva Art', 'HaMusahim 27', 'המוסכים 27', 'ХаМусахим 27', '050-8939399'),
-(35, 37, 'Israel', 'צפון', 'Израиль', 'Karmiel', 'כרמיאל', 'Кармиель', 'Sun Defender', 'סאנדיפנדר', 'Sun Defender', 'HaOreg 3', 'האורג 3', 'ХаОрег 3', '052-8078889'),
+(30, 22, 'Israel', 'מרכז', 'Израиль', 'Netanya', 'נתניה', 'Натанья', 'Odiva Art', 'Odiva Art', 'Odiva Art', 'Shechterman 26', 'שכטרמן 26', 'Шехтерман 26', '050-6324547'),
+(31, 36, 'Israel', 'צפון', 'Израиль', 'Yarka', 'ירכא', 'Ярка', 'German Yarka', 'German Yarka', 'German Yarka', 'Main Rd.', 'כביש ראשי', 'Главная дорога', '04-8215758'),
+(32, 37, 'Israel', 'צפון', 'Израиль', 'Yarka', 'ירכא', 'Ярка', 'Kastro Motors', 'קסטרו מוטורס', 'Kastro Motors', 'Main Rd.', 'כביש ראשי', 'Главная дорога', '04-6083733'),
+(33, 0, 'Israel', 'תת_לא_פעיל', 'Израиль', 'Nahaf', 'נחף', 'Нахаф', 'Ofnotrade', 'אופנוטרייד', 'Ofnotrade', '"Ofnotrade" on Waze', 'ליד מגרש הכדורגל', '"Ofnotrade" on Waze', '04-6585185'),
+(34, 0, 'Israel', 'תת_לא_פעיל', 'Израиль', 'Haifa', 'חיפה', 'Хайфа', 'Odiva Art', 'אודיבה ארט', 'Odiva Art', 'HaMusahim 27', 'המוסכים 27', 'ХаМусахим 27', '050-8939399'),
+(35, 34, 'Israel', 'צפון', 'Израиль', 'Karmiel', 'כרמיאל', 'Кармиель', 'Sun Defender', 'סאנדיפנדר', 'Sun Defender', 'HaOreg 3', 'האורג 3', 'ХаОрег 3', '052-8078889'),
 (36, 23, 'Israel', 'מרכז', 'Израиль', 'Netanya', 'נתניה', 'Натанья', 'Shimi Bikes', 'שימי אופנועים', 'Shimi Bikes', 'Ort 9', 'אורט 9', 'Орт 9', '09-8848042'),
 (38, 33, 'Israel', 'צפון', 'Израиль', 'Akko', 'עכו', 'Akko', 'Сhevrolet', 'Сhevrolet', 'Сhevrolet', 'Sha\'ar Naaman 1', 'שער נאמן 1', 'Ша\'ар Нааман 1', '04-9915203'),
 (39, 38, 'Israel', 'צפון', 'Израиль', 'Nahariya', 'נהריה', 'Нахария', 'Hezi Or Kor', 'חזי אור קור', 'Hezi Or Kor', 'Lohmey HaGetaot 24', 'לוחמי הגטאות 24', 'Лохмей ХаГетаот 24', '04-9001237'),
