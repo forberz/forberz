@@ -366,7 +366,7 @@ if (isset($CART_ITEMS)) {
 	
 </form>
 
-<div id="yousure" style="display: none"><?=isset($DICT['yousure'] ? $DICT['yousure'] : 'Are you sure ?')?></div>
+<div id="yousure" style="display: none"><?=isset($DICT['yousure']) ? $DICT['yousure'] : 'Are you sure ?'?></div>
 
 <?php
 }
