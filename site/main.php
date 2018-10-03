@@ -25,6 +25,16 @@ $result = $DB->query("SELECT id, prod_id, img, thumb,
 					FROM `gallery` 
 					WHERE id IN (1,2,3,4,5,6,7,8) ORDER BY id");
 ?>
+<div class="main_clients">
+	<div class="main_clients_title">
+		<h2><?= $DICT['clients']?></h2>
+	</div>
+	<div class="main_clients_text">
+		<?php while ($row = $result->fetch_assoc()) {?>
+    	<div class="client_logo"><img class="client_logo" src="<?=$row['img']?>"></div>
+    	<?php }?>
+	</div>
+</div>
 
 <div class="ecoflex">
 	<div class="ecosqr1">
@@ -55,19 +65,9 @@ $result = $DB->query("SELECT id, prod_id, img, thumb,
 		</div>
 	</div>
 </div>
-<div class="main_clients">
-	<div class="main_clients_title">
-		<h2><?= $DICT['clients']?></h2>
-	</div>
-	<div class="main_clients_text">
-		<?php while ($row = $result->fetch_assoc()) {?>
-    	<div class="client_logo"><img class="client_logo" src="<?=$row['img']?>"></div>
-    	<?php }?>
-	</div>
-</div>
-<div class="banner">
+<!-- <div class="banner">
 	<a href="/catalogue"><img class="banner" src="<?php echo $LANG === 'en' ? 'img/banner1en.jpg' : 'img/banner1he.jpg' ?>" alt="Forberz - Natural Care and Detailing Products for Cars and Bikes" /></a>
-</div>
+</div> -->
 <?php include('comment.php'); ?>
 <!-- <div class="main_reviews">
 	<div class="main_reviews_title">

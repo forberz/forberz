@@ -4,6 +4,12 @@
 .pc {
     display: table-cell;
 }
+div.blackback{
+    background-color: black;
+    padding: 0.5rem;
+    margin: 0 auto;
+    margin-top: 0.5rem;
+}
 
 div.shops {
     background-color: #0A0A0A;

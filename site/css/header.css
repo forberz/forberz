@@ -9,6 +9,7 @@ div.black_wrap {
     width: 100%;
     margin: 0 auto;
     padding: 0;
+    padding-bottom: 0.3rem;
     border-radius: 0;
 }
 div.social {

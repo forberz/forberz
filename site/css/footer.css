@@ -53,9 +53,11 @@ div.footer_bottom {
 }
 ul.footer_menu {
     margin: auto;
-    padding: 0;
+    padding: 0.5em;
     margin-top: 1em;
     list-style-type: none;
+    border-left: 1px solid #333;
+    background-color: rgba(0,0,0,0.6);
 }
 .foot_li a {
     transition: color .2s ease-in-out; 
