@@ -81,7 +81,7 @@ while ($row = $result->fetch_assoc()) {
 			<h4><?=$row['icons']?></h4>
 		</div> -->
 		<?php if (isset($CART_ITEMS)) { ?>
-		<div class="catdiv cart">
+		<div class="catdiv" <?= $ID ? '' : 'onclick="document.location=\'catalogue/' . $row['linktxt'] . '\'"' ?>>
 			<table class="buy cart" style="float: right;">
 				<tr valign="top">
 					<td colspan="3" align="right" onclick="removeItem('<?=$row['linktxt']?>')">&times;</td>
