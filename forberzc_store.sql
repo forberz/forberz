@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 25, 2018 at 11:00 PM
+-- Generation Time: Oct 03, 2018 at 12:02 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -59,12 +59,14 @@ INSERT INTO `comments` (`id`, `lang`, `table_name`, `obj_id`, `data`, `author`, 
 
 DROP TABLE IF EXISTS `coupons`;
 CREATE TABLE `coupons` (
-  `id` varchar(8) NOT NULL,
+  `id` int(11) NOT NULL,
+  `code` varchar(8) NOT NULL,
   `prod_id` int(11) NOT NULL,
   `price_en` int(7) NOT NULL,
   `price_he` int(7) NOT NULL,
   `price_ru` int(7) NOT NULL,
   `size` int(7) NOT NULL DEFAULT '1',
+  `type` int(1) DEFAULT '0',
   `min_quantity` int(7) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -72,11 +74,11 @@ CREATE TABLE `coupons` (
 -- Dumping data for table `coupons`
 --
 
-INSERT INTO `coupons` (`id`, `prod_id`, `price_en`, `price_he`, `price_ru`, `size`, `min_quantity`) VALUES
-('FBRZ5543', 1, 555, 275, 555, 500, 1),
-('FBRZ5546', 1, 555, 65, 555, 120, 20),
-('FBRZ6672', 2, 555, 65, 555, 500, 24),
-('NADAVBUR', 2, 555, 100, 0, 500, 1);
+INSERT INTO `coupons` (`id`, `code`, `prod_id`, `price_en`, `price_he`, `price_ru`, `size`, `type`, `min_quantity`) VALUES
+(1, 'FRBRZ555', 1, 555, 65, 555, 120, NULL, 20),
+(2, 'FRBRZ555', 2, 555, 65, 555, 500, NULL, 24),
+(3, 'FRBRZ555', 2, 555, 100, 0, 500, NULL, 1),
+(4, 'FRBRZ555', 1, 555, 275, 555, 500, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -103,7 +105,7 @@ INSERT INTO `dict` (`id`, `lang_key`, `lang_he`, `lang_en`, `lang_ru`) VALUES
 (4, 'main_h2', '', '', 'Форберз'),
 (5, 'main_p', 'מוצרי דיטיילינג טבעיים\n(טיפוח רכב ודו-גלגלי).\nמוצרי שחזור, שימור וחידוש לפלסטיק, עור, גומי, ויניל, צבע ועוד.\nתכשירי ניקוי עור, בד, פלסטיק, ויניל ועוד.', '', 'Извините, страница не закончена.'),
 (6, 'social_on', 'גם ב', 'Social', 'Форберз на:'),
-(7, 'cata', 'קטלוג מוצרים', 'Products Catalogue', 'Каталог'),
+(7, 'cata', 'קטלוג', 'Catalogue', 'Каталог'),
 (8, 'wherebuy', 'חנויות', 'Shops', 'Где купить?'),
 (9, 'protreat', 'מומחים', 'Pro-Treatment', 'Про-Сервис'),
 (10, 'guide', 'הדרכה ויעוץ', 'Guides', 'Школа Дитэйлинга'),
@@ -169,7 +171,8 @@ INSERT INTO `dict` (`id`, `lang_key`, `lang_he`, `lang_en`, `lang_ru`) VALUES
 (74, 'comment_business', 'שם העסק', 'Your Business Name', 'Business Name'),
 (75, 'comment_data', 'ספרו לנו מה דעתכם', 'Tell us what You think', 'Tell us what You think'),
 (76, 'comment_send', 'שלח', 'SEND', 'SEND'),
-(77, 'tellus', 'ספרו לנו', 'Tell Us', 'Tell Us');
+(77, 'tellus', 'ספרו לנו', 'Tell Us', 'Tell Us'),
+(78, 'yousure', 'בטוח?', 'SURE?', '');
 
 -- --------------------------------------------------------
 
@@ -678,10 +681,15 @@ ALTER TABLE `titles`
 ALTER TABLE `comments`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
+-- AUTO_INCREMENT for table `coupons`
+--
+ALTER TABLE `coupons`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT for table `dict`
 --
 ALTER TABLE `dict`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 --
 -- AUTO_INCREMENT for table `gallery`
 --
