@@ -12,6 +12,9 @@ include('header.php');
 		</div>
 		<div class="about_forberz_text">
 			<?= $DICT['contact_text']?>
+		<?php
+		include('comment.php');
+		?>
 		</div>
 	</div>
 

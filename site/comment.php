@@ -89,12 +89,14 @@ foreach ($items as $table => $ids) {
 	}
 }
 
+if ($PAGE !== 'contact'){
 ?>
 <div class="h_img">
-<h2 id="comments_title"><?=$DICT['feedback']?></h2>
+	<h2 id="comments_title"><?=$DICT['feedback']?></h2>
 </div>
-<div id="comments" style="height: <?= 400 * max(1, ceil(count($comments)/3))?>px">
+<?php } ?>
 
+<div id="comments" style="height: <?= 400 * max(1, ceil(count($comments)/3))?>px">
 	<?php
 		foreach ($comments as $row) {
 	?>
