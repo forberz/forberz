@@ -7,21 +7,24 @@ require '../conn.php';
 
 $query = "SELECT C.min_quantity, C.price_". $DB->real_escape_string($_POST['lang']) ." AS price, C.size
 	FROM `coupons` AS C 
-	WHERE code = '". $DB->real_escape_string($_POST['coupon']) ."' AND prod_id = '". $DB->real_escape_string($_POST['prod_id']) ."'
-	LIMIT 1";
+	WHERE code = '". $DB->real_escape_string($_POST['coupon']) ."' 
+		AND (ISNULL(prod_id) OR prod_id = 0 OR prod_id = '". $DB->real_escape_string($_POST['prod_id']) .")'";
 
 // var_dump($query);
 
-if (($result = $DB->query($query)) && ($row = $result->fetch_object())) {
-	echo json_encode(array(
-		'error' => false,
+$results = array();
+
+$result = $DB->query($query);
+
+while ($row = $result->fetch_object()) {
+	$results[] = array(
 		'min_quantity' => $row->min_quantity,
 		'price' => $row->price,
 		'size' => $row->size
-	));
-} else {
-	echo json_encode(array(
-		'error' => true
-	));
+	);
 }
 
+echo json_encode(array(
+	'error' => !!count($results),
+	'results' => $results
+));

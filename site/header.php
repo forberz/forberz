@@ -85,6 +85,7 @@ switch ($PAGE) {
 		}
 	
 	default:
+		$TABLE_NAME = $PAGE;
 		$result = $DB->query("SELECT id, TRUE AS cur, title_{$LANG} AS title FROM titles WHERE page = '{$PAGE}'");
 		break;
 }
@@ -152,7 +153,6 @@ $current_page = preg_replace('/(index)?\.php/', '', pathinfo($_SERVER['PHP_SELF'
 		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 
 		<script type="text/javascript" src="site/js/script.js"></script>
-		<!-- <script type="text/javascript" src="site/js/cart.js"></script> -->
 
 		<link rel="stylesheet" href="site/css/style.css"/>
 		<link rel="stylesheet" href="site/css/header.css"/>
