@@ -91,12 +91,12 @@ while ($row = isset($prev_row) ? $prev_row : $result->fetch_assoc()) {
 	
 	?>
 	<div class="cat_wrap <?php echo ($sider % 2) === 0 ? 'left' : 'right'; ?> <?= $ID ? 'insider' : '' ?>" id="cart_item_<?=$row['link_text']?>" data-item-id="<?=$row['id']?>">
-		<!-- <div class="product_icons">
+		<div class="product_icons">
 			<h4><?=$row['icons']?></h4>
-		</div> -->
+		</div>
 		<div class="catdiv" <?= $ID || isset($CART_ITEMS) ? '' : 'onclick="document.location=\'catalogue/' . $row['linktxt'] . '\'"' ?>>
 			<?php if (isset($CART_ITEMS)) { ?>
-			<table class="buy cart" style="float: right;">
+<!-- 			<table class="buy cart" style="float: right;">
 				<tr valign="top">
 					<td colspan="3" align="right" onclick="removeItem(event, '<?=$row['link_text']?>', <?=$row['id']?>)">&times;</td>
 				</tr>
@@ -139,13 +139,13 @@ while ($row = isset($prev_row) ? $prev_row : $result->fetch_assoc()) {
 					</td>
 					<td></td>
 				</tr>
-			</table>
+			</table> -->
 			<?php } ?>
 			<div class="prod_img_buy <?= $ID ? 'product' : '' ?>">
 				<img class="product_eng" src="<?=$row['image']?>" alt="<?=$row['img_alt']?>" />
 								
 				<?php if ($ID) { ?>
-				<form class="payment_btn" id="rideeffect" name="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+				<!-- <form class="payment_btn" id="rideeffect" name="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 					<table class="buy">
 						<tr valign="bottom">
 							<td>
@@ -192,7 +192,7 @@ while ($row = isset($prev_row) ? $prev_row : $result->fetch_assoc()) {
 					</table>
 					
 					<input type="hidden" name="return" value="https://www.forberz.com/#thank-you">
-					<!-- <input type="hidden" name="notify_url" value="https://homzit.com/order/paypal"> -->
+					<input type="hidden" name="notify_url" value="https://homzit.com/order/paypal">
 					<input type="hidden" name="cancel_return" value="https://www.forberz.com/">
 					<input type="hidden" name="cmd" value="_xclick">
 					<input type="hidden" name="business" value="sales@forberz.com">
@@ -204,7 +204,7 @@ while ($row = isset($prev_row) ? $prev_row : $result->fetch_assoc()) {
 					<input type="hidden" name="item_name" id="item_name_<?=$row['link_text']?>" 
 						value="<?=htmlentities(strip_tags($row['title']).' - '.strip_tags($row['subtitle']))?>">
 					<input type="hidden" name="item_number" value="9">
-					<!-- <input type="hidden" name="invoice" value="5906270250f"> -->
+					<input type="hidden" name="invoice" value="5906270250f">
 					<input type="hidden" name="amount" id="item_price_<?=$row['link_text']?>" value="<?=$prices[0]?>">
 					<input type="hidden" name="shipping" value="0">
 					<input type="submit" value="<?= $DICT['buybtn']?>">
@@ -216,7 +216,7 @@ while ($row = isset($prev_row) ? $prev_row : $result->fetch_assoc()) {
 
 					<span class="buy_info"><?= $DICT['buyshortterm']?></span>
 					
-				</form>
+				</form> -->
 				<?php } ?>
 			</div>
 
@@ -237,64 +237,6 @@ while ($row = isset($prev_row) ? $prev_row : $result->fetch_assoc()) {
 				<?php if ($ID) { ?>
 					<div class="product_description">
 						<?=$row['maintext']?>
-					</div>
-					<div class="main" id="howto">
-						<h2><?= $DICT['how_to_use']?></h2>
-						<ul class="other_point">
-						<?php
-							$points = explode(' @@ ', $row['howtopoints']);
-
-							foreach ($points as $p) {
-								echo '<li>'.$p.'</li>';
-							}
-						?>
-						</ul>
-
-						<?=$row['howtotext']?>
-					</div>
-					<div class="main">
-							<h2><?= $DICT['tips']?></h2>
-							<ul class="other_point">
-							<?php
-								$points = explode(" @@ ", $row['howtotips']);
-								
-								foreach ($points as $p) {
-									echo '<li>'.$p.'</li>';
-								}
-							?>
-							</ul>
-						</div>
-					<div class="main" id="faq">
-					  <h2><?= $DICT['freq']?></h2>
-						<ul class="other_point">
-						  <?php
-							$points = explode("--", $row['faqpoints']);
-
-							foreach ($points as $p) {
-							  $qANDa = preg_split("/\r?\n\r?\n/", $p);
-							  if (count($qANDa) > 1) {
-								echo '<li><b>'.$qANDa[0].'</b><br>'.$qANDa[1].'</li>';
-							  } else {
-								echo "<li>$p</li>";
-							  }
-							}
-						  ?>
-						</ul>
-					</div>
-
-					<div class="main" id="msds">
-						<h2><?= $DICT['msds'] ?></h2>
-						<ul class="other_point">
-						<?php
-							$points = explode(' @@ ', $row['msdspoints']);
-
-							foreach ($points as $p) {
-								echo '<li>'.$p.'</li>';
-							}
-						?>
-						</ul>
-
-						<?= $row['msdstext'] ?>
 					</div>
 					<br><br>
 				<?php 

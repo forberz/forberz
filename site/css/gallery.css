@@ -1,5 +1,5 @@
 #gallery {
-    width: 88.7%;
+    width: 100%;
     text-align: center;
 }
 
@@ -58,8 +58,8 @@ iframe#the-video {
     opacity: 1;
 }
 .gallery-img.prodgal{
-    width: 40% !important;
-    height: 300px !important;
+    width: 20% !important;
+    height: 250px !important;
     background-size: 150% auto !important;
 }
 

@@ -133,7 +133,7 @@ if ($PAGE !== 'contact'){
 		<br>
 		<textarea id="comment_data" name="comment_data" placeholder="<?=$DICT['comment_data']?>" required="required" 
 			onfocus="document.getElementById('comment_hack').value = 'ok'"></textarea>
-		<input type="text" id="comment_author" name="comment_author" maxlength="255" placeholder="<?=$DICT['comment_author']?>" />
+		<input type="text" id="comment_author" name="comment_author" maxlength="255" placeholder="<?=$DICT['comment_author']?>" required="required" />
 		<input type="text" id="comment_business" name="comment_business" maxlength="255" placeholder="<?=$DICT['comment_business']?>" />
 		<input type="hidden" id="comment_hack" name="comment_hack" value="no-ok" />
 		<input type="hidden" name="comment_table" value="<?=$TABLE_NAME?>" />

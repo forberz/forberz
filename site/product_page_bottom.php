@@ -13,7 +13,6 @@
 	  <?php
 	  }
 	}
-	include('comment.php');
 ?>
 </div>
 
@@ -27,3 +26,62 @@
   </div>
 </div>
 
+<div class="tipsqr" id="howto">
+	<h2><?= $DICT['how_to_use']?></h2>
+		<ul class="other_point">
+					<?php
+						$points = explode(' @@ ', $row['howtopoints']);
+
+						foreach ($points as $p) {
+							echo '<li>'.$p.'</li>';
+						}
+					?>
+					</ul>
+
+						<?=$row['howtotext']?>
+					</div>
+					<div class="tipsqr">
+							<h2><?= $DICT['tips']?></h2>
+							<ul class="other_point">
+							<?php
+								$points = explode(" @@ ", $row['howtotips']);
+								
+								foreach ($points as $p) {
+									echo '<li>'.$p.'</li>';
+								}
+							?>
+							</ul>
+						</div>
+					<div class="tipsqr" id="faq">
+					  <h2><?= $DICT['freq']?></h2>
+						<ul class="other_point">
+						  <?php
+							$points = explode("--", $row['faqpoints']);
+
+							foreach ($points as $p) {
+							  $qANDa = preg_split("/\r?\n\r?\n/", $p);
+							  if (count($qANDa) > 1) {
+								echo '<li><b>'.$qANDa[0].'</b><br>'.$qANDa[1].'</li>';
+							  } else {
+								echo "<li>$p</li>";
+							  }
+							}
+						  ?>
+						</ul>
+					</div>
+
+					<div class="tipsqr" id="msds">
+						<h2><?= $DICT['msds'] ?></h2>
+						<ul class="other_point">
+						<?php
+							$points = explode(' @@ ', $row['msdspoints']);
+
+							foreach ($points as $p) {
+								echo '<li>'.$p.'</li>';
+							}
+						?>
+						</ul>
+
+						<?= $row['msdstext'] ?>
+					</div>
+					

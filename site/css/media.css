@@ -18,6 +18,14 @@
 		flex-direction: column;
 		margin: 1rem 0;
 	}
+	div.product_icons {
+		display: none;
+	}
+
+	div.tipsqr {
+		width: 90%;
+		display: block;
+	}
 }
 @media screen and (min-width: 1000px) {
 	html[lang="he"] .buttons_before_prod, html[lang="he"] body.rtl .buttons_before_prod {
@@ -55,6 +63,11 @@
 	div.comment, form.comment {
 		width: 95%;
 	}
+
+	div.tipsqr {
+		width: 90%;
+		display: block;
+	}
 		
 	div.about_forberz {
 	background-color: #0A0A0A;
@@ -69,6 +82,10 @@
 	display: none;
 	}
 	
+	div.product_icons {
+		display: none;
+	}
+
 	div.about_forberz_text {
 	width: 95%;
 	height: 100%;
@@ -98,7 +115,7 @@
 		height: 200px !important;
 		background-size: 200% auto !important;
 	}
-
+	
 	div.page_menu {
 		display: block;
 		width: 93%;
@@ -317,6 +334,9 @@
 }
 
 @media (min-width: 1400px) {
+	div.product_icons {
+		display: none;
+	}
 	div.cat_wrap:not(.insider) {
 		width: 49%;
 		height: 39rem;
