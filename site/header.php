@@ -7,20 +7,20 @@ date_default_timezone_set('UTC');
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-if(preg_match('/www./', $_SERVER['HTTP_HOST'])) {
-	$_SERVER['HTTP_HOST'] = str_replace('www.', '', $_SERVER['HTTP_HOST']);
-	$redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-	header('HTTP/1.1 301 Moved Permanently');
-	header('Location: ' . $redirect);
-	exit();
-}
+// if(preg_match('/www./', $_SERVER['HTTP_HOST'])) {
+// 	$_SERVER['HTTP_HOST'] = str_replace('www.', '', $_SERVER['HTTP_HOST']);
+// 	$redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+// 	header('HTTP/1.1 301 Moved Permanently');
+// 	header('Location: ' . $redirect);
+// 	exit();
+// }
 
-if(!is_dir('C:\\Windows') && !is_dir('/Users') && (empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] == "off")) {
-	$redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-	header('HTTP/1.1 301 Moved Permanently');
-	header('Location: ' . $redirect);
-	exit();
-}
+// if(!is_dir('C:\\Windows') && !is_dir('/Users') && (empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] == "off")) {
+// 	$redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+// 	header('HTTP/1.1 301 Moved Permanently');
+// 	header('Location: ' . $redirect);
+// 	exit();
+// }
 
 $SITES = array(
 	'en' => 'forberz.com',
@@ -93,12 +93,12 @@ $res = $result->fetch_assoc();
 $TITLE = strip_tags($res['title']);
 $obj_id = intval($res['id']);
 
-if (!$res['cur'] && !in_array($_SERVER['PHP_SELF'], array('/forberz/sitemap.php', '/sitemap.php', '/forberz/site/cart.php', '/site/cart.php', '/cart.php'))) {
-	$redirect = 'https://' . ($LANG === 'en' ? $SITES['he'] : $SITES['en']) . '/' . $PAGE . '/' . $res['linktxt'];
-	header('HTTP/1.1 301 Moved Permanently');
-	header('Location: ' . $redirect);
-	exit();
-}
+// if (!$res['cur'] && !in_array($_SERVER['PHP_SELF'], array('/forberz/sitemap.php', '/sitemap.php', '/forberz/site/cart.php', '/site/cart.php', '/cart.php'))) {
+// 	$redirect = 'https://' . ($LANG === 'en' ? $SITES['he'] : $SITES['en']) . '/' . $PAGE . '/' . $res['linktxt'];
+// 	header('HTTP/1.1 301 Moved Permanently');
+// 	header('Location: ' . $redirect);
+// 	exit();
+// }
 
 $current_page = preg_replace('/(index)?\.php/', '', pathinfo($_SERVER['PHP_SELF'])['basename']);
 
@@ -108,7 +108,7 @@ $current_page = preg_replace('/(index)?\.php/', '', pathinfo($_SERVER['PHP_SELF'
 		<?php 
 			foreach ($LANGS as $L) {
 				if ($L !== $LANG) {
-					echo '<link rel="alternate" href="https://'.$SITES[$L].'/'.$current_page.($ID ? '/' . $ID : '').'" hreflang="'.$L.'">';
+					echo '<link rel="alternate" href="http://'.$SITES[$L].'/'.$current_page.($ID ? '/' . $ID : '').'" hreflang="'.$L.'">';
 				}
 			}
 			
@@ -119,7 +119,8 @@ $current_page = preg_replace('/(index)?\.php/', '', pathinfo($_SERVER['PHP_SELF'
 				echo '<base href="http://127.0.0.1/forberz/" />';
 				// echo '<base href="http://192.168.1.101/forberz/" />';
 			} else {
-				echo '<base href="https://' . $SITES[$LANG] . '/" />';
+				// echo '<base href="https://' . $SITES[$LANG] . '/" />';
+				echo '<base href="/" />';
 			}
 		?>
 		
@@ -134,14 +135,14 @@ $current_page = preg_replace('/(index)?\.php/', '', pathinfo($_SERVER['PHP_SELF'
 		<meta property="og:title" content="Forberz">
 		<meta property="og:description" content="Forberz - 100% Natural Car and Bike Care and Detailing Products">
 		
-		<meta property="og:image" content="https://forberz.com/img/forberzavatar.jpg">
-		<meta property="og:image:url" content="https://forberz.com/img/forberzavatar.jpg">
+		<meta property="og:image" content="http://forberz.com/img/forberzavatar.jpg">
+		<meta property="og:image:url" content="http://forberz.com/img/forberzavatar.jpg">
 		<meta property="og:image:type" content="image/jpeg">
 		<meta property="og:image:width" content="1500">
 		<meta property="og:image:height" content="1500">
 		
 		<!-- main picture -->
-		<!-- <meta itemprop="image" content="https://forberz.com/img/forberzavatar.jpg"> -->
+		<!-- <meta itemprop="image" content="http://forberz.com/img/forberzavatar.jpg"> -->
 		
 		<meta name="description" content="Forberz - 100% Natural Car and Bike Care and Detailing Products">
 		<meta name="author" content="Forberz">
