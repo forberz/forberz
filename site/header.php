@@ -116,8 +116,8 @@ $current_page = preg_replace('/(index)?\.php/', '', pathinfo($_SERVER['PHP_SELF'
 				// echo '<base href="http://127.0.0.1/" />';
 				echo '<base href="http://127.0.0.1/" />';
 			} elseif (is_dir('/Users')) {
-				// echo '<base href="http://127.0.0.1/forberz/" />';
-				echo '<base href="http://192.168.1.101/forberz/" />';
+				echo '<base href="http://127.0.0.1/forberz/" />';
+				// echo '<base href="http://192.168.1.101/forberz/" />';
 			} else {
 				echo '<base href="https://' . $SITES[$LANG] . '/" />';
 			}
@@ -174,9 +174,13 @@ $current_page = preg_replace('/(index)?\.php/', '', pathinfo($_SERVER['PHP_SELF'
 	</head>
 	<body class="<?= $LANG === 'he' ? 'rtl' : 'ltr'?>">
 		<?php
-			if (strpos($_SERVER['HTTP_USER_AGENT'], 'iPhone') !== false || strpos($_SERVER['HTTP_USER_AGENT'], 'Androind') !== false) {
-				include("site/menu-mobile.php");
+			if (
+				strpos($_SERVER['HTTP_USER_AGENT'], 'iPhone') !== false 
+				|| strpos($_SERVER['HTTP_USER_AGENT'], 'iPad') !== false 
+				|| strpos($_SERVER['HTTP_USER_AGENT'], 'Androind') !== false
+			) {
+				include("menu-mobile.php");
 			} else {
-				include("site/menu.php");
+				include("menu.php");
 			}
 		?>

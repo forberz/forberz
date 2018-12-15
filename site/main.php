@@ -10,7 +10,7 @@ $result = $DB->query("SELECT
 						FROM `gallery` 
 						WHERE id IN (50,51,54,53) ORDER BY id");
 ?> -->
-<p class="spacer">.</p>
+<p class="spacer">&nbsp;</p>
 <div class="webstrip">
 	<img class="webstrip" src="img/webstrip.jpg" alt="Forberz - Natural Care and Detailing Products for Cars and Bikes" />
 </div>
