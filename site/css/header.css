@@ -99,3 +99,46 @@ li.opmenu {
 body.rtl li.opmenu {
     float: left !important;
 }
+
+header.mobile .top {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #011638;
+	z-index: 9;
+}
+
+header.mobile a {
+	float: right;
+    width: 150px;
+    margin: 0.5rem;
+}
+
+header.mobile #menu-opener {
+	width: 2rem;
+	height: 2rem;
+	background: url(../../img/menu-reg.svg) no-repeat center center;
+	background-size: 100%;
+	cursor: pointer;
+	margin: 0.5rem;
+	float: left;
+}
+
+header.mobile #menu-opener.close {
+	background-image: url(../../img/menu-open.svg);
+}
+
+header.mobile div.main_menu {
+	position: fixed;
+	top: 3rem;
+	left: 0;
+	width: 100%;
+	height: auto;
+	transition: all .2s ease-in-out;
+	transform: translate3d(0,0,0);
+	z-index: 1;
+}
+
+header.mobile div.main_menu.close {
+	transform: translate3d(0,-200%,0);
+}

@@ -26,7 +26,7 @@
 					echo '<li><a href="https://'.$SITES[$L].'/'.$current_page.($ID ? '/' . ($LANG === $L ? $ID : $res['linktxt']) : '').'" '.($LANG === $L ? 'class="grey"' : '').'>'.$LT.'</a></li>';
 				}
 			?>
-		</ul>
+			</ul>
 		  </li>
 		</ul>
 	</div> 

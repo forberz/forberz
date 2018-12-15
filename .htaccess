@@ -20,6 +20,7 @@ FileETag MTime Size
 	RewriteRule ^$ /index.php [QSA,L]
 	RewriteRule ^catalogue/?(.*)?/?(\d+)?$ /site/catalogue.php?id=$1&limit=$2 [QSA,L]
 	RewriteRule ^cart/?(\d+,\d+,\d+;)+$ /site/cart.php?ids=$1 [QSA,L]
+	# RewriteRule ^cart/?(\d+,\d+,\d+,[a-zA-Z0-9]+;)+$ /site/cart.php?ids=$1 [QSA,L]
 	RewriteRule ^guide/?(.*)?/?(\d+)?$ /site/guide.php?id=$1&limit=$2 [QSA,L]
 	RewriteRule ^protreat/?$ /site/protreat.php [QSA,L]
 	RewriteRule ^shops/?$ /site/shops.php [QSA,L]
