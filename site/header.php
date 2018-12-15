@@ -178,7 +178,7 @@ $current_page = preg_replace('/(index)?\.php/', '', pathinfo($_SERVER['PHP_SELF'
 			if (
 				strpos($_SERVER['HTTP_USER_AGENT'], 'iPhone') !== false 
 				|| strpos($_SERVER['HTTP_USER_AGENT'], 'iPad') !== false 
-				|| strpos($_SERVER['HTTP_USER_AGENT'], 'Androind') !== false
+				|| strpos($_SERVER['HTTP_USER_AGENT'], 'Android') !== false
 			) {
 				include("menu-mobile.php");
 			} else {
